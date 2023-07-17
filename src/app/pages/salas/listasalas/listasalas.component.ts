@@ -19,6 +19,17 @@ export class ListasalasComponent {
     this.salas = []
   }
 
+  async ngOnInit() {
+    try {
+      this.salas = await this.salasService.getAll()
+      console.log(this.salas)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
+  reservarSala() {
+
+  }
 
 }
