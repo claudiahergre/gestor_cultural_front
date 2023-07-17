@@ -7,10 +7,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { StaffComponent } from './pages/staff/staff.component';
-import { SalasComponent } from './pages/salas/salas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NuevasalaComponent } from './pages/salas/nuevasala/nuevasala.component';
+import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.component';
+import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     UsuariosComponent,
     StaffComponent,
-    SalasComponent,
-    ContactoComponent
+    ContactoComponent,
+    NuevasalaComponent,
+    EditarsalaComponent,
+    ListasalasComponent
   ],
   imports: [
     BrowserModule,
