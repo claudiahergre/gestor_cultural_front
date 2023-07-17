@@ -1,9 +1,29 @@
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+import { Staff } from '../interface/staff.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
 
-  constructor() { }
+  private baseUrl: string;
+
+  private httpClient = inject(HttpClient);
+
+  constructor() {
+    this.baseUrl = 'http://localhost:3000/api/staff';
+  }
+
+  registro(formValues: any): Promise<Staff> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return firstValueFrom(
+      this.httpClient.post<Staff>(this.baseUrl, formValues, httpOptions)
+    );
+  }
 }

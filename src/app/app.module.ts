@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-import { StaffComponent } from './pages/staff/staff.component';
+
 import { SalasComponent } from './pages/salas/salas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/staff/login/login.component';
+import { RegistroComponent } from './pages/staff/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     HomeComponent,
     UsuariosComponent,
-    StaffComponent,
+
     SalasComponent,
-    ContactoComponent
+    ContactoComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
