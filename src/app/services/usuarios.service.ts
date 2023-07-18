@@ -21,6 +21,10 @@ export class UsuariosService {
     )
   }
 
-
+  login(formValues: any): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues)
+    );
+  }
 
 }
