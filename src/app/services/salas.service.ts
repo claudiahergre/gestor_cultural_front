@@ -47,7 +47,9 @@ export class SalasService {
         )
     }
 
+    reservarSala() {
 
+    }
 
 }
 

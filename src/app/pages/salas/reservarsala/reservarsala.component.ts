@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SalasService } from 'src/app/services/salas.service';
 
 @Component({
   selector: 'app-reservarsala',
@@ -9,6 +11,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ReservarsalaComponent {
 
   formulario: FormGroup
+  salasServices = inject(SalasService)
+  activatedRoute = inject(ActivatedRoute)
+  router = inject(Router)
 
 
   constructor() {
@@ -30,6 +35,14 @@ export class ReservarsalaComponent {
     this.formulario.value.datetime_inicio = this.formulario.value.fecha_reserva + ' ' + this.formulario.value.hora_reserva;
     this.formulario.value.datetime_fin = this.formulario.value.fecha_fin + ' ' + this.formulario.value.hora_fin;
     // console.log(this.formulario.value.datetime_inicio, this.formulario.value.datetime_fin)
+
+    // alert con el precio total multiplicando el precio de la sala por las horas totales
+    // si confirma, next con la reserva
+    this.salasServices.reservarSala()
+    // alert tu sala ha sido reservada
+
+    //redirección a la lista de salas
+
   }
 
 }
