@@ -1,8 +1,9 @@
 export interface Sala {
     id: number,
     precio: string,
-    disponible: boolean,
     aforo: number,
     nombre: string,
-    direccion: string
+    direccion: string,
+    descripcion: string,
+    url_foto: string
 }

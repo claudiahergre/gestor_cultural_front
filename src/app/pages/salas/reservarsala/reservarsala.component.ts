@@ -21,28 +21,31 @@ export class ReservarsalaComponent {
       fecha_reserva: new FormControl(),
       hora_reserva: new FormControl(),
 
-      fecha_fin: new FormControl(),
-      hora_fin: new FormControl(),
+      fecha_fin_reserva: new FormControl(),
+      hora_fin_reserva: new FormControl(),
 
-      datetime_inicio: new FormControl(),
-      datetime_fin: new FormControl()
+      //datetime_inicio: new FormControl(),
+      //datetime_fin: new FormControl()
     })
   }
 
-  onSubmit() {
+  async onSubmit() {
     // console.log(this.formulario.value)
-    // 1º concatenar fecha y hora
-    this.formulario.value.datetime_inicio = this.formulario.value.fecha_reserva + ' ' + this.formulario.value.hora_reserva;
-    this.formulario.value.datetime_fin = this.formulario.value.fecha_fin + ' ' + this.formulario.value.hora_fin;
     // console.log(this.formulario.value.datetime_inicio, this.formulario.value.datetime_fin)
 
-    // alert con el precio total multiplicando el precio de la sala por las horas totales
+    // alert de confirmación
+
     // si confirma, next con la reserva
-    this.salasServices.reservarSala()
+    const response = await this.salasServices.reservarSala(this.formulario.value)
+
+    if (response.error === 'reservada') {
+
+    }
     // alert tu sala ha sido reservada
 
-    //redirección a la lista de salas
 
+    //redirección a la lista de salas
+    this.router.navigate(['/salas'])
   }
 
 }

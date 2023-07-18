@@ -20,9 +20,8 @@ export class NuevasalaComponent {
       precio: new FormControl(),
       direccion: new FormControl(),
       aforo: new FormControl(),
-      disponible: new FormControl(),
-      // descripcion: new FormControl(),
-      // foto: new FormControl(),
+      descripcion: new FormControl(),
+      url_foto: new FormControl()
     })
   }
 
@@ -34,9 +33,10 @@ export class NuevasalaComponent {
     if (response.error) {
       console.log(response.error) //aqui estoy comprobando qué errores me devuelve la aplicacion.
 
+    } else {
+      this.router.navigate(['/salas']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
     }
 
-    this.router.navigate(['/salas']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
   }
 
 
