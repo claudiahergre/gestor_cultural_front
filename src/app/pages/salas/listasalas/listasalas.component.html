@@ -1,14 +1,15 @@
-<div class="card" style="width: 18rem;" *ngFor="let sala of salas">
-
+<div class="card" style="width: 18rem;">
+    <!-- *ngFor="let sala of salas" -->
     <img src="..." class="card-img-top" alt="...">
 
     <div class="card-body">
-        <h5 class="card-title">{{sala.nombre}}</h5>
+        <h5 class="card-title"><!-- {{sala.nombre}} --></h5>
         <!-- <p class="card-text">DESCRIPCIÓN</p> -->
-        <p class="card-text">Aforo: {{sala.aforo}}</p>
-        <p class="card-text">Dirección: {{sala.direccion}}</p>
-        <p class="card-text">Precio por hora: {{sala.precio}}</p>
-        <a href="#" class="btn btn-primary">Reservar esta sala</a>
+        <p class="card-text">Aforo: <!-- {{sala.aforo}} --></p>
+        <p class="card-text">Dirección: <!-- {{sala.direccion}} --></p>
+        <p class="card-text">Precio por hora: <!-- {{sala.precio}} --></p>
+        <a class="btn btn-primary" [routerLink]="['/salas/reservar/1']">Reservar esta sala</a>
     </div>
+
 
 </div>

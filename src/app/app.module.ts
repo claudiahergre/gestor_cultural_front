@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NuevasalaComponent } from './pages/salas/nuevasala/nuevasala.component';
 import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.component';
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
+import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListasalasComponent } from './pages/salas/listasalas/listasalas.compone
     ContactoComponent,
     NuevasalaComponent,
     EditarsalaComponent,
-    ListasalasComponent
+    ListasalasComponent,
+    ReservarsalaComponent
   ],
   imports: [
     BrowserModule,
