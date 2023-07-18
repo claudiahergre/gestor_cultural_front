@@ -35,6 +35,8 @@ export class LoginComponent {
       this.router.navigate(['/panelTrabajador'])
     }
 
+    localStorage.setItem('token', response.token);
+
 
   }
 

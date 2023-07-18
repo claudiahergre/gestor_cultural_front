@@ -1,21 +1,63 @@
-<div class="container text-center">
+<div class="container mt-5">
     <div class="row">
-
-
-
-        <div [routerLink]="['/usuarios']" type="button" class="col btn btn-primary rounded border-primary p-3 mt-5 m-1">
-            Lista de usuarios
+        <!-- Apartado de botones de edición -->
+        <div class="col-md-4">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sección de edición</h5>
+                    <div class="d-grid gap-2">
+                        <a [routerLink]="['/usuarios']" class="btn btn-primary">Usuarios</a>
+                        <a [routerLink]="['/listaStaff']" class="btn btn-primary">Staff</a>
+                        <a [routerLink]="['/salas']" class="btn btn-primary">Salas</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div [routerLink]="['/staff']" type="button" class="col btn btn-primary rounded border-primary p-3 mt-5 m-1">
-            Lista de staff
+        <!-- Apartado de contadores -->
+        <div class="col-md-8">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Contador de totales</h5>
+                    <div class="row">
+                        <div class="col">
+                            <h6>Total de usuarios</h6>
+                            <p class="card-text">300</p>
+                        </div>
+                        <div class="col">
+                            <h6>Total de miembros del staff</h6>
+                            <p class="card-text">50</p>
+                        </div>
+                        <div class="col">
+                            <h6>Total de salas disponibles</h6>
+                            <p class="card-text">25</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div [routerLink]="['/salas']" type="button" class="col btn btn-primary rounded border-primary p-3 mt-5 m-1">
-            Lista de salas
+    <!-- Apartado de "Mi Perfil" y logout -->
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="card h-100 d-flex">
+                <div class="card-body">
+                    <h5 class="card-title">Mi Perfil</h5>
+                    <p><strong>Nombre:</strong> John Doe</p>
+                    <p><strong>Usuario:</strong> johndoe</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <p><strong>Rol:</strong> Administrador</p>
+                </div>
+            </div>
         </div>
-
-
-
+        <div class="col-md-4">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Accesos directos</h5>
+                    <button class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

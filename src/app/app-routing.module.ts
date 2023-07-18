@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/staff/login/login.component';
 import { RegistroComponent } from './pages/staff/registro/registro.component';
 import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
 import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
+import { ListaStaffComponent } from './pages/staff/lista-staff/lista-staff.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,9 +18,12 @@ const routes: Routes = [
   { path: 'loginStaff', component: LoginComponent },
   { path: 'registroStaff', component: RegistroComponent },
 
-  //Rutas para panelAdmin y panelTrabajador
+  //Rutas para panelAdmin, panelTrabajador, listaStaff, eliminar staff y editar staff
   { path: 'panelAdmin', component: PanelAdminComponent },
   { path: 'panelTrabajador', component: PanelTrabajadorComponent },
+  { path: 'listaStaff', component: ListaStaffComponent },
+  { path: 'staff/editar/:staffId', component: RegistroComponent },
+  { path: 'staff/eliminar/:staffId', component: RegistroComponent },
 
   { path: 'salas', component: SalasComponent },
   { path: 'contacto', component: ContactoComponent },

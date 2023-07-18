@@ -15,6 +15,7 @@ import { LoginComponent } from './pages/staff/login/login.component';
 import { RegistroComponent } from './pages/staff/registro/registro.component';
 import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
 import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
+import { ListaStaffComponent } from './pages/staff/lista-staff/lista-staff.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-t
     RegistroComponent,
     PanelAdminComponent,
     PanelTrabajadorComponent,
+    ListaStaffComponent,
 
   ],
   imports: [

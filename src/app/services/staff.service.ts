@@ -16,6 +16,12 @@ export class StaffService {
     this.baseUrl = 'http://localhost:3000/api/staff';
   }
 
+  getAllStaff(): Promise<Staff[]> {
+    return firstValueFrom(
+      this.httpClient.get<Staff[]>(this.baseUrl)
+    );
+  }
+
   registro(formValues: any): Promise<Staff> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,13 +35,11 @@ export class StaffService {
 
   login(formValues: any): Promise<any> {
     return firstValueFrom(
-      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues)
+      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues) //confirmar con javi cuando haga la ruta en el back
     );
   }
 
-  isLogged(): boolean {
-    return localStorage.getItem('NUESTRO_TOKEN_CUANDO_ESTE') ? true : false;
-  }
+
 
 
 }
