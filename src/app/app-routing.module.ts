@@ -6,6 +6,8 @@ import { SalasComponent } from './pages/salas/salas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginComponent } from './pages/staff/login/login.component';
 import { RegistroComponent } from './pages/staff/registro/registro.component';
+import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
+import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +16,10 @@ const routes: Routes = [
 
   { path: 'loginStaff', component: LoginComponent },
   { path: 'registroStaff', component: RegistroComponent },
+
+  //Rutas para panelAdmin y panelTrabajador
+  { path: 'panelAdmin', component: PanelAdminComponent },
+  { path: 'panelTrabajador', component: PanelTrabajadorComponent },
 
   { path: 'salas', component: SalasComponent },
   { path: 'contacto', component: ContactoComponent },

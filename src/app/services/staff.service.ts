@@ -26,4 +26,16 @@ export class StaffService {
       this.httpClient.post<Staff>(this.baseUrl, formValues, httpOptions)
     );
   }
+
+  login(formValues: any): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues)
+    );
+  }
+
+  isLogged(): boolean {
+    return localStorage.getItem('NUESTRO_TOKEN_CUANDO_ESTE') ? true : false;
+  }
+
+
 }

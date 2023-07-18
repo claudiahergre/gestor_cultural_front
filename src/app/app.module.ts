@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/staff/login/login.component';
 import { RegistroComponent } from './pages/staff/registro/registro.component';
+import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
+import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { RegistroComponent } from './pages/staff/registro/registro.component';
     SalasComponent,
     ContactoComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    PanelAdminComponent,
+    PanelTrabajadorComponent,
+
   ],
   imports: [
     BrowserModule,
