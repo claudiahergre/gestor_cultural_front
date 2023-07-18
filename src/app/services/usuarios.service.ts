@@ -21,10 +21,20 @@ export class UsuariosService {
     )
   }
 
+  registro(formValues: any): Promise<Usuario | any> {
+    return firstValueFrom(
+      this.httpClient.post<Usuario | any>(`${this.baseUrl}/registro`, formValues)
+    );
+  }
+
   login(formValues: any): Promise<any> {
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/login`, formValues)
     );
   }
+
+  /* isLogged(): boolean {
+    return localStorage.getItem('gym_token') ? true : false;
+  } */
 
 }

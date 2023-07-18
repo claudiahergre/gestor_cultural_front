@@ -11,9 +11,9 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaUsuariosComponent } from './pages/usuarios/lista-usuarios/lista-usuarios.component';
-import { NuevoUsuarioComponent } from './pages/usuarios/nuevo-usuario/nuevo-usuario.component';
 import { EditarUsuarioComponent } from './pages/usuarios/editar-usuario/editar-usuario.component';
 import { LoginComponent } from './pages/usuarios/login/login.component';
+import { RegistroComponent } from './pages/usuarios/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +24,9 @@ import { LoginComponent } from './pages/usuarios/login/login.component';
     SalasComponent,
     ContactoComponent,
     ListaUsuariosComponent,
-    NuevoUsuarioComponent,
     EditarUsuarioComponent,
     LoginComponent,
+    RegistroComponent,
 
   ],
   imports: [

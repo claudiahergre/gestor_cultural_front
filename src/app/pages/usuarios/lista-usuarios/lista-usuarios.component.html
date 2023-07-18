@@ -8,10 +8,11 @@
             <th>DNI</th>
             <th>Email</th>
             <th>Direccion</th>
+            <th>Accion</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let usuario from usuarios">
+        <tr *ngFor="let usuario of usuarios">
             <td>{{usuario.id}}</td>
             <td>{{usuario.nombre}}</td>
             <td>{{usuario.username}}</td>
@@ -19,6 +20,11 @@
             <td>{{usuario.dni}}</td>
             <td>{{usuario.email}}</td>
             <td>{{usuario.direccion}}</td>
+            <td>
+                <button class="btn btn-info" [routerLink]="['/usuario', 'editar', usuario.id]">Editar</button>
+                <button class="btn btn-info" [routerLink]="['/usuario', 'eliminar', usuario.id]">Borrar</button>
+            </td>
+
 
         </tr>
     </tbody>
