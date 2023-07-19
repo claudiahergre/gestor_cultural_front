@@ -37,7 +37,7 @@ export class RegistroComponent {
       return alert(response.fatal);
     }
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['/usuarios/login']);
   }
 
 

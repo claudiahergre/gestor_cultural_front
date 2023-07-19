@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
@@ -16,6 +16,8 @@ export class EditarUsuarioComponent {
   usuarioService = inject(UsuariosService)
 
   activatedRoute = inject(ActivatedRoute)
+
+  router = inject(Router)
 
   constructor() {
     this.usuarioId = 0;
@@ -46,6 +48,9 @@ export class EditarUsuarioComponent {
   async onSubmit() {
     const response = await this.usuarioService.update(this.usuarioId, this.formulario.value)
     console.log(response)
+
+    this.router.navigate(['/usuarios'])
+
   }
 
 
