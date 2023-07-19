@@ -23,9 +23,6 @@ export class ReservarsalaComponent {
 
       fecha_fin_reserva: new FormControl(),
       hora_fin_reserva: new FormControl(),
-
-      //datetime_inicio: new FormControl(),
-      //datetime_fin: new FormControl()
     })
   }
 

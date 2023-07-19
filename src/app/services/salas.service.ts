@@ -20,12 +20,26 @@ export class SalasService {
     }
 
     getAll(): Promise<Sala[]> {
+        ///// borrar cuando tengamos el interceptor ///
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        ///////////
         return firstValueFrom(
             this.httpClient.get<Sala[]>(this.baseUrl)
         )
     }
 
     getById(idSala: number): Promise<Sala> {
+        ///// borrar cuando tengamos el interceptor ///
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        ///////////
         return firstValueFrom(
             this.httpClient.get<Sala>(`${this.baseUrl}/${idSala}`)
         )
@@ -46,12 +60,26 @@ export class SalasService {
     }
 
     updateById(idSala: number, formValue: any): Promise<Sala> {
+        ///// borrar cuando tengamos el interceptor ///
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        ///////////
         return firstValueFrom(
             this.httpClient.put<Sala>(`${this.baseUrl}/${idSala}`, formValue)
         )
     }
 
     deleteById(idSala: number) {
+        ///// borrar cuando tengamos el interceptor ///
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        ///////////
         return firstValueFrom(
             this.httpClient.delete<any>(`${this.baseUrl}/${idSala}`)
         )
@@ -59,6 +87,13 @@ export class SalasService {
 
     reservarSala(formValue: any): Promise<Reserva | any> {
 
+        ///// borrar cuando tengamos el interceptor ///
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        }
+        ///////////
         return firstValueFrom(
             this.httpClient.post<Reserva | any>(this.usuariosHasSalasUrl, formValue)
         )

@@ -36,7 +36,7 @@ export class EditarsalaComponent {
       console.log(sala)
       this.salaId = params['idSala']
 
-      const obj = {
+      const infoForm = {
         nombre: sala.nombre,
         precio: sala.precio,
         direccion: sala.direccion,
@@ -45,8 +45,8 @@ export class EditarsalaComponent {
         url_foto: sala.url_foto
       }
 
-      this.formulario.setValue(obj);
-      console.log(obj)
+      this.formulario.setValue(infoForm);
+      console.log(infoForm)
     })
   }
 
