@@ -38,7 +38,12 @@ export class UsuariosService {
     )
   }
 
-  delete(usuarioId: number): Promise<Usuario> {
+  remove(usuarioId: number): Promise<Usuario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
     return firstValueFrom(
       this.httpClient.delete<Usuario>(`${this.baseUrl}/${usuarioId}`)
     )

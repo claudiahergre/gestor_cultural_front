@@ -25,7 +25,7 @@ export class ListaUsuariosComponent {
   async onDelete(usuarioId: number) {
 
 
-    const response = await this.usuariosService.delete(usuarioId)
+    const response = await this.usuariosService.remove(usuarioId)
     this.usuarios = await this.usuariosService.getAll()
 
 
