@@ -22,6 +22,12 @@ export class StaffService {
     );
   }
 
+  getById(staffId: number): Promise<Staff | any> {
+    return firstValueFrom(
+      this.httpClient.get<Staff>(`${this.baseUrl}/id/${staffId}`)
+    )
+  }
+
   registro(formValues: any): Promise<Staff> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -37,6 +43,19 @@ export class StaffService {
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/login`, formValues) //confirmar con javi cuando haga la ruta en el back
     );
+  }
+
+  updateById(staffId: any, formValues: any): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.put<Staff>(`${this.baseUrl}/${staffId}`, formValues)
+    )
+  }
+
+  //NO SE HACER PARA BORRAR
+  eliminarStaff(staffId: any): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.delete<any>(`${this.baseUrl}/${staffId}`)
+    )
   }
 
 

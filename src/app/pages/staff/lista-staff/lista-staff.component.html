@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container text-center m-5">
+
+    <h3 class="text-center mb-5">Lista de miembros del staff</h3>
     <table class="table">
         <thead>
             <th>ID</th>
@@ -13,13 +15,13 @@
                 <td>{{staff.id}}</td>
                 <td>{{staff.nombre}}</td>
                 <td>{{staff.usuario}}</td>
-                <td>{{staff.email}} euros</td>
+                <td>{{staff.email}}</td>
                 <td>{{staff.rol}} </td>
                 <td>
                     <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">Editar</button>
                 </td>
                 <td>
-                    <button class="btn btn-danger" [routerLink]="['/staff', 'eliminar', staff.id]">Eliminar</button>
+                    <button class="btn btn-danger">Eliminar</button>
                 </td>
 
             </tr>
@@ -28,3 +30,5 @@
     </table>
 
 </div>
+
+<!-- (click)="eliminar(staff.id)" -->

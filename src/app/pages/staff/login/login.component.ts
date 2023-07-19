@@ -24,18 +24,24 @@ export class LoginComponent {
   async onSubmit() {
 
     const response = await this.staffService.login(this.formulario.value) //me falta hacer el login en el servicio
+    console.log(response)
 
     if (response.fatal) {
       return alert(response.fatal);
     } else if (response.rol === 'administrador') {
       //Hacer routernavigate al panel de administrador
+      localStorage.setItem('token_front', response.token);
       this.router.navigate(['/panelAdmin'])
+
     } else if (response.rol === 'trabajador') {
       //Hacer routernavigate al panel de trabajadores 
       this.router.navigate(['/panelTrabajador'])
+      localStorage.setItem('token_front', response.token);
     }
 
-    localStorage.setItem('token', response.token);
+
+
+
 
 
   }

@@ -9,6 +9,7 @@ import { RegistroComponent } from './pages/staff/registro/registro.component';
 import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
 import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
 import { ListaStaffComponent } from './pages/staff/lista-staff/lista-staff.component';
+import { EditarStaffComponent } from './pages/staff/editar-staff/editar-staff.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'panelAdmin', component: PanelAdminComponent },
   { path: 'panelTrabajador', component: PanelTrabajadorComponent },
   { path: 'listaStaff', component: ListaStaffComponent },
-  { path: 'staff/editar/:staffId', component: RegistroComponent },
+  { path: 'staff/editar/:staffId', component: EditarStaffComponent },
   { path: 'staff/eliminar/:staffId', component: RegistroComponent },
 
   { path: 'salas', component: SalasComponent },
