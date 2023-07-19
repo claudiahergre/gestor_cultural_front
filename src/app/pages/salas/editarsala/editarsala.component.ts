@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SalasService } from 'src/app/services/salas.service';
+import { StaffService } from 'src/app/services/staff.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editarsala',
@@ -15,6 +17,7 @@ export class EditarsalaComponent {
   router = inject(Router)
 
   salasServices = inject(SalasService)
+  staffServices = inject(StaffService)
   activatedRoute = inject(ActivatedRoute)
 
   constructor() {
@@ -31,10 +34,10 @@ export class EditarsalaComponent {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      console.log(params['idSala'])
-      const sala = await this.salasServices.getById(params['idSala'])
+      console.log(params['salaId'])
+      const sala = await this.salasServices.getById(params['salaId'])
       console.log(sala)
-      this.salaId = params['idSala']
+      this.salaId = params['salaId']
 
       const infoForm = {
         nombre: sala.nombre,
@@ -51,6 +54,7 @@ export class EditarsalaComponent {
   }
 
   async onSubmit() {
+
     const response = await this.salasServices.updateById(this.salaId, this.formulario.value)
     console.log(response)
 

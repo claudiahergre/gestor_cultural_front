@@ -39,7 +39,9 @@ export class SalasService {
                 'Content-Type': 'application/json'
             })
         }
-        ///////////
+        //////////
+
+        console.log(idSala)
         return firstValueFrom(
             this.httpClient.get<Sala>(`${this.baseUrl}/${idSala}`)
         )
@@ -72,7 +74,7 @@ export class SalasService {
         )
     }
 
-    deleteById(idSala: number) {
+    deleteById(salaId: number) {
         ///// borrar cuando tengamos el interceptor ///
         const httpOptions = {
             headers: new HttpHeaders({
@@ -81,7 +83,7 @@ export class SalasService {
         }
         ///////////
         return firstValueFrom(
-            this.httpClient.delete<any>(`${this.baseUrl}/${idSala}`)
+            this.httpClient.delete<any>(`${this.baseUrl}/${salaId}`)
         )
     }
 
