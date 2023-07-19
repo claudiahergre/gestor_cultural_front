@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Usuario } from '../interfaces/usuarios.interface';
 import { firstValueFrom } from 'rxjs';
@@ -21,6 +21,29 @@ export class UsuariosService {
     )
   }
 
+  getById(usuarioId: number): Promise<Usuario> {
+    return firstValueFrom(
+      this.httpClient.get<Usuario>(`${this.baseUrl}/${usuarioId}`)
+    )
+  }
+
+  update(usuarioId: number, FormValues: any): Promise<Usuario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    return firstValueFrom(
+      this.httpClient.put<Usuario>(`${this.baseUrl}/editar/${usuarioId}`, FormValues)
+    )
+  }
+
+  delete(usuarioId: number): Promise<Usuario> {
+    return firstValueFrom(
+      this.httpClient.delete<Usuario>(`${this.baseUrl}/${usuarioId}`)
+    )
+  }
+
   registro(formValues: any): Promise<Usuario | any> {
     return firstValueFrom(
       this.httpClient.post<Usuario | any>(`${this.baseUrl}/registro`, formValues)
@@ -33,8 +56,8 @@ export class UsuariosService {
     );
   }
 
-  /* isLogged(): boolean {
-    return localStorage.getItem('gym_token') ? true : false;
-  } */
+  isLogged(): boolean {
+    return localStorage.getItem('tokencito') ? true : false;
+  }
 
 }

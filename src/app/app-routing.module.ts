@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'usuarios/registro', component: RegistroComponent },
   { path: 'usuarios/login', component: LoginComponent },
   { path: 'usuarios/editar/:usuarioId', component: EditarUsuarioComponent },
+  { path: 'usuarios/eliminar/:usuarioId', component: EditarUsuarioComponent },
   { path: 'staff', component: StaffComponent },
   { path: 'salas', component: SalasComponent },
   { path: 'contacto', component: ContactoComponent },

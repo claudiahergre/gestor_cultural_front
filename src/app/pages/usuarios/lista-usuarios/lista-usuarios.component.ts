@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Usuario } from 'src/app/interfaces/usuarios.interface';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -19,6 +20,15 @@ export class ListaUsuariosComponent {
 
   async ngOnInit() {
     this.usuarios = await this.usuariosService.getAll()
+  }
+
+  async onDelete(usuarioId: number) {
+
+
+    const response = await this.usuariosService.delete(usuarioId)
+    this.usuarios = await this.usuariosService.getAll()
+
+
   }
 }
 
