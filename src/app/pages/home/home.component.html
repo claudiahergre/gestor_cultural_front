@@ -1,1 +1,6 @@
-<p>home works!</p>
+<div class="gallery">
+  <div *ngFor="let imagen of images" class="image-container">
+    <img [src]="imagen.ruta" alt="{{ imagen.nombre }}" class="gallery-image">
+    <div class="image-description">{{ imagen.descripcion }}</div>
+  </div>
+</div>
