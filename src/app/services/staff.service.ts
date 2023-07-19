@@ -35,7 +35,7 @@ export class StaffService {
       })
     }
     return firstValueFrom(
-      this.httpClient.post<Staff>(this.baseUrl, formValues, httpOptions)
+      this.httpClient.post<Staff>(`${this.baseUrl}/registro`, formValues, httpOptions)
     );
   }
 
