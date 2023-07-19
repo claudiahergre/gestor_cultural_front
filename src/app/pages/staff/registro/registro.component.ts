@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RegistroComponent {
 
   staffService = inject(StaffService)
 
-  constructor() {
+  constructor(private router: Router) {
     this.formulario = new FormGroup({
       nombre: new FormControl(),
       usuario: new FormControl(),
@@ -27,6 +28,12 @@ export class RegistroComponent {
     const response = await this.staffService.registro(this.formulario.value);
     console.log(response);
 
+    if (response.id) {
+      this.router.navigate(['/loginStaff'])
+    } else {
+      //alertita de que se registre correctamente
+      alert('Tienes que hacer el login correctamente')
+    }
 
   }
 
