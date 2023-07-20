@@ -1,34 +1,37 @@
-<div class="container text-center m-5">
+<div class="fondo">
 
     <h3 class="text-center mb-5">Lista de miembros del staff</h3>
-    <table class="table">
-        <thead>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>usuario</th>
-            <th>Email</th>
-            <th>Roll</th>
 
-        </thead>
-        <tbody>
-            <tr *ngFor="let staff of arrStaff">
-                <td>{{staff.id}}</td>
-                <td>{{staff.nombre}}</td>
-                <td>{{staff.usuario}}</td>
-                <td>{{staff.email}}</td>
-                <td>{{staff.rol}} </td>
-                <td>
-                    <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">Editar</button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">Eliminar</button>
-                </td>
+    <div class="container p-3 mt-3 rounded text-center">
 
-            </tr>
-        </tbody>
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>usuario</th>
+                <th>Email</th>
+                <th>Roll</th>
 
-    </table>
+            </thead>
+            <tbody>
+                <tr *ngFor="let staff of arrStaff">
+                    <td>{{staff.id}}</td>
+                    <td>{{staff.nombre}}</td>
+                    <td>{{staff.usuario}}</td>
+                    <td>{{staff.email}}</td>
+                    <td>{{staff.rol}} </td>
+                    <td>
+                        <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
 
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
 </div>
-
 <!-- (click)="eliminar(staff.id)" -->
