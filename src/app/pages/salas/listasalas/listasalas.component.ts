@@ -42,9 +42,10 @@ export class ListasalasComponent {
       text: "Una vez borrado no se puede recuperar",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#0077B6',
+      cancelButtonColor: '#F3722C',
       confirmButtonText: 'Sí, bórralo'
+
     }).then(async (result) => {
       if (result.isConfirmed) {
         const response = await this.salasService.deleteById(salaId)
@@ -56,8 +57,8 @@ export class ListasalasComponent {
           timer: 2500,
           width: 500,
           padding: '3em',
-          color: '#716add',
-          background: '#000000'
+          color: '#333333',
+          background: '#0077B6'
         })
 
       }

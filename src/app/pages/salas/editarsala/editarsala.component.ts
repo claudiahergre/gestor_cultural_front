@@ -34,9 +34,9 @@ export class EditarsalaComponent {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      console.log(params['salaId'])
+      // console.log(params['salaId'])
       const sala = await this.salasServices.getById(params['salaId'])
-      console.log(sala)
+      // console.log(sala)
       this.salaId = params['salaId']
 
       const infoForm = {
@@ -59,6 +59,17 @@ export class EditarsalaComponent {
     console.log(response)
 
     //alert - cambios guardados
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Cambios guardados',
+      showConfirmButton: false,
+      timer: 2500,
+      width: 500,
+      padding: '3em',
+      color: '#333333',
+      background: '#0077B6'
+    })
 
     this.router.navigate(['/salas'])
   }

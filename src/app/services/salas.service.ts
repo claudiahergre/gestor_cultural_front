@@ -70,7 +70,7 @@ export class SalasService {
         }
         ///////////
         return firstValueFrom(
-            this.httpClient.put<Sala>(`${this.baseUrl}/${idSala}`, formValue)
+            this.httpClient.put<Sala>(`${this.baseUrl}/editar/${idSala}`, formValue)
         )
     }
 
