@@ -17,6 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     let clonedRequest = request;
 
+    //TODO setItem token_front en el Login de staff y usuarios
     if (localStorage.getItem('token_front')) {
       clonedRequest = request.clone({
         setHeaders: {
