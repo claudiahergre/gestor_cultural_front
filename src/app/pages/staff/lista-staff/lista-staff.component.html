@@ -10,7 +10,8 @@
                 <th>Nombre</th>
                 <th>usuario</th>
                 <th>Email</th>
-                <th>Roll</th>
+                <th>Rol</th>
+                <th>Acciones</th>
 
             </thead>
             <tbody>
@@ -21,10 +22,8 @@
                     <td>{{staff.email}}</td>
                     <td>{{staff.rol}} </td>
                     <td>
-                        <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">✏️</button>
-                    </td>
-                    <td>
-                        <button (click)="eliminar()" class="btn btn-danger">🗑️</button>
+                        <button class="btn" [routerLink]="['/staff', 'editar', staff.id]">✏️</button>
+                        <button (click)="eliminar(staff.id)" class="btn">🗑️</button>
                     </td>
 
                 </tr>
