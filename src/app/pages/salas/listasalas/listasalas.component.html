@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;" *ngFor="let sala of salas">
+
+    <img [src]="sala.url_foto" class="card-img-top" alt="">
+
+    <div class="card-body">
+        <h5 class="card-title">{{sala.nombre}}</h5>
+        <p class="card-text">{{sala.descripcion}}</p>
+        <p class="card-text">Aforo: {{sala.aforo}}</p>
+        <p class="card-text">Dirección: {{sala.direccion}}</p>
+        <p class="card-text">Precio por hora: {{sala.precio}}</p>
+        <a class="btn btn-primary" [routerLink]="['/salas', 'reservar', sala.id]">Reservar esta sala</a>
+    </div>
+
+
+
+
+
+</div>

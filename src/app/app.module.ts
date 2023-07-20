@@ -4,9 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SalasComponent } from './pages/salas/salas.component';
-import { ContactoComponent } from './pages/contacto/contacto.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
+
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ListaUsuariosComponent } from './pages/usuarios/lista-usuarios/lista-usuarios.component';
@@ -19,20 +18,24 @@ import { ListaStaffComponent } from './pages/staff/lista-staff/lista-staff.compo
 import { EditarStaffComponent } from './pages/staff/editar-staff/editar-staff.component';
 import { LoginStaffComponent } from './pages/staff/login/login-staff.component';
 import { RegistroStaffComponent } from './pages/staff/registro/registro-staff.component';
-
+import { ContactoComponent } from './pages/contacto/contacto.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NuevasalaComponent } from './pages/salas/nuevasala/nuevasala.component';
+import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.component';
+import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
+import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
+import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    SalasComponent,
     ContactoComponent,
     ListaUsuariosComponent,
     EditarUsuarioComponent,
     LoginComponent,
     RegistroComponent,
-    SalasComponent,
     ContactoComponent,
     LoginComponent,
     RegistroComponent,
@@ -41,7 +44,13 @@ import { RegistroStaffComponent } from './pages/staff/registro/registro-staff.co
     ListaStaffComponent,
     EditarStaffComponent,
     LoginStaffComponent,
-    RegistroStaffComponent
+    RegistroStaffComponent,
+    ContactoComponent,
+    NuevasalaComponent,
+    EditarsalaComponent,
+    ListasalasComponent,
+    ReservarsalaComponent,
+    SalasadminComponent
   ],
   imports: [
     BrowserModule,
