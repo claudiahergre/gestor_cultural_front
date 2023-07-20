@@ -31,7 +31,7 @@ export class LoginComponent {
       return alert(response.fatal);
     }
 
-    localStorage.setItem('tokencito_cultural', response.token);
+    localStorage.setItem('token_front', response.token);
     this.router.navigate(['/salas']);
   }
 }
