@@ -1,12 +1,14 @@
 .fondo {
     background-color: var(--blanco);
-    height: calc(100vh - 56px);
+    /* height: calc(100vh - 56px); */
     padding-top: 40px;
 }
 
 .container {
     background-color: white;
-    /*  border: 1px solid rgb(28, 146, 179); */
+    /* Añado margen pero no se aplica el background color */
+    margin-bottom: 200px;
+
 }
 
 tbody {

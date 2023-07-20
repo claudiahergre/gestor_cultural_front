@@ -1,11 +1,20 @@
-.btn {
+.fondo {
     background-color: var(--blanco);
-}
-
-.btn:hover {
-    background-color: var(--colorPrincipal);
+    height: calc(100vh - 56px);
+    padding-top: 40px;
 }
 
 .container {
-    background-color: var(--azulClaro);
+    background-color: white;
+    border: 1px solid rgb(28, 146, 179);
+}
+
+
+.btn {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: rgb(1, 101, 129);
 }
