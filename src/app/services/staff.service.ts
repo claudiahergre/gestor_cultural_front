@@ -61,9 +61,14 @@ export class StaffService {
   }
 
   //NO SE HACER PARA BORRAR
-  eliminarStaff(staffId: any): Promise<any> {
+  remove(staffId: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
     return firstValueFrom(
-      this.httpClient.delete<any>(`${this.baseUrl}/${staffId}`)
+      this.httpClient.delete<Staff>(`${this.baseUrl}/${staffId}`)
     )
   }
 

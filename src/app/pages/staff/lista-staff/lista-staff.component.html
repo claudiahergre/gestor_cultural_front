@@ -21,7 +21,7 @@
                     <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">Editar</button>
                 </td>
                 <td>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-danger" (click)="eliminar(staff.id)">Eliminar</button>
                 </td>
 
             </tr>
@@ -30,5 +30,3 @@
     </table>
 
 </div>
-
-<!-- (click)="eliminar(staff.id)" -->

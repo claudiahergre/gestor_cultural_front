@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Staff } from 'src/app/interfaces/staff.interface';
 import { StaffService } from 'src/app/services/staff.service';
 
@@ -12,6 +12,8 @@ export class ListaStaffComponent {
   arrStaff: Staff[]
 
 
+
+
   constructor(private staffService: StaffService) {
     this.arrStaff = []
   }
@@ -20,15 +22,14 @@ export class ListaStaffComponent {
 
   async ngOnInit() {
     const staff = await this.staffService.getAllStaff()
-    console.log(staff)
     this.arrStaff = staff
-    console.log(staff);
   }
 
-  /* eliminar(id: number) {
-    this.staffService.eliminarStaff(staffId)
+  async eliminar(staffId: number) {
+    const response = await this.staffService.remove(staffId)
+    this.arrStaff = await this.staffService.getAllStaff()
 
-  } */
+  }
 
 
 
