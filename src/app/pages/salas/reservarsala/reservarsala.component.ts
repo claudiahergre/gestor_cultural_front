@@ -26,6 +26,17 @@ export class ReservarsalaComponent {
     })
   }
 
+  // ngOnInit() {
+  //   this.activatedRoute.snapshot.params;
+  //    try {
+  //     const activatedRoute = this.salasServices.getById()
+  //     console.log(activatedRoute)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+
   async onSubmit() {
     // console.log(this.formulario.value)
     // console.log(this.formulario.value.datetime_inicio, this.formulario.value.datetime_fin)
