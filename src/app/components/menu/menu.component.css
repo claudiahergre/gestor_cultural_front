@@ -1,8 +1,4 @@
 .navbar {
-    background-color: var(--colorPrincipal);
-}
-
-.nav-item:hover {
-    background-color: var(--azulClaro);
-    border-radius: 10px;
+    /*  background-color: var(--naranja); */
+    background-color: rgb(28, 146, 179);
 }

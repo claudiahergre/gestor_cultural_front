@@ -26,6 +26,9 @@ export class ReservarsalaComponent {
     })
   }
 
+  //en ng oninit. ir con el activated route
+  // this.activated.activatedroutr = this.activatedRoute.snapshot.snapshot.params - nos devuelve la id de la sala que queremos reservar. esto sirve para conectar con el back
+
   async onSubmit() {
     // console.log(this.formulario.value)
     // console.log(this.formulario.value.datetime_inicio, this.formulario.value.datetime_fin)

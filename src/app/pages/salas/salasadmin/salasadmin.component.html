@@ -1,29 +1,36 @@
-<div class="container">
-    <table class="table">
-        <thead style="background-color:  #AED9E0">
+<div class="fondo">
 
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Dirección</th>
-            <th>Aforo</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-        </thead>
-        <tbody *ngFor="let sala of salas">
+    <h3 class="text-center mb-5">Lista de salas editables</h3>
 
-            <td>{{sala.nombre}}</td>
-            <td>{{sala.descripcion}}</td>
-            <td>{{sala.direccion}}</td>
-            <td>{{sala.aforo}}</td>
-            <td>{{sala.precio}}</td>
+    <div class="container p-3 mt-3 rounded text-center">
 
-            <td>
-                <button [routerLink]="['/salas','editar',sala.id]" class="btn bet-light">✏️</button>
-                <button (click)="eliminarSala(sala.id)" class="btn bet-light">🗑️</button>
-            </td>
-        </tbody>
+        <table class="table">
+            <thead>
+
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Dirección</th>
+                <th>Aforo</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sala of salas">
+                    <td>{{sala.nombre}}</td>
+                    <td>{{sala.descripcion}}</td>
+                    <td>{{sala.direccion}}</td>
+                    <td>{{sala.aforo}}</td>
+                    <td>{{sala.precio}}</td>
+
+                    <td>
+                        <button [routerLink]="['/salas','editar',sala.id]" class="btn bet-light">✏️</button>
+                        <button (click)="eliminarSala(sala.id)" class="btn bet-light">🗑️</button>
+                    </td>
+                </tr>
+            </tbody>
 
 
-    </table>
+        </table>
 
+    </div>
 </div>
