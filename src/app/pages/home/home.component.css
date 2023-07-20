@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.container{
+    margin: 0 auto;
+    padding: 20px;
+}
+.carousel {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    position: center;
+
+}
+.carousel button {
+    margin: 5px;
+
+}
+.galeria {
+    width: 500px;
+    height: 400px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0;
+        filter: blur(20px)}
+    10% { opacity: 1;
+        filter: brightness(2) blur(10px)}
+}
+
+div.carousel img {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+.galeria img:hover {
+
+}
+.reservar-salas{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.reservar-salas button{
+    width: 30%;
+    align-items: center;
+    margin: 0 auto;
+}
