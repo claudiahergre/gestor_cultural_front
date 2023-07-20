@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { StaffComponent } from './pages/staff/staff.component';
+
 import { SalasComponent } from './pages/salas/salas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,13 +16,17 @@ import { ListaUsuariosComponent } from './pages/usuarios/lista-usuarios/lista-us
 import { EditarUsuarioComponent } from './pages/usuarios/editar-usuario/editar-usuario.component';
 import { LoginComponent } from './pages/usuarios/login/login.component';
 import { RegistroComponent } from './pages/usuarios/registro/registro.component';
+import { PanelAdminComponent } from './pages/staff/panel-admin/panel-admin.component';
+import { PanelTrabajadorComponent } from './pages/staff/panel-trabajador/panel-trabajador.component';
+import { ListaStaffComponent } from './pages/staff/lista-staff/lista-staff.component';
+import { EditarStaffComponent } from './pages/staff/editar-staff/editar-staff.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    StaffComponent,
     SalasComponent,
     ContactoComponent,
     CalendarComponent,
@@ -30,6 +34,14 @@ import { RegistroComponent } from './pages/usuarios/registro/registro.component'
     EditarUsuarioComponent,
     LoginComponent,
     RegistroComponent,
+    SalasComponent,
+    ContactoComponent,
+    LoginComponent,
+    RegistroComponent,
+    PanelAdminComponent,
+    PanelTrabajadorComponent,
+    ListaStaffComponent,
+    EditarStaffComponent,
 
   ],
   imports: [

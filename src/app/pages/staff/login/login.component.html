@@ -1,0 +1,26 @@
+<div class="container mt-5 border rounded p-3">
+
+    <h5>Inicia sesión para acceder a tu panel</h5>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque itaque alias numquam, cumque ea quis quasi
+        quam, quas sequi praesentium iste doloribus perspiciatis beatae sint? Vitae sit illum quidem earum?</p>
+
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email</span>
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Contraseña</span>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+
+
+
+        <input type="submit" value="Enviar" class="btn">
+
+    </form>
+
+</div>
