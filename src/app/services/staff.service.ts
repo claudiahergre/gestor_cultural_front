@@ -28,6 +28,13 @@ export class StaffService {
     )
   }
 
+  //Para obtener del back el perfil del staff logado
+  perfil(): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.get<Staff>(`${this.baseUrl}/perfil`)
+    )
+  }
+
   registro(formValues: any): Promise<Staff> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -44,6 +51,8 @@ export class StaffService {
       this.httpClient.post<any>(`${this.baseUrl}/login`, formValues) //confirmar con javi cuando haga la ruta en el back
     );
   }
+
+
 
   updateById(staffId: any, formValues: any): Promise<any> {
     return firstValueFrom(
