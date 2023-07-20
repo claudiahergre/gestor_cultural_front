@@ -21,10 +21,10 @@
                     <td>{{staff.email}}</td>
                     <td>{{staff.rol}} </td>
                     <td>
-                        <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">Editar</button>
+                        <button class="btn btn-success" [routerLink]="['/staff', 'editar', staff.id]">✏️</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger">Eliminar</button>
+                        <button (click)="eliminar()" class="btn btn-danger">🗑️</button>
                     </td>
 
                 </tr>
@@ -34,4 +34,3 @@
 
     </div>
 </div>
-<!-- (click)="eliminar(staff.id)" -->
