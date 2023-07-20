@@ -1,0 +1,11 @@
+.btn {
+    background-color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: var(--colorPrincipal);
+}
+
+.container {
+    background-color: var(--azulClaro);
+}
