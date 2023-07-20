@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
-import { Staff } from 'src/app/interface/staff.interface';
+import { Staff } from 'src/app/interfaces/staff.interface';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({

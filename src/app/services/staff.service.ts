@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { Staff } from '../interface/staff.interface';
+import { Staff } from '../interfaces/staff.interface';
 
 @Injectable({
   providedIn: 'root'

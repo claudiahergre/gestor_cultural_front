@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-registro-staff',
+  templateUrl: './registro-staff.component.html',
+  styleUrls: ['./registro-staff.component.css']
 })
-export class RegistroComponent {
+export class RegistroStaffComponent {
 
   formulario: FormGroup;
 
