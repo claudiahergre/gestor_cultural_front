@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
-// import dayGridPlugin from '@fullcalendar/daygrid/index';
+import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import esLocale from '@fullcalendar/core/locales/es'
@@ -18,7 +18,7 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.options = {
-      plugins: [ timeGridPlugin, interactionPlugin],
+      plugins: [ dayGridPlugin,timeGridPlugin, interactionPlugin],
       defaultDate: new Date(),
       locale: esLocale,
       header: {
@@ -29,17 +29,17 @@ export class CalendarComponent implements OnInit {
       editable: false,
       events: [
       {
-        title: 'Evento 1',
+        title: 'Conferencia',
         start: new Date().getTime(),
         description: 'evento 1',
       },
       {
-        title: 'Evento 2',
+        title: 'Concierto',
         start: new Date(new Date().getTime() + 86400000),
         description: 'evento 2',
       },
       {
-        title: 'Evento 3',
+        title: 'Curso de formación',
         start: new Date(new Date().getTime() + 86400000 * 2),
         end: new Date(new Date().getTime() + 86400000 * 3),
         description: 'evento 2',
