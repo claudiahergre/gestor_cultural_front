@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>UserName</th>
+            <th>Teléfono</th>
+            <th>DNI</th>
+            <th>Email</th>
+            <th>Direccion</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios" class="table-info">
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td>{{usuario.dni}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.direccion}}</td>
+            <td>
+                <button class="btn btn-info m-1" [routerLink]="['/usuarios', 'editar', usuario.id]">Editar</button>
+                <button class="btn btn-info ms-1" (click)="onDelete(usuario.id)">Borrar</button>
+            </td>
+
+
+        </tr>
+    </tbody>
+
+
+</table>
