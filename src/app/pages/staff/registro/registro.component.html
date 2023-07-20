@@ -1,29 +1,56 @@
-<div class="container">
+<div class="container mt-5 border rounded p-3">
+
+    <h5>Registro para miembros del staff</h5>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque itaque alias numquam, cumque ea quis quasi
+        quam, quas sequi praesentium iste doloribus perspiciatis beatae sint? Vitae sit illum quidem earum?</p>
+
+
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" formControlName="nombre">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Usuario</label>
-            <input type="text" class="form-control" formControlName="usuario">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" formControlName="password">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Nombre</span>
+            <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre">
         </div>
 
-        <select formControlName="rol">
-            <option selected>Rol</option>
-            <option value="administrador">Administrador</option>
-            <option value="trabajador">Trabajador</option>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Usuario</span>
+            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                formControlName="usuario">
+        </div>
 
-        </select>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email</span>
+            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                formControlName="email">
+        </div>
 
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Contraseña</span>
+            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
+                formControlName="password">
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Rol</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="rol">
+                <option value="administrador">Administrador</option>
+                <option value="trabajador">Trabajador</option>
+            </select>
+        </div>
+
+
+
+
+
+
+        <input type="submit" value="Enviar" class="btn">
+
+
+
+
     </form>
+
+
+
 </div>
