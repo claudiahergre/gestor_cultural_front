@@ -9,11 +9,6 @@
         <p class="card-text">Dirección: {{sala.direccion}}</p>
         <p class="card-text">Precio por hora: {{sala.precio}}</p>
         <a class="btn btn-primary" [routerLink]="['/salas', 'reservar', sala.id]">Reservar esta sala</a>
-
-        <a class="btn btn-primary" [routerLink]="['/salas', 'editar', sala.id]">Editar esta sala</a>
-
-        <button *ngIf="staffTemporal === 'administrador'" class="btn btn-primary"
-            (click)="eliminarSala(sala.id)">Eliminar esta sala</button>
     </div>
 
 

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SalasService } from 'src/app/services/salas.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-nuevasala',
@@ -34,7 +35,19 @@ export class NuevasalaComponent {
       console.log(response.error) //aqui estoy comprobando qué errores me devuelve la aplicacion.
 
     } else {
-      this.router.navigate(['/salas']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Sala creada',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
+
+      this.router.navigate(['/salas/salasadmin']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
     }
 
   }

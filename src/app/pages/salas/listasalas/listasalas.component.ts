@@ -35,35 +35,4 @@ export class ListasalasComponent {
     }
   }
 
-
-  eliminarSala(salaId: number) {
-    Swal.fire({
-      title: '¿Estás segur@?',
-      text: "Una vez borrado no se puede recuperar",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#0077B6',
-      cancelButtonColor: '#F3722C',
-      confirmButtonText: 'Sí, bórralo'
-
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        const response = await this.salasService.deleteById(salaId)
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Sala borrada',
-          showConfirmButton: false,
-          timer: 2500,
-          width: 500,
-          padding: '3em',
-          color: '#333333',
-          background: '#0077B6'
-        })
-
-      }
-    })
-  }
-
-
 }

@@ -14,6 +14,7 @@ import { NuevasalaComponent } from './pages/salas/nuevasala/nuevasala.component'
 import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.component';
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
+import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.c
     NuevasalaComponent,
     EditarsalaComponent,
     ListasalasComponent,
-    ReservarsalaComponent
+    ReservarsalaComponent,
+    SalasadminComponent
   ],
   imports: [
     BrowserModule,

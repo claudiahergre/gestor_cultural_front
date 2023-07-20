@@ -71,7 +71,7 @@ export class EditarsalaComponent {
       background: '#0077B6'
     })
 
-    this.router.navigate(['/salas'])
+    this.router.navigate(['/salas/salasadmin'])
   }
 
 }

@@ -8,6 +8,7 @@ import { NuevasalaComponent } from './pages/salas/nuevasala/nuevasala.component'
 import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.component';
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
+import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'staff', component: StaffComponent },
 
   { path: 'salas', component: ListasalasComponent },
+  { path: 'salas/salasadmin', component: SalasadminComponent },
   { path: 'salas/nueva', component: NuevasalaComponent },
   { path: 'salas/editar/:salaId', component: EditarsalaComponent },
   { path: 'salas/reservar/:salaId', component: ReservarsalaComponent },
