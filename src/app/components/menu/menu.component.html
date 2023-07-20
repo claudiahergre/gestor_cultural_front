@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="['/home']">AppChachi</a>
+<nav class="navbar navbar-expand-lg text-secondary">
+    <div class="container-fluid text-secondary">
+        <a class="navbar-brand text-secondary">AppChachi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li [routerLink]="['/home']" class="nav-item">
-                    <a class="nav-link active" aria-current="page">Home</a>
+                    <a class="nav-link active text-secondary" aria-current="page">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a [routerLink]="['/contacto']" class="nav-link">Contacto</a>
+                    <a [routerLink]="['/contacto']" class="nav-link text-white">Contacto</a>
                 </li>
 
                 <li class="nav-item">
@@ -47,9 +47,15 @@
                         Acceso Usuarios
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- estas rutas no funcionan hasta que sepa como ha llamado Gustavo a su ruta -->
-                        <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuarios</a></li>
-                        <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuarios</a></li>
+                        <<<<<<< HEAD <!-- estas rutas no funcionan hasta que sepa como ha llamado Gustavo a su ruta -->
+                            <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuarios</a></li>
+                            <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuarios</a>
+                            </li>
+                            =======
+                            <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuario</a></li>
+                            <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuario</a>
+                            </li>
+                            >>>>>>> feature/cambioRutas
                     </ul>
                 </li>
 
