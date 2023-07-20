@@ -1,11 +1,10 @@
-<p>contacto works!</p>
 <div class="container mt-5 border rounded p-3">
 
+    <div class="title">
     <h3>Formulario de contacto</h3>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque itaque alias numquam, cumque ea quis quasi
-        quam, quas sequi praesentium iste doloribus perspiciatis beatae sint? Vitae sit illum quidem earum?</p>
-
+    <p>No dudes en contactar con nosotros, te resolveremos tus dudas o si tienes alguna sugerencia para llevar a cabo tu evento/actividad. ¡Nuevas experiencias siempre son bienvenidas!</p>
+</div>
 
     <!-- <form [formGroup]="formulario" (ngSubmit)="onSubmit()"> -->
 <form [formGroup]="formulario">
@@ -25,12 +24,13 @@
             <input type="text" class="form-control" placeholder="Introduce un correo electrónico"
                 formControlName="email">
         </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Mensaje</span>
+            <textarea type="text" class="form-control" rows="3" placeholder="Escribe aquí tu mensaje"
+                formControlName="mensaje"></textarea>
+        </div>
         <input type="submit" value="Enviar" class="btn">
-        <!-- <div class="input-group mb-3">
-            <span class="input-group-text"></span>
-            <textarea type="text" class="form-control" placeholder="Escribe tu mensaje"
-                formControlName="mensaje">
-        </div> -->
 
         <!-- <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Rol</label>

@@ -11,20 +11,32 @@ img{
     margin: 0 auto;
     padding: 20px;
 }
+.title{
+margin-bottom: 50px;
+text-align: center;
+text-justify: center;
+padding: 10px;
+width: 70%;
+}
 .carousel {
     display: flex;
     margin: 0 auto;
     align-items: center;
-    position: center;
-
+    position: relative;
+    left:100px;
+    background-color: whitesmoke;
+    width: 50vh;
 }
 .carousel button {
     margin: 5px;
-
+    padding: 10px;
+}
+.carousel button:first-child{
+    padding: 0px;
 }
 .galeria {
-    width: 500px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
     animation: fadeIn 1s ease;
 }
 
@@ -44,12 +56,18 @@ div.carousel img {
 
 }
 .reservar-salas{
-    display:flex;
-    justify-content: space-around;
-    flex-direction: column;
+    display:inline-block;
+    text-align: center;
+    text-justify: center;
+
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .reservar-salas button{
     width: 30%;
     align-items: center;
     margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
