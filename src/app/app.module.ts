@@ -10,7 +10,10 @@ import { StaffComponent } from './pages/staff/staff.component';
 import { SalasComponent } from './pages/salas/salas.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,15 +23,19 @@ import { HttpClientModule } from '@angular/common/http';
     UsuariosComponent,
     StaffComponent,
     SalasComponent,
-    ContactoComponent
+    ContactoComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
