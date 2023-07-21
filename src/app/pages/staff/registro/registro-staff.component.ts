@@ -16,14 +16,14 @@ export class RegistroStaffComponent {
 
   constructor(private router: Router) {
     this.formulario = new FormGroup({
-      nombre: new FormControl([null, Validators.required]),
-      usuario: new FormControl([null, Validators.required]),
+      nombre: new FormControl(null,[ Validators.required]),
+      usuario: new FormControl(null,[ Validators.required]),
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
       ]),
-      password: new FormControl([null, Validators.required]),
-      rol: new FormControl([null, Validators.required]),
+      password: new FormControl(null,[Validators.required]),
+      rol: new FormControl(null,[Validators.required]),
     });
   }
 
@@ -45,5 +45,5 @@ export class RegistroStaffComponent {
       this.formulario.get(field)?.touched
     );
   }
-  
+
 }

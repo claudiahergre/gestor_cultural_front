@@ -19,13 +19,13 @@ export class EditarStaffComponent {
     this.staffId = '';
 
     this.formulario = new FormGroup({
-      nombre: new FormControl([null, Validators.required]),
-      usuario: new FormControl([null, Validators.required]),
+      nombre: new FormControl(null,[Validators.required]),
+      usuario: new FormControl(null,[Validators.required]),
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
       ]),
-      rol: new FormControl([null, Validators.required]),
+      rol: new FormControl(null,[Validators.required]),
     });
   }
 
@@ -52,7 +52,7 @@ export class EditarStaffComponent {
       this.formulario.value
     );
   }
-  
+
   checkError(field: string, error: string) {
     return (
       this.formulario.get(field)?.hasError(error) &&

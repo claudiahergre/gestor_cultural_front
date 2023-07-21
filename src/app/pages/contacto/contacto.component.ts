@@ -13,13 +13,13 @@ export class ContactoComponent {
 
   constructor(private router: Router) {
     this.formulario = new FormGroup({
-      nombre: new FormControl([null, Validators.required]),
-      apellidos: new FormControl([null, Validators.required]),
-      email: new FormControl([
+      nombre: new FormControl(null, [Validators.required]),
+      apellidos: new FormControl(null,[Validators.required]),
+      email: new FormControl(null,[
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
       ]),
-      mensaje: new FormControl([null, Validators.required]),
+      mensaje: new FormControl(null,[Validators.required]),
     });
   }
 

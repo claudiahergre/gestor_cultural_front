@@ -9,7 +9,7 @@
             <div class="input-group mb-3">
               <span class="input-group-text">Email</span>
               <input type="text" class="form-control" formControlName="email" />
-              <p class="error" *ngIf="checkError('direccion', 'required')">
+              <p class="error" *ngIf="checkError('email', 'required')">
                 La dirección email es obligatoria.
               </p>
               <p class="error" *ngIf="checkError('email', 'pattern')">
