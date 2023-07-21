@@ -22,8 +22,10 @@ export class NuevasalaComponent {
       direccion: new FormControl('', [Validators.required]),
       aforo: new FormControl('', [Validators.required]),
       descripcion: new FormControl('', [Validators.required]),
-      url_foto: new FormControl('', [Validators.required])
-    })
+      url_foto: new FormControl('', [Validators.required]),
+      telefono_contacto: new FormControl('', [Validators.required]),
+      email_contacto: new FormControl('', [Validators.required])
+    });
   }
 
   async onSubmit() {
