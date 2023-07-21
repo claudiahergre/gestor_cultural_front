@@ -1,11 +1,5 @@
-<!-- <div class="gallery">
-  <div *ngFor="let imagen of images" class="image-container">
-    <img [src]="imagen.url" alt="{{ imagen.nombre }}" class="gallery-image">
-    <div class="image-description">{{ imagen.descripcion }}</div>
-  </div>
-</div> -->
-
 <div class="container">
+
   <div class="title">
     <h1>Gestor cultural</h1>
     <h4>
@@ -14,12 +8,27 @@
     </h4>
   </div>
 
-<div class="carousel">
-     <!-- <img [src]="imagen.url" [alt]="imagen.nombre"> accedo a la imagen que quiero en el array -->
-     <button class="btn btn-secondary" (click)="startInterval()">Ver imagenes</button>
-     <button class="btn btn-secondary" (click)="stopInterval()">Detener</button>
-     <img class="galeria" [src]="images[imagenSeleccionada].url" [alt]="">
-    </div>
+  <div class="carousel">
+    <!-- <img [src]="imagen.url" [alt]="imagen.nombre"> accedo a la imagen que quiero en el array -->
+    <button class="btn btn-secondary" (click)="startInterval()">Ver imagenes</button>
+    <button class="btn btn-secondary" (click)="stopInterval()">Detener</button>
+    <img class="galeria" [src]="images[imagenSeleccionada].url" [alt]="">
+  </div>
+
+
+
+
+  <div class="reservar-salas">
+    <h3>¿Necesitas un espacio?</h3>
+    <button class="btn btn-warning" [routerLink]="['/salas', 'reservar']">Reserva tu sala</button>
+    <h3>
+      Todo tipo de eventos y/o actividades: conferencias, conciertos, exposiciones,
+      masterclasses,...
+    </h3>
+    <button class="btn btn-info" [routerLink]="['/salas', 'reservar']">Ver info de las salas</button>
+  </div>
+
+</div>
 
 
 <!-- <div id="carouselExample" class="carousel slide">
@@ -37,15 +46,3 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div> -->
-
-  <div class="reservar-salas">
-    <h3>¿Necesitas un espacio?</h3>
-    <button class="btn btn-warning" [routerLink]="['/salas', 'reservar']">Reserva tu sala</button>
-    <h3>
-      Todo tipo de eventos y/o actividades: conferencias, conciertos, exposiciones,
-      masterclasses,...
-    </h3>
-    <button class="btn btn-info"[routerLink]="['/salas', 'reservar']">Ver info de las salas</button>
-  </div>
-
-</div>
