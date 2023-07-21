@@ -1,15 +1,55 @@
-<div class="container mt-5 border rounded p-3">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" formControlName="email">
+<div class="fondo">
+
+    <div class="container">
+
+        <h3 class="text-center mb-5">¡Inicia sesión!</h3>
+
+        <div class="row">
+
+            <div class="bordecito col-6 rounded text-center">
+
+                <div class="p-3 mt-3 rounded">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" formControlName="email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Contraseña</span>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div>
+
+                        <input type="submit" value="Enviar" class="btn m-3">
+
+                        <p>¿Todavía no te has registrado? <strong [routerLink]="['/registroStaff']">Aquí puedes
+                                hacerlo.</strong>
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="texto col-6 p-4">
+
+                <h5 class="mb-4"> <strong>Accede al área de clientes.</strong></h5>
+
+                <p>
+                    Inicia sesión para poder acceder a tu perfil. Recuerda que si no estás registrado debes
+                    hacerlo <strong [routerLink]="['/registroStaff']">aquí.</strong>
+                </p>
+
+                <p>Cuándo inicies sesión podrás ver todas nuestras salas y esacios disponibles.</p>
+
+
+
+
+
+            </div>
+
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">Contraseña</span>
-            <input type="password" class="form-control" formControlName="password">
-        </div>
+    </div>
 
-        <input type="submit" value="Enviar" class="btn">
-    </form>
 </div>

@@ -1,50 +1,62 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-img{
+
+img {
     width: 100%;
     height: auto;
 }
-.container{
+
+.container {
     margin: 0 auto;
     padding: 20px;
 }
-.title{
-margin-bottom: 50px;
-text-align: center;
-text-justify: center;
-padding: 10px;
-width: 70%;
+
+.title {
+    margin-bottom: 50px;
+    text-align: center;
+    text-justify: center;
+    padding: 10px;
+    width: 70%;
 }
+
 .carousel {
     display: flex;
     margin: 0 auto;
     align-items: center;
     position: relative;
-    left:100px;
+    left: 100px;
     background-color: whitesmoke;
     width: 50vh;
 }
+
 .carousel button {
     margin: 5px;
     padding: 10px;
 }
-.carousel button:first-child{
+
+.carousel button:first-child {
     padding: 0px;
 }
+
 .galeria {
     width: 800px;
     height: 800px;
     animation: fadeIn 1s ease;
 }
 
-@keyframes fadeIn{
-    0% { opacity: 0;
-        filter: blur(20px)}
-    10% { opacity: 1;
-        filter: brightness(2) blur(10px)}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(20px)
+    }
+
+    10% {
+        opacity: 1;
+        filter: brightness(2) blur(10px)
+    }
 }
 
 div.carousel img {
@@ -52,11 +64,9 @@ div.carousel img {
     height: auto;
     display: block;
 }
-.galeria img:hover {
 
-}
-.reservar-salas{
-    display:inline-block;
+.reservar-salas {
+    display: inline-block;
     text-align: center;
     text-justify: center;
 
@@ -64,7 +74,8 @@ div.carousel img {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.reservar-salas button{
+
+.reservar-salas button {
     width: 30%;
     align-items: center;
     margin: 0 auto;
