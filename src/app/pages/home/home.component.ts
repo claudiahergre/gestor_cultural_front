@@ -57,6 +57,6 @@ export class HomeComponent implements OnInit {
   startInterval() {
     this.interval = setInterval(() => {
       this.cambiaImagen()
-    }, 3000);
+    }, 1600);
   }
 }
