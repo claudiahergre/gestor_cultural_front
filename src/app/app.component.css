@@ -1,20 +1,6 @@
-:root {
-    --colorPrincipal: #0077B6;
-    --colorSecundario: #48CAE4;
-    --azulClaro: #AED9E0;
-    --naranja: #F3722C;
-    --naranjaClaro: #F8961E;
-    --blanco: #F2F4F3;
-    --negroSuave: #333333;
-}
-
 .footer {
-    /* Estilo del footer */
-    position: relative;
-    bottom: 0;
     width: 100%;
-    height: 250px;
-    /* Ajusta la altura de tu footer según tus necesidades */
+    height: 200px;
     background-color: rgb(28, 146, 179);
     color: white;
     text-align: center;
