@@ -1,43 +1,48 @@
-<div class="container">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div class="fondo">
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" formControlName="nombre">
-        </div>
+    <h3 class="text-center mb-5">Editar Sala</h3>
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Precio</span>
-            <input type="text" class="form-control" formControlName="precio">
-        </div>
+    <div class="container p-3 mt-3 rounded">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Direccion</span>
-            <input type="text" class="form-control" formControlName="direccion">
-        </div>
+            <div class="input-group mt-3">
+                <span class="input-group-text">Nombre</span>
+                <input type="text" class="form-control" formControlName="nombre">
+            </div>
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Aforo</span>
-            <input type="number" class="form-control" formControlName="aforo">
-        </div>
+            <div class="input-group mt-3">
+                <span class="input-group-text">Precio</span>
+                <input type="text" class="form-control" formControlName="precio">
+            </div>
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">descripcion</span>
-            <input type="text" class="form-control" formControlName="descripcion">
-        </div>
+            <div class="input-group mt-3">
+                <span class="input-group-text">Direccion</span>
+                <input type="text" class="form-control" formControlName="direccion">
+            </div>
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">foto</span>
-            <input type="text" class="form-control" formControlName="url_foto">
-        </div>
+            <div class="input-group mt-3">
+                <span class="input-group-text">Aforo</span>
+                <input type="number" class="form-control" formControlName="aforo">
+            </div>
 
-        <input class="btn" type="submit" class="btn mt-3" value="Guardar">
+            <div class="input-group mt-3">
+                <span class="input-group-text">descripcion</span>
+                <input type="text" class="form-control" formControlName="descripcion">
+            </div>
 
-        <!--  <div class="errores">
+            <div class="input-group mt-3">
+                <span class="input-group-text">foto</span>
+                <input type="text" class="form-control" formControlName="url_foto">
+            </div>
+
+            <input class="btn" type="submit" class="btn mt-3" value="Guardar">
+
+            <!--  <div class="errores">
             <p *ngFor=" let error of errores">{{error.msg}}</p>
         </div> -->
 
-    </form>
+        </form>
 
 
+    </div>
 </div>
