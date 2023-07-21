@@ -13,7 +13,6 @@ img {
     margin: 0 auto;
     padding: 20px;
 }
-
 .title {
     margin-bottom: 50px;
     text-align: center;
@@ -21,8 +20,16 @@ img {
     padding: 10px;
     width: 70%;
 }
-
 .carousel {
+    display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+        width: 100%;
+        flex-direction: column;
+}
+
+
+/* .carousel {
     display: flex;
     margin: 0 auto;
     align-items: center;
@@ -30,15 +37,20 @@ img {
     left: 100px;
     background-color: whitesmoke;
     width: 50vh;
-}
+} */
 
 .carousel button {
-    margin: 5px;
-    padding: 10px;
+    /* margin: 5px; */
+    /* padding: 10px; */
+    margin-top: 10px;
+        /* Ajusta el margen según sea necesario */
+        display: flex;
+        justify-content: center;
+        width: 140px;
 }
 
 .carousel button:first-child {
-    padding: 0px;
+    padding: 3px;
 }
 
 .galeria {
@@ -60,9 +72,9 @@ img {
 }
 
 div.carousel img {
-    width: 500px;
+    width: 700px;
     height: auto;
-    display: block;
+    
 }
 
 .reservar-salas {
