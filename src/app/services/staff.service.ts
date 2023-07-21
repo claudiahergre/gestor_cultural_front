@@ -53,14 +53,13 @@ export class StaffService {
   }
 
 
-
   updateById(staffId: any, formValues: any): Promise<any> {
     return firstValueFrom(
       this.httpClient.put<Staff>(`${this.baseUrl}/${staffId}`, formValues)
     )
   }
 
-  //NO SE HACER PARA BORRAR
+  //Para eliminar el staff de la BBDD
   remove(staffId: any): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({

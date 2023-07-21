@@ -1,55 +1,88 @@
-<div class="container mt-5 border rounded p-3">
+<div class="fondo">
 
-    <h5>Registro para miembros del staff</h5>
+    <div class="container">
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque itaque alias numquam, cumque ea quis quasi
-        quam, quas sequi praesentium iste doloribus perspiciatis beatae sint? Vitae sit illum quidem earum?</p>
+        <h3 class="text-center m-3">¡Regístrate!</h3>
+
+        <div class="row">
+
+            <div class="bordecito col-8 rounded text-center">
+
+                <div class="p-3 mt-3">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nombre</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre"
+                                formControlName="nombre">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Usuario</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                                formControlName="usuario">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                                formControlName="email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Contraseña</span>
+                            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
+                                formControlName="password">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Rol</label>
+                            <select class="form-select" id="inputGroupSelect01" formControlName="rol">
+                                <option value="administrador">Administrador</option>
+                                <option value="trabajador">Trabajador</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Regístrate" class="btn m-3">
 
 
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <p>¿Ya eres miembro? <strong [routerLink]="['/loginStaff']">Inicia tu sesión</strong></p>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre">
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="texto col-4 p-4">
+
+
+                <h5 class="mb-4"> <strong>Bienvenido a AppChachi</strong></h5>
+
+                <p>Si ya eres miembro del <strong>staff </strong> pero todavia no tienes cuenta y quieres acceder a tu
+                    panel de control,
+                    no olvides que tienes
+                    que estar
+                    registrado.</p>
+
+                <p>Si ya estás registrado puedes iniciar sesión directamente <strong>aquí.</strong></p>
+
+                <p>Si has llegado aquí por error, y lo que quieres es alquilar uno de nuestros espacios, regístrate
+                    <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para crear tu perfil.
+                </p>
+
+
+            </div>
+
+
+
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">Usuario</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
-                formControlName="usuario">
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
-                formControlName="email">
-        </div>
-
-        <div class="input-group mb-3">
-            <span class="input-group-text">Contraseña</span>
-            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
-                formControlName="password">
-        </div>
-
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Rol</label>
-            <select class="form-select" id="inputGroupSelect01" formControlName="rol">
-                <option value="administrador">Administrador</option>
-                <option value="trabajador">Trabajador</option>
-            </select>
-        </div>
+    </div>
 
 
 
 
-
-
-        <input type="submit" value="Enviar" class="btn">
-
-
-
-
-    </form>
 
 
 

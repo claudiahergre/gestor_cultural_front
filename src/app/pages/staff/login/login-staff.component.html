@@ -1,26 +1,58 @@
-<div class="container mt-5 border rounded p-3">
+<div class="fondo">
 
-    <h5>Inicia sesión para acceder a tu panel</h5>
+    <div class="container">
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque itaque alias numquam, cumque ea quis quasi
-        quam, quas sequi praesentium iste doloribus perspiciatis beatae sint? Vitae sit illum quidem earum?</p>
+        <h3 class="text-center mb-5">¡Inicia sesión!</h3>
+
+        <div class="row">
+
+            <div class="bordecito col-6 rounded text-center">
+
+                <div class="p-3 mt-3 rounded">
+
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" formControlName="email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Contraseña</span>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div>
+
+                        <input type="submit" value="Enviar" class="btn">
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="texto col-6 p-4">
 
 
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" formControlName="email">
+                <h5 class="mb-4"> <strong>Accede a tu perfil personal</strong></h5>
+
+                <p>
+                    Inicia sesión para poder acceder a tu panel de control. Recuerda que si no estás registrado debes
+                    hacerlo <strong [routerLink]="['/registroStaff']">aquí.</strong>
+                </p>
+
+                <p>Si has llegado aquí por error, y lo que quieres es alquilar uno de nuestros espacios, regístrate
+                    <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para crear tu perfil.
+                </p>
+
+
+            </div>
+
+
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">Contraseña</span>
-            <input type="password" class="form-control" formControlName="password">
-        </div>
+    </div>
 
 
 
-        <input type="submit" value="Enviar" class="btn">
-
-    </form>
 
 </div>

@@ -12,8 +12,9 @@
                     <a class="nav-link active" aria-current="page">Home</a>
                 </li> -->
 
+
                 <li class="nav-item">
-                    <a [routerLink]="['/salas']" class="nav-link">Salas</a>
+                    <a [routerLink]="['/salas']" class="nav-link active">Salas</a>
                 </li>
 
                 <!--  <li class="nav-item dropdown">
@@ -29,7 +30,8 @@
                 </li> -->
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Acceso Staff
                     </a>
                     <ul class="dropdown-menu">
@@ -39,7 +41,15 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Acceso Usuarios
+                    </a>
+
+                </li>
+
+
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Acceso Usuarios
                 </a>
@@ -48,12 +58,11 @@
                     <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuarios</a></li>
                     <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuarios</a></li>
                 </ul>
-            </li>
+                </li>
 
-            <li class="nav-item">
-                <a [routerLink]="['/contacto']" class="nav-link">Contacto</a>
-            </li>
-
+                <li class="nav-item">
+                    <a [routerLink]="['/contacto']" class="nav-link active">Contacto</a>
+                </li>
 
             </ul>
         </div>
