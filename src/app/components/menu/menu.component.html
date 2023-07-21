@@ -5,13 +5,10 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
             <ul class="navbar-nav">
-
-                <!-- <li [routerLink]="['/home']" class="nav-item">
-                    <a class="nav-link active" aria-current="page">Home</a>
-                </li> -->
-
 
                 <li class="nav-item">
                     <a [routerLink]="['/salas']" class="nav-link active">Salas</a>
@@ -41,23 +38,15 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Acceso Usuarios
                     </a>
-
+                    <ul class="dropdown-menu">
+                        <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuarios</a></li>
+                        <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuarios</a></li>
+                    </ul>
                 </li>
-
-
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Acceso Usuarios
-                </a>
-                <ul class="dropdown-menu">
-                    <!-- estas rutas no funcionan hasta que sepa como ha llamado Gustavo a su ruta -->
-                    <li [routerLink]="['/usuarios', 'login']"><a class="dropdown-item">Login Usuarios</a></li>
-                    <li [routerLink]="['/usuarios', 'registro']"><a class="dropdown-item">Registro Usuarios</a></li>
-                </ul>
 
 
                 <li class="nav-item">
