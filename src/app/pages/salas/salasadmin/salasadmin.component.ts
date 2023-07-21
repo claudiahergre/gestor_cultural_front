@@ -57,10 +57,12 @@ export class SalasadminComponent {
           background: '#0077B6'
         })
 
+        // recargar la pagina
+        this.salas = await this.salasService.getAll()
       }
     })
 
-    this.router.navigate(['/salas/salasadmin'])
+
 
   }
 

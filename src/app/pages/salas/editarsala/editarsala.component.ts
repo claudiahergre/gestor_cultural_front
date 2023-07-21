@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SalasService } from 'src/app/services/salas.service';
 import { StaffService } from 'src/app/services/staff.service';
@@ -22,12 +22,12 @@ export class EditarsalaComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      nombre: new FormControl(),
-      precio: new FormControl(),
-      direccion: new FormControl(),
-      aforo: new FormControl(),
-      descripcion: new FormControl(),
-      url_foto: new FormControl()
+      nombre: new FormControl('', [Validators.required]),
+      precio: new FormControl('', [Validators.required]),
+      direccion: new FormControl('', [Validators.required]),
+      aforo: new FormControl('', [Validators.required]),
+      descripcion: new FormControl('', [Validators.required]),
+      url_foto: new FormControl('', [Validators.required])
     })
     this.salaId = 0
   }
@@ -72,6 +72,10 @@ export class EditarsalaComponent {
     })
 
     this.router.navigate(['/salas/salasadmin'])
+  }
+
+  checkError(field: string, error: string): boolean | undefined {
+    return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched
   }
 
 }
