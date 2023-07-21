@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { ContactoService } from 'src/app/services/contacto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
@@ -10,35 +11,45 @@ import { Router } from '@angular/router';
 })
 export class ContactoComponent {
   formulario: FormGroup;
+  contactoService = inject(ContactoService);
 
   constructor(private router: Router) {
     this.formulario = new FormGroup({
       nombre: new FormControl(null, [Validators.required]),
-      apellidos: new FormControl(null,[Validators.required]),
-      email: new FormControl(null,[
+      apellidos: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
       ]),
-      mensaje: new FormControl(null,[Validators.required]),
+      mensaje: new FormControl(null, [Validators.required]),
     });
   }
 
-  // async onSubmit() {
-    //   const response = await this.formulario.value;
-    //   console.log(response);
+  async onSubmit() {
+      const response = await this.contactoService.contactoFormulario(this.formulario.value);
+      console.log(response);
 
-    //   if (response.id) {
-      //     this.router.navigate(['/loginStaff']);
-      //   } else {
-             //alerta de que se envia correctamente
-        //     alert('Tienes que hacer el login correctamente');
-        //   }
-  // }
+      Swal.fire({
+        icon: 'success',
+        title: 'Mensaje enviado correctamente',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
 
-        checkError(field: string, error: string) {
-          return (
-            this.formulario.get(field)?.hasError(error) &&
-            this.formulario.get(field)?.touched
-          );
-        }
+
+      this.router.navigate(['/home']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+    }
+
+
+
+  checkError(field: string, error: string) {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
+  }
 }
