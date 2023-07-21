@@ -1,29 +1,27 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SalasService } from 'src/app/services/salas.service';
 
 @Component({
   selector: 'app-reservarsala',
   templateUrl: './reservarsala.component.html',
-  styleUrls: ['./reservarsala.component.css']
+  styleUrls: ['./reservarsala.component.css'],
 })
 export class ReservarsalaComponent {
-
-  formulario: FormGroup
-  salasServices = inject(SalasService)
-  activatedRoute = inject(ActivatedRoute)
-  router = inject(Router)
-
+  formulario: FormGroup;
+  salasServices = inject(SalasService);
+  activatedRoute = inject(ActivatedRoute);
+  router = inject(Router);
 
   constructor() {
     this.formulario = new FormGroup({
-      fecha_reserva: new FormControl(),
-      hora_reserva: new FormControl(),
+      fecha_reserva: new FormControl(null, [Validators.required]),
+      hora_reserva: new FormControl(null, [Validators.required]),
 
-      fecha_fin_reserva: new FormControl(),
-      hora_fin_reserva: new FormControl(),
-    })
+      fecha_fin_reserva: new FormControl(null, [Validators.required]),
+      hora_fin_reserva: new FormControl(null, [Validators.required]),
+    });
   }
 
   //en ng oninit. ir con el activated route
@@ -36,16 +34,23 @@ export class ReservarsalaComponent {
     // alert de confirmación
 
     // si confirma, next con la reserva
-    const response = await this.salasServices.reservarSala(this.formulario.value)
+    const response = await this.salasServices.reservarSala(
+      this.formulario.value
+    );
 
     if (response.error === 'reservada') {
-
     }
     // alert tu sala ha sido reservada
 
-
     //redirección a la lista de salas
-    this.router.navigate(['/salas'])
+    this.router.navigate(['/salas']);
   }
 
+  checkError(field: string, error: string): boolean | undefined {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
+  }
+  
 }
