@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -18,13 +18,20 @@ export class RegistroComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      nombre: new FormControl(),
-      dni: new FormControl(),
-      telefono: new FormControl(),
-      direccion: new FormControl(),
-      email: new FormControl(),
-      username: new FormControl(),
-      password: new FormControl(),
+      nombre: new FormControl(null, [Validators.required]),
+
+      dni: new FormControl(null, [Validators.required]),
+
+      telefono: new FormControl(null, [Validators.required]),
+
+      direccion: new FormControl(null, [Validators.required]),
+
+      email: new FormControl(null, [Validators.required,
+      Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/)]),
+
+      username: new FormControl(null, [Validators.required]),
+
+      password: new FormControl(null, [Validators.required]),
     })
   }
 
@@ -38,6 +45,11 @@ export class RegistroComponent {
     }
 
     this.router.navigate(['/usuarios/login']);
+  }
+
+
+  checkError(field: string, error: string) {
+    return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched;
   }
 
 
