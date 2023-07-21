@@ -1,62 +1,55 @@
 <div class="fondo">
+  <div class="container">
+    <h3 class="text-center mb-5">¡Inicia sesión!</h3>
 
-    <div class="container">
-
-        <h3 class="text-center mb-5">¡Inicia sesión!</h3>
-
-        <div class="row">
-
-            <div class="bordecito col-6 rounded text-center">
-
-                <div class="p-3 mt-3 rounded">
-
-                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Email</span>
-                            <input type="text" class="form-control" formControlName="email">
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Contraseña</span>
-                            <input type="password" class="form-control" formControlName="password">
-                        </div>
-
-                        <input type="submit" value="Enviar" class="btn m-3">
-
-                        <p>¿Todavía no te has registrado? <strong [routerLink]="['/registroStaff']">Aquí puedes
-                                hacerlo.</strong>
-                        </p>
-
-                    </form>
-
-                </div>
-
+    <div class="row">
+      <div class="bordecito col-6 rounded text-center">
+        <div class="p-3 mt-3 rounded">
+          <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Email</span>
+              <input type="text" class="form-control" formControlName="email" />
+              <p class="error" *ngIf="checkError('email', 'required')">
+                La dirección email es obligatoria.
+              </p>
+              <p class="error" *ngIf="checkError('email', 'pattern')">
+             La dirección email no tiene un formato válido.
+            </p>
             </div>
 
-            <div class="texto col-6 p-4">
-
-
-                <h5 class="mb-4"> <strong>Accede a tu perfil personal</strong></h5>
-
-                <p>
-                    Inicia sesión para poder acceder a tu panel de control. Recuerda que si no estás registrado debes
-                    hacerlo <strong [routerLink]="['/registroStaff']">aquí.</strong>
-                </p>
-
-                <p>Si has llegado aquí por error, y lo que quieres es alquilar uno de nuestros espacios, regístrate
-                    <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para crear tu perfil.
-                </p>
-
-
+            <div class="input-group mb-3">
+              <span class="input-group-text">Contraseña</span>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+              />
+              <p class="error" *ngIf="checkError('password', 'required')">
+                La contraseña es obligatoria.
+              </p>
             </div>
 
-
+            <input type="submit" value="Enviar" class="btn" />
+          </form>
         </div>
+      </div>
 
+      <div class="texto col-6 p-4">
+        <h5 class="mb-4"><strong>Accede a tu perfil personal</strong></h5>
+
+        <p>
+          Inicia sesión para poder acceder a tu panel de control. Recuerda que
+          si no estás registrado debes hacerlo
+          <strong [routerLink]="['/registroStaff']">aquí.</strong>
+        </p>
+
+        <p>
+          Si has llegado aquí por error, y lo que quieres es alquilar uno de
+          nuestros espacios, regístrate
+          <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para
+          crear tu perfil.
+        </p>
+      </div>
     </div>
-
-
-
-
+  </div>
 </div>

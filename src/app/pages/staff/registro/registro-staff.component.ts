@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
 
@@ -16,12 +16,15 @@ export class RegistroStaffComponent {
 
   constructor(private router: Router) {
     this.formulario = new FormGroup({
-      nombre: new FormControl(),
-      usuario: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      rol: new FormControl()
-    })
+      nombre: new FormControl(null,[ Validators.required]),
+      usuario: new FormControl(null,[ Validators.required]),
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
+      ]),
+      password: new FormControl(null,[Validators.required]),
+      rol: new FormControl(null,[Validators.required]),
+    });
   }
 
   async onSubmit() {
@@ -34,7 +37,13 @@ export class RegistroStaffComponent {
       //alertita de que se registre correctamente
       alert('Tienes que hacer el login correctamente')
     }
+  }
 
+  checkError(field: string, error: string) {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
   }
 
 }
