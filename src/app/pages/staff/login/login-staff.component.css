@@ -4,7 +4,7 @@
     padding-top: 40px;
 }
 
-.container {
+.bordecito {
     background-color: white;
     border: 1px solid rgb(28, 146, 179);
 }
@@ -17,4 +17,8 @@
 
 .btn:hover {
     background-color: rgb(1, 101, 129);
+}
+
+p {
+    font-size: larger;
 }
