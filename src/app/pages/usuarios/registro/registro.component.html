@@ -1,38 +1,83 @@
-<div class="container mt-5 border rounded p-3">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="input-group mb-3">
-            <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">DNI</span>
-            <input type="text" class="form-control" placeholder="Escribe tu DNI" formControlName="dni">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Teléfono</span>
-            <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
-                formControlName="telefono">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Dirección</span>
-            <input type="text" class="form-control" placeholder="Escribe tu direccion" formControlName="direccion">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
-                formControlName="email">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Usuario</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
-                formControlName="username">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Password</span>
-            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
-                formControlName="password">
+<div class="fondo">
+
+    <div class="container">
+
+        <h3 class="text-center mb-5">¡Regístrate!</h3>
+
+        <div class="row">
+
+            <div class="bordecito col-8 rounded text-center">
+
+                <div class="p-3 m-3">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nombre</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre"
+                                formControlName="nombre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">DNI</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu DNI" formControlName="dni">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Teléfono</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
+                                formControlName="telefono">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Dirección</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu direccion"
+                                formControlName="direccion">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                                formControlName="email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Usuario</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                                formControlName="username">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Password</span>
+                            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
+                                formControlName="password">
+                        </div>
+
+                        <input type="submit" value="Enviar" class="btn m-3">
+                    </form>
+
+                    <p>¿Ya eres miembro? <strong [routerLink]="['/usuarios', 'login']">Inicia tu sesión</strong></p>
+
+                </div>
+
+            </div>
+
+            <div class="texto col-4 p-4">
+
+                <h5 class="mb-4"> <strong>Bienvenido a AppChachi.</strong></h5>
+
+                <p>En AppChachi podrás alquilar nuestras salas por horas para llevar acabo todo tipo de eventos.</p>
+
+                <p>El <strong>alquiler de espacios por horas</strong> es una solución muy útil para aquellos
+                    profesionales, empresas o
+                    particulares que no encuentran con el espacio perfecto para llevar a cabo su actividad.</p>
+
+                <p>Una vez te registres, podrás <strong [routerLink]="['/usuarios', 'login']">iniciar sesión</strong> y
+                    descubrir todas las salas y espacios
+                    que tenemos
+                    disponibles para tu evento.</p>
+
+                <p>Si ya estás registrado y lo que quieres es iniciar sesión puedes hacerlo directamente
+                    <strong [routerLink]="['/usuarios', 'login']">aquí</strong>.
+                </p>
+
+
+            </div>
+
         </div>
 
-        <input type="submit" value="Enviar" class="btn">
-    </form>
+    </div>
+
 </div>
