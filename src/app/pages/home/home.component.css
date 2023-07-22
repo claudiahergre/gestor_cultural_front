@@ -1,28 +1,15 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-img {
+ */
+/* img {
     width: 100%;
     height: auto;
-}
+} */
 
-.container {
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.title {
-    margin-bottom: 50px;
-    text-align: center;
-    text-justify: center;
-    padding: 10px;
-    width: 70%;
-}
-
-.carousel {
+/* .carousel {
     display: flex;
     margin: 0 auto;
     align-items: center;
@@ -30,24 +17,24 @@ img {
     left: 100px;
     background-color: whitesmoke;
     width: 50vh;
-}
+} */
 
-.carousel button {
+/* .carousel button {
     margin: 5px;
     padding: 10px;
-}
+} */
 
-.carousel button:first-child {
+/* .carousel button:first-child {
     padding: 0px;
-}
+} */
 
-.galeria {
+/* .galeria {
     width: 800px;
     height: 800px;
     animation: fadeIn 1s ease;
-}
+} */
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0;
         filter: blur(20px)
@@ -57,28 +44,44 @@ img {
         opacity: 1;
         filter: brightness(2) blur(10px)
     }
-}
+} */
 
 div.carousel img {
-    width: 500px;
+    width: 100%;
     height: auto;
     display: block;
 }
 
-.reservar-salas {
-    display: inline-block;
-    text-align: center;
-    text-justify: center;
-
-    width: 70%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.botones {
+    display: flex;
+    justify-content: space-between;
 }
 
-.reservar-salas button {
-    width: 30%;
+.btn {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+    width: 250px;
+}
+
+.btn:hover {
+    background-color: rgb(1, 101, 129);
+}
+
+.seccion1 {
+    background-color: rgb(219, 219, 219);
+    height: 600px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
+}
+
+.cajas {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bordes {
+    border-left: 2px solid rgb(1, 101, 129);
+    border-right: 2px solid rgb(1, 101, 129);
 }
