@@ -1,8 +1,9 @@
 /// <reference path="../../../../node_modules/@types/google.maps/index.d.ts" />
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { inject } from '@angular/core/testing';
+import { inject } from '@angular/core';
 import { SalasService } from 'src/app/services/salas.service';
+
 
 @Component({
   selector: 'app-mapa',

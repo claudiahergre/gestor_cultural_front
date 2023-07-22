@@ -16,9 +16,14 @@ export class SalasService {
     private usuariosHasSalasUrl: string
     private mapsUrl = 'https://maps.googleapis.com/maps/api/geocode/json'
 
+    const latitud: number
+    const longitud: number
+
     constructor() {
         this.baseUrl = 'http://localhost:3000/api/salas'
         this.usuariosHasSalasUrl = 'http://localhost:3000/api/usuarios_has_salas'
+        this.latitud = 0
+        this.longitud = 0
     }
 
     getAll(): Promise<Sala[]> {
@@ -115,8 +120,8 @@ export class SalasService {
                 if (resultados.length > 0) {
                     const ubicacion = resultados[0].geometry?.location;
                     if (ubicacion) {
-                        return { latitud: ubicacion.lat, longitud: ubicacion.lng };
                         console.log(ubicacion)
+                        return { latitud= ubicacion.lat, longitud: ubicacion.lng };
                     }
                 }
                 throw new Error('No se pudo obtener la ubicación.');
