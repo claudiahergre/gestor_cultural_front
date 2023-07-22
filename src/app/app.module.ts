@@ -59,7 +59,6 @@ import { MapaComponent } from './pages/mapa/mapa.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

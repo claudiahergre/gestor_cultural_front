@@ -1,6 +1,8 @@
 /// <reference path="../../../../node_modules/@types/google.maps/index.d.ts" />
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { inject } from '@angular/core/testing';
+import { SalasService } from 'src/app/services/salas.service';
 
 @Component({
   selector: 'app-mapa',
@@ -18,6 +20,8 @@ export class MapaComponent {
 
   arrMarkers: any[]
 
+  salasService = inject(SalasService)
+
 
   constructor() {
     this.geocoder = new google.maps.Geocoder
@@ -27,9 +31,9 @@ export class MapaComponent {
 
   // cuando cargue el componente, quiero que localice mi posicion (para que el mapa esté centrado en la posición del usuario)
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    // no hace falta instalar ni importar nada, porque ya lo hacen los navegadores
+    // centrar el mapa en la posicion del usuario
     navigator.geolocation.getCurrentPosition(position => {
       console.log(position);
       const miPosicion = new google.maps.LatLng(
@@ -37,22 +41,40 @@ export class MapaComponent {
         position.coords.longitude
       );
       this.mapa.setCenter(miPosicion);
-
-
-      // CREAR UN MARKER Y AÑADIRLO AL ARRAY
-      // en nuestra posicion
-      const marker = this.agregarMarker(miPosicion, ' Tu posición ', '')
-      this.arrMarkers.push(marker)
-
-      // en otro sitio por coordenadas
-      let salaM = new google.maps.LatLng(40.4167278, -3.7033387)
-
-      const markerSalaM = this.agregarMarker(salaM, 'Sala Margarita', 'Gran salón para bodas u otros eventos')
-      this.arrMarkers.push(markerSalaM)
-
-      console.log(this.arrMarkers)
-
     });
+
+    //obtener la lista de salas
+    this.arrMarkers = [];
+    try {
+      const salasRegistradas = await this.salasService.getAll();
+
+      // iterar sobre las salas y agregar marcadores
+      for (const sala of salasRegistradas) {
+        const coordenadas = await this.salasService.obtenerCoordenadas(sala.direccion);
+        const position = new google.maps.LatLng(coordenadas.latitud, coordenadas.longitud);
+        const marker = this.agregarMarker(position, sala.nombre, sala.descripcion);
+        this.arrMarkers.push(marker);
+      }
+
+    } catch (error) {
+      console.log('Error al obtener las salas')
+    }
+
+
+    /*  // CREAR UN MARKER Y AÑADIRLO AL ARRAY
+     // en nuestra posicion
+     const marker = this.agregarMarker(miPosicion, ' Tu posición ', '')
+     this.arrMarkers.push(marker)
+
+     // en otro sitio por coordenadas
+     let salaM = new google.maps.LatLng(40.4167278, -3.7033387)
+
+     const markerSalaM = this.agregarMarker(salaM, 'Sala Margarita', 'Gran salón para bodas u otros eventos')
+     this.arrMarkers.push(markerSalaM)
+
+     console.log(this.arrMarkers) */
+
+
 
   } /// fin ngOnInit
 
