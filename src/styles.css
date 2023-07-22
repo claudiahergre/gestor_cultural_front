@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
 :root {
     --colorPrincipal: #0077B6;
     --colorSecundario: #48CAE4;
@@ -8,4 +10,13 @@
     --naranjaClaro: #F8961E;
     --blanco: #F2F4F3;
     --negroSuave: #333333;
+}
+
+body {
+    background-color: var(--blanco);
+    padding-top: 50px;
+}
+
+.fondo {
+    min-height: calc(100vh- 56px - 200px);
 }

@@ -28,8 +28,8 @@
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.direccion}}</td>
                     <td>
-                        <button class="btn btn-info m-1" [routerLink]="['/usuarios', 'editar', usuario.id]">✏️</button>
-                        <button class="btn btn-info ms-1" (click)="onDelete(usuario.id)">🗑️</button>
+                        <button class="btn" [routerLink]="['/usuarios', 'editar', usuario.id]">✏️</button>
+                        <button class="btn" (click)="onDelete(usuario.id)">🗑️</button>
                     </td>
 
 

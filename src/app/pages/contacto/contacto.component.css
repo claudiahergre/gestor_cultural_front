@@ -1,19 +1,18 @@
 .btn {
-    background-color: var(--blanco);
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
 }
 
 .btn:hover {
-    background-color: var(--colorPrincipal);
+    background-color: rgb(1, 101, 129);
 }
 
-.container {
-    background-color: var(--azulClaro);
+p {
+    font-size: larger;
 }
 
-.title {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
+.error {
+    text-align: left;
+    font-size: small;
+    color: red;
 }

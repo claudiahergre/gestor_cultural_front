@@ -1,79 +1,150 @@
-<div class="container mt-5 border rounded p-3">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="input-group mb-3">
-            <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre">
+<div class="fondo">
+    <div class="container p-5">
+        <h3 class="text-center mb-4">¡Regístrate!</h3>
 
-            <p class="error" *ngIf="checkError('nombre', 'required')">
-                El nombre es obligatorio
-            </p>
+        <div class="row">
+
+            <div class="bordecito col-8 rounded text-center">
+                <div class="p-3 mt-3">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nombre</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre"
+                                formControlName="nombre">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('nombre', 'required')">
+                            El nombre es obligatorio
+                        </p>
+
+
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text">Documento de identificación</span>
+
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option value="dni">DNI</option>
+                                <option value="nie">NIE</option>
+                            </select>
+
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Escribe tu DNI"
+                                formControlName="dni">
+
+                        </div>
+
+
+                        <p class="error" *ngIf="checkError('dni', 'required')">
+                            El DNI es obligatorio
+                        </p>
+
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Teléfono</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
+                                formControlName="telefono">
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('telefono', 'required')">
+                            El teléfono es obligatorio
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Dirección</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu direccion"
+                                formControlName="direccion">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('direccion', 'required')">
+                            La dirección es obligatoria
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                                formControlName="email">
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('email', 'required')">
+                            La dirección email es obligatoria
+                        </p>
+
+                        <p class="error" *ngIf="checkError('email', 'pattern')">
+                            La dirección de email no tiene un formato válido
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Usuario</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                                formControlName="username">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('usuario', 'required')">
+                            El usuario es obligatorio
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Password</span>
+                            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
+                                formControlName="password">
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('password', 'required')">
+                            La contraseña es obligatoria
+                        </p>
+
+                        <input type="submit" value="Enviar" class="btn mb-3">
+
+                        <p>¿Ya eres miembro? <strong [routerLink]="['/usuarios', 'login']">Inicia tu sesión.</strong>
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="texto col-4 p-4">
+                <h5 class="mb-4"><strong>Bienvenido a AppChachi</strong></h5>
+
+                <p>En AppChachi podrás alquilar nuestras salas por horas para llevar acabo todo tipo de eventos.</p>
+
+                <p>El <strong>alquiler de espacios por horas</strong> es una solución muy útil para aquellos
+                    profesionales, empresas o
+                    particulares que no encuentran con el espacio perfecto para llevar a cabo su actividad.</p>
+
+                <p>Una vez te registres, podrás <strong [routerLink]="['/usuarios', 'login']">iniciar sesión</strong> y
+                    descubrir todas las salas y espacios
+                    que tenemos
+                    disponibles para tu evento.</p>
+
+                <p>Si ya estás registrado y lo que quieres es iniciar sesión puedes hacerlo directamente
+                    <strong [routerLink]="['/usuarios', 'login']">aquí</strong>.
+                </p>
+
+
+
+            </div>
 
 
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">DNI</span>
-            <input type="text" class="form-control" placeholder="Escribe tu DNI" formControlName="dni">
-
-            <p class="error" *ngIf="checkError('dni', 'required')">
-                El DNI es obligatorio
-            </p>
-
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Teléfono</span>
-            <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
-                formControlName="telefono">
-
-            <p class="error" *ngIf="checkError('telefono', 'required')">
-                El teléfono es obligatorio
-            </p>
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Dirección</span>
-            <input type="text" class="form-control" placeholder="Escribe tu direccion" formControlName="direccion">
-
-            <p class="error" *ngIf="checkError('direccion', 'required')">
-                La dirección es obligatoria
-            </p>
-
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
-                formControlName="email">
-
-            <p class="error" *ngIf="checkError('email', 'required')">
-                La dirección email es obligatoria
-            </p>
-
-            <p class="error" *ngIf="checkError('email', 'pattern')">
-                La dirección de email no tiene un formato válido
-            </p>
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Usuario</span>
-            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
-                formControlName="username">
-
-            <p class="error" *ngIf="checkError('usuario', 'required')">
-                El usuario es obligatorio
-            </p>
-
-
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Password</span>
-            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
-                formControlName="password">
-
-            <p class="error" *ngIf="checkError('password', 'required')">
-                La contraseña es obligatoria
-            </p>
-
-        </div>
-    </form>
+    </div>
 </div>

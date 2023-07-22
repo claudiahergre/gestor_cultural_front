@@ -1,40 +1,69 @@
-<div class="container">
-  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-      <label class="form-label">Nombre</label>
-      <input type="text" class="form-control" formControlName="nombre" />
-      <p class="error" *ngIf="checkError('nombre', 'required')">
-        El nombre es obligatorio.
-      </p>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Usuario</label>
-      <input type="text" class="form-control" formControlName="usuario" />
-      <p class="error" *ngIf="checkError('usuario', 'required')">
-        El nombre de usuario es obligatorio.
-      </p>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input type="text" class="form-control" formControlName="email" />
-      <p class="error" *ngIf="checkError('email', 'required')">
-        La dirección email es obligatoria.
-      </p>
-      <p class="error" *ngIf="checkError('email', 'pattern')">
-        La dirección email no tiene un formato válido.
-      </p>
+<div class="fondo">
+  <div class="container p-5">
+    <h3 class="text-center mb-4">Formulario de edición de miembros del staff</h3>
+
+    <div class="row">
+      <div class="bordecito rounded text-center">
+
+        <div class="p-3 mt-3">
+          <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Nombre</span>
+              <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre" />
+            </div>
+
+            <p class="error" *ngIf="checkError('nombre', 'required')">
+              El nombre es obligatorio.
+            </p>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Usuario</span>
+              <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                formControlName="usuario" />
+
+
+            </div>
+
+            <p class="error" *ngIf="checkError('usuario', 'required')">
+              El nombre de usuario es obligatorio.
+            </p>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Email</span>
+              <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                formControlName="email" />
+
+            </div>
+
+            <p class="error" *ngIf="checkError('email', 'required')">
+              La dirección email es obligatoria.
+            </p>
+            <p class="error" *ngIf="checkError('email', 'pattern')">
+              La dirección email no tiene un formato válido.
+            </p>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Rol</label>
+              <select class="form-select" id="inputGroupSelect01" formControlName="rol">
+                <option value="administrador">Administrador</option>
+                <option value="trabajador">Trabajador</option>
+              </select>
+
+            </div>
+
+            <p class="error" *ngIf="checkError('rol', 'required')">
+              Tienes que elegir un rol.
+            </p>
+
+            <input type="submit" value="Actualizar" class="btn m-3" />
+
+
+          </form>
+        </div>
+
+      </div>
     </div>
 
-    <div>
-      <select formControlName="rol">
-        <option selected>Rol</option>
-        <option value="administrador">Administrador</option>
-        <option value="trabajador">Trabajador</option>
-      </select>
-      <p class="error" *ngIf="checkError('rol', 'required')">
-        Tienes que elegir un rol.
-      </p>
-    </div>
-    <input type="submit" value="Enviar" class="btn btn-success" />
-  </form>
+
+  </div>
 </div>
