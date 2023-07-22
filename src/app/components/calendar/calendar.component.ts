@@ -14,20 +14,48 @@ export class CalendarComponent implements OnInit {
   public events!: any[];
 
   public options: any;
+
+  // eventoTitulo: string = '';
+  // eventoFechaInicio: string = '';
+  // eventoFechaFin: string = '';
+
+
   constructor() {}
 
   ngOnInit() {
     this.options = {
-      plugins: [ dayGridPlugin,timeGridPlugin, interactionPlugin],
+      plugins: [timeGridPlugin, interactionPlugin],
       defaultDate: new Date(),
       locale: esLocale,
       header: {
         left: 'prev,next',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay',
+        initialView: 'dayGridMonth',
       },
-      editable: false,
+      editable: true,
+      droppable: true,
       events: [
+        {
+          title: 'Conferencia',
+          start: new Date().getTime(),
+          description: 'evento 1',
+        },
+        {
+          title: 'Concierto',
+          start: new Date(new Date().getTime() + 86400000),
+          description: 'evento 2',
+        },
+        {
+          title: 'Curso de formación',
+          start: new Date(new Date().getTime() + 86400000 * 2),
+          end: new Date(new Date().getTime() + 86400000 * 3),
+          description: 'evento 2',
+        },
+      ],
+    };
+
+    this.events = [
       {
         title: 'Conferencia',
         start: new Date().getTime(),
@@ -44,26 +72,60 @@ export class CalendarComponent implements OnInit {
         end: new Date(new Date().getTime() + 86400000 * 3),
         description: 'evento 2',
       },
-    ]
-    };
-
-    this.events = [
-      {
-        title: 'Evento 1',
-        start: new Date().getTime(),
-        description: 'evento 1',
-      },
-      {
-        title: 'Evento 2',
-        start: new Date(new Date().getTime() + 86400000),
-        description: 'evento 2',
-      },
-      {
-        title: 'Evento 3',
-        start: new Date(new Date().getTime() + 86400000 * 2),
-        end: new Date(new Date().getTime() + 86400000 * 3),
-        description: 'evento 2',
-      },
+      {},
     ];
   }
-}
+
+// async getEvents(): Promise<any[]> {
+//     try {
+//       const response = await this.http.get<any[]>('/path/file.php').toPromise();
+//       return response.map(event => {
+//         return {
+//           'title': event.title,
+//           'description': event.description,
+//           'start': event.start,
+//           'end': event.end,
+//         };
+//       });
+//     } catch (error) {
+//       throw error;
+//     }
+//   }
+// }
+
+
+
+//   agregarEvento() {
+     // Obtener datos del formulario
+    // const id = this.id_reserva;
+//     const titulo = this.eventoTitulo;
+//     const fechaInicio = new Date(this.eventoFechaInicio);
+//     const fechaFin = new Date(this.eventoFechaFin);
+
+     // Validar los datos (puedes agregar más validaciones según tus necesidades)
+
+     // Crear objeto de evento
+//     const nuevoEvento = {
+       // id: id,
+//       title: titulo,
+//       start: fechaInicio,
+//       end: fechaFin,
+
+//     };
+
+     // Agregar el evento a la lista de eventos
+//     this.events.push(nuevoEvento);
+
+     // Limpiar el formulario
+//     this.eventoTitulo = '';
+//     this.eventoFechaInicio = '';
+//     this.eventoFechaFin = '';
+
+     // Actualizar el calendario para mostrar el nuevo evento
+    // if (this.fullcalendar) {
+     //   this.fullcalendar.getApi().addEvent(nuevoEvento);
+     // }
+
+
+
+  }

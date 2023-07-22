@@ -9,7 +9,7 @@
     :host ::ng-deep .fc{
         width: 100%;
         /* Establecer el ancho deseado */
-        height: 600px;
+        height: 800px;
         /* Establecer la altura deseada */
         /* border: 1px solid #007bff; */
 
@@ -18,7 +18,7 @@
 :host ::ng-deep .fc-daygrid-day {
     height: 60px;
     /* Establecer la altura deseada para las celdas */
-    
+
 }
 
 :host ::ng-deep .fc-toolbar {
