@@ -39,12 +39,8 @@ export class ContactoComponent {
         color: '#333333',
         background: '#0077B6'
       })
-
-
-      this.router.navigate(['/home']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+      this.router.navigate(['/home'])
     }
-
-
 
   checkError(field: string, error: string) {
     return (
