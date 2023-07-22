@@ -21,17 +21,26 @@
                             El nombre es obligatorio
                         </p>
 
+
                         <div class="input-group mb-3">
-                            <span class="input-group-text">DNI</span>
-                            <input type="text" class="form-control" placeholder="Escribe tu DNI" formControlName="dni">
 
+                            <span class="input-group-text">Documento de identificación</span>
 
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option value="dni">DNI</option>
+                                <option value="nie">NIE</option>
+                            </select>
 
+                            <input type="text" aria-label="First name" class="form-control" placeholder="Escribe tu DNI"
+                                formControlName="dni">
 
                         </div>
+
+
                         <p class="error" *ngIf="checkError('dni', 'required')">
                             El DNI es obligatorio
                         </p>
+
 
                         <div class="input-group mb-3">
                             <span class="input-group-text">Teléfono</span>
