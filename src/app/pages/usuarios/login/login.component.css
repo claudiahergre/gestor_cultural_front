@@ -22,3 +22,9 @@
 p {
     font-size: larger;
 }
+
+.error {
+    text-align: left;
+    font-size: small;
+    color: red;
+}
