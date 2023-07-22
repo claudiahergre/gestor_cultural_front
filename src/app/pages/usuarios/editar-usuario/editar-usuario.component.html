@@ -1,61 +1,105 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" formControlName="nombre">
+<div class="fondo">
+    <div class="container p-5">
+        <h3 class="text-center mb-4">Formulario de edición de usuarios</h3>
 
-        <p class="error" *ngIf="checkError('nombre', 'required')">
-            El nombre es obligatorio
-        </p>
+        <div class="row">
+            <div class="bordecito rounded text-center">
 
+                <div class="p-3 mt-3">
+                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nombre</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre"
+                                formControlName="nombre">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('nombre', 'required')">
+                            El nombre es obligatorio
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">DNI</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu DNI" formControlName="dni">
+
+
+
+
+                        </div>
+                        <p class="error" *ngIf="checkError('dni', 'required')">
+                            El DNI es obligatorio
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Teléfono</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
+                                formControlName="telefono">
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('telefono', 'required')">
+                            El teléfono es obligatorio
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Dirección</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu direccion"
+                                formControlName="direccion">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('direccion', 'required')">
+                            La dirección es obligatoria
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Email</span>
+                            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+                                formControlName="email">
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('email', 'required')">
+                            La dirección email es obligatoria
+                        </p>
+
+                        <p class="error" *ngIf="checkError('email', 'pattern')">
+                            La dirección de email no tiene un formato válido
+                        </p>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Usuario</span>
+                            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+                                formControlName="username">
+
+
+
+
+                        </div>
+
+                        <p class="error" *ngIf="checkError('usuario', 'required')">
+                            El usuario es obligatorio
+                        </p>
+
+                        <input type="submit" value="Actualizar" class="btn mb-3">
+
+
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">DNI</label>
-        <input type="text" class="form-control" formControlName="dni">
-
-        <p class="error" *ngIf="checkError('dni', 'required')">
-            El DNI es obligatorio
-        </p>
-
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Teléfono</label>
-        <input type="text" class="form-control" formControlName="telefono">
-
-        <p class="error" *ngIf="checkError('telefono', 'required')">
-            El teléfono es obligatorio
-        </p>
-
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Dirección</label>
-        <input type="text" class="form-control" formControlName="direccion">
-
-        <p class="error" *ngIf="checkError('direccion', 'required')">
-            La dirección es obligatoria
-        </p>
-
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" formControlName="email">
-
-        <p class="error" *ngIf="checkError('email', 'required')">
-            La dirección email es obligatoria
-        </p>
-
-        <p class="error" *ngIf="checkError('email', 'pattern')">
-            La dirección de email no tiene un formato válido
-        </p>
-
-    </div>
-    <div class="mb-3">
-        <label class="form-label">UserName</label>
-        <input type="text" class="form-control" formControlName="username">
-
-        <p class="error" *ngIf="checkError('usuario', 'required')">
-            El usuario es obligatorio
-        </p>
-
-    </div>
-    <input type="submit" value="Enviar" class="btn btn-info">
-</form>
+</div>
