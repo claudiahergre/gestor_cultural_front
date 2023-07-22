@@ -12,6 +12,7 @@
 
 body {
     background-color: var(--blanco);
+    padding-top: 50px;
 }
 
 .fondo {
