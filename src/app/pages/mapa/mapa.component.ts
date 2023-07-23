@@ -63,29 +63,13 @@ export class MapaComponent {
       console.log('Error al obtener las salas')
     }
 
-
-    /*  // CREAR UN MARKER Y AÑADIRLO AL ARRAY
-     // en nuestra posicion
-     const marker = this.agregarMarker(miPosicion, ' Tu posición ', '')
-     this.arrMarkers.push(marker)
-
-     // en otro sitio por coordenadas
-     let salaM = new google.maps.LatLng(40.4167278, -3.7033387)
-
-     const markerSalaM = this.agregarMarker(salaM, 'Sala Margarita', 'Gran salón para bodas u otros eventos')
-     this.arrMarkers.push(markerSalaM)
-
-     console.log(this.arrMarkers) */
-
-
-
   } /// fin ngOnInit
 
 
   //necesito hacer algo especifico cuando el html ya ha salido por pantalla. si lo hiciese en el ngoninit, aun no tendría generado el div, y no podria tener acceso a el
   ngAfterViewInit() {
     this.loadMap()
-    this.loadAutocomplete()
+
   }
 
   loadMap() {
@@ -101,10 +85,6 @@ export class MapaComponent {
 
   }
 
-  loadAutocomplete() {
-    const autocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement)
-  }
-
   agregarMarker(position: google.maps.LatLng, nombreSala: string, descripcion: string) {
     const marker = new google.maps.Marker({
       position,
@@ -113,8 +93,9 @@ export class MapaComponent {
     })
 
     const contentString =
-      `<div id="tarjeta">
-      <h4 id="firstHeading" class="firstHeading">${nombreSala}</h4>
+      `<div id="tarjeta" style="width: 250px">
+      <h5 id="firstHeading" class="firstHeading">${nombreSala}</h5>
+      <hr style="color: #0077B6">
       <div id="contenidotarjeta">
       <p>${descripcion}</p> 
 
