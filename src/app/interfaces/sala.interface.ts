@@ -1,3 +1,5 @@
+import { CalendarEvent } from "./calendar_event.interface";
+
 export interface Sala {
     id: number,
     precio: string,
@@ -5,5 +7,6 @@ export interface Sala {
     nombre: string,
     direccion: string,
     descripcion: string,
-    url_foto: string
+    url_foto: string,
+    reservas: CalendarEvent[]
 }
