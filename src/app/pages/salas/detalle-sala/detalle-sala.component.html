@@ -6,4 +6,6 @@
     <p>Aforo: {{ sala.aforo }}</p>
     <p>Descripción: {{ sala.descripcion }}</p>
     <img [src]="sala.url_foto" alt="Foto de la sala">
+
+    <button [routerLink]="['/salas', 'reservar', sala.id]">Reservar Sala</button>
 </div>
