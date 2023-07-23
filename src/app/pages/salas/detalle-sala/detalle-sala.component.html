@@ -2,6 +2,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-6">
+
                 <div *ngIf="sala" class="detalle-sala">
                     <h2>{{sala.nombre}}</h2>
                     <div class="sala-info">
@@ -25,6 +26,8 @@
 
             <div class="col-6">
                 <div class="mapa">
+
+                    <!-- PREGUNTAR SI PODEMOS PONER VARIABLE EL SRC DE MANERA FÁCIL -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.103236493256!2d-3.6445239240923253!3d40.42871287143766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f427544ec07%3A0xc7deb889facf2f64!2sC.%20de%20Achuri%2C%2019%2C%2028017%20Madrid!5e0!3m2!1ses!2ses!4v1690013439908!5m2!1ses!2ses"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
