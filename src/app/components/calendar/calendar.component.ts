@@ -44,6 +44,17 @@ export class CalendarComponent implements OnInit {
       editable: true,
       droppable: true,
       events: this.reservas,
+      eventDrop: (ev: any) => {
+        console.log(ev.event);
+
+        const body = {
+          // start: ev.event.
+        };
+      },
+      eventResize: (ev: any) => {
+        console.log(ev.event);
+
+      },
     };
 
     // this.events = [
@@ -67,10 +78,10 @@ export class CalendarComponent implements OnInit {
     // ];
   }
 
-  async getEvents(): Promise<CalendarEvent[] | any>{
+  async getEvents(): Promise<CalendarEvent[] | any> {
     try {
-      const response = await this.calendarServices.getAll()
-      const calendarEvents : CalendarEvent[] = response.map((event) => {
+      const response = await this.calendarServices.getAll();
+      const calendarEvents: CalendarEvent[] = response.map((event) => {
         return {
           title: event.titulo,
           description: event.descripcion,
@@ -81,7 +92,7 @@ export class CalendarComponent implements OnInit {
       });
       return calendarEvents;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 }
