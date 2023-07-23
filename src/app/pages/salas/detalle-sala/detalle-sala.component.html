@@ -1,11 +1,46 @@
-<div *ngIf="sala">
-    <h2>Detalle de la sala {{ sala.id }}</h2>
-    <p>Nombre: {{ sala.nombre }}</p>
-    <p>Dirección: {{ sala.direccion }}</p>
-    <p>Precio: {{ sala.precio }}</p>
-    <p>Aforo: {{ sala.aforo }}</p>
-    <p>Descripción: {{ sala.descripcion }}</p>
-    <img [src]="sala.url_foto" alt="Foto de la sala">
+<div class="fondo">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <div *ngIf="sala" class="detalle-sala">
+                    <h2>{{sala.nombre}}</h2>
+                    <div class="sala-info">
+                        <div class="sala-image">
+                            <img [src]="sala.url_foto" alt="Foto de la sala">
+                        </div>
+                        <div class="sala-details">
+                            <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+                            <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
+                            <p><strong>Precio:</strong> {{ sala.precio }}</p>
+                            <p><strong>Aforo:</strong> {{ sala.aforo }}</p>
+                            <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+                            <p><strong>Teléfono de contacto:</strong></p>
+                            <p><strong>Email:</strong></p>
+                            <button [routerLink]="['/salas', 'reservar', sala.id]" class="btn">Reservar Sala</button>
+                        </div>
+                    </div>
 
-    <button [routerLink]="['/salas', 'reservar', sala.id]">Reservar Sala</button>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.103236493256!2d-3.6445239240923253!3d40.42871287143766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f427544ec07%3A0xc7deb889facf2f64!2sC.%20de%20Achuri%2C%2019%2C%2028017%20Madrid!5e0!3m2!1ses!2ses!4v1690013439908!5m2!1ses!2ses"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
 </div>
