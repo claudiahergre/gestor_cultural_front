@@ -1,35 +1,39 @@
 <div class="container">
-    <div>
-        <div class="card">datos del usuario</div>
-        <div class="card">datos de la sala</div>
+  <div>
+    <div class="card">datos del usuario</div>
+    <div class="card">datos de la sala</div>
+  </div>
+
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="input-group mt-3">
+      <span class="input-group-text">Fecha de inicio</span>
+      <input type="date" class="form-control" formControlName="fecha_reserva" />
+
+      <span class="input-group-text">Hora de inicio</span>
+      <input type="time" class="form-control" formControlName="hora_reserva" />
     </div>
 
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="input-group mt-3">
+      <span class="input-group-text">Fecha de fin</span>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="fecha_fin_reserva"
+      />
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Fecha de inicio</span>
-            <input type="date" class="form-control" formControlName="fecha_reserva">
+      <span class="input-group-text">Hora de fin</span>
+      <input
+        type="time"
+        class="form-control"
+        formControlName="hora_fin_reserva"
+      />
+    </div>
 
-            <span class="input-group-text">Hora de inicio</span>
-            <input type="time" class="form-control" formControlName="hora_reserva">
-        </div>
+    <input class="btn" type="submit" class="btn mt-3" value="Guardar" />
 
-        <div class="input-group mt-3">
-            <span class="input-group-text">Fecha de fin</span>
-            <input type="date" class="form-control" formControlName="fecha_fin_reserva">
-
-            <span class="input-group-text">Hora de fin</span>
-            <input type="time" class="form-control" formControlName="hora_fin_reserva">
-        </div>
-
-        <input class="btn" type="submit" class="btn mt-3" value="Guardar">
-
-
-
-        <!--  <div class="errores">
+    <!--  <div class="errores">
         <p *ngFor=" let error of errores">{{error.msg}}</p>
     </div> -->
-
-    </form>
-    <app-calendar></app-calendar>
+  </form>
+  <app-calendar></app-calendar>
 </div>
