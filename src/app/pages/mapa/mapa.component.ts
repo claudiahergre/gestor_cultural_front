@@ -51,12 +51,14 @@ export class MapaComponent {
 
       // iterar sobre las salas y agregar marcadores
       for (const sala of salasRegistradas) {
-        const coordenadas = await this.salasService.obtenerCoordenadas(sala.direccion);
-        const position = new google.maps.LatLng(coordenadas.latitud, coordenadas.longitud);
-        const marker = this.agregarMarker(position, sala.nombre, sala.descripcion);
-        this.arrMarkers.push(marker);
+        this.salasService.obtenerCoordenadas(sala.direccion).subscribe(
+          coordenadas => {
+            const position = new google.maps.LatLng(coordenadas.latitud, coordenadas.longitud);
+            const marker = this.agregarMarker(position, sala.nombre, sala.descripcion);
+            this.arrMarkers.push(marker);
+          }
+        )
       }
-
     } catch (error) {
       console.log('Error al obtener las salas')
     }
