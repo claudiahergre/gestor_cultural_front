@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import esLocale from '@fullcalendar/core/locales/es'
+import esLocale from '@fullcalendar/core/locales/es';
+import { CalendarService } from 'src/app/services/calendar.service';
+import { Reserva } from 'src/app/interfaces/reserva.interface';
 
 @Component({
   selector: 'app-calendar',
@@ -11,16 +13,20 @@ import esLocale from '@fullcalendar/core/locales/es'
   styleUrls: ['./calendar.component.css'],
 })
 export class CalendarComponent implements OnInit {
+  calendarServices = inject(CalendarService);
+  
   public events!: any[];
-
   public options: any;
+  public baseUrl: string;
 
-  // eventoTitulo: string = '';
-  // eventoFechaInicio: string = '';
-  // eventoFechaFin: string = '';
+  eventTitulo: string = '';
+  eventDescripcion: string = '';
+  eventFechaInicio: string = '';
+  eventoFechaFin: string = '';
 
-
-  constructor() {}
+  constructor() {
+    this.baseUrl = 'http://localhost:3000/api/reservas';
+  }
 
   ngOnInit() {
     this.options = {
@@ -76,56 +82,22 @@ export class CalendarComponent implements OnInit {
     ];
   }
 
-// async getEvents(): Promise<any[]> {
-//     try {
-//       const response = await this.http.get<any[]>('/path/file.php').toPromise();
-//       return response.map(event => {
-//         return {
-//           'title': event.title,
-//           'description': event.description,
-//           'start': event.start,
-//           'end': event.end,
-//         };
-//       });
-//     } catch (error) {
-//       throw error;
-//     }
-//   }
-// }
-
-
-
-//   agregarEvento() {
-     // Obtener datos del formulario
-    // const id = this.id_reserva;
-//     const titulo = this.eventoTitulo;
-//     const fechaInicio = new Date(this.eventoFechaInicio);
-//     const fechaFin = new Date(this.eventoFechaFin);
-
-     // Validar los datos (puedes agregar más validaciones según tus necesidades)
-
-     // Crear objeto de evento
-//     const nuevoEvento = {
-       // id: id,
-//       title: titulo,
-//       start: fechaInicio,
-//       end: fechaFin,
-
-//     };
-
-     // Agregar el evento a la lista de eventos
-//     this.events.push(nuevoEvento);
-
-     // Limpiar el formulario
-//     this.eventoTitulo = '';
-//     this.eventoFechaInicio = '';
-//     this.eventoFechaFin = '';
-
-     // Actualizar el calendario para mostrar el nuevo evento
-    // if (this.fullcalendar) {
-     //   this.fullcalendar.getApi().addEvent(nuevoEvento);
-     // }
-
-
-
+  async getEvents(): Promise<Reserva[]> {
+    try {
+      const response = await this.calendarServices.getAll<Reserva[]>(
+        this.baseUrl
+      );
+      return response.map((event) => {
+        return {
+          title: this.eventTitulo,
+          description: this.eventDescripcion,
+          start: this.eventFechaInicio,
+          end: this.eventoFechaFin,
+        };
+        console.log(event);
+      });
+    } catch (error) {
+      console.log(error)
+    }
   }
+}
