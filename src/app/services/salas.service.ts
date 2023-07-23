@@ -41,9 +41,9 @@ export class SalasService {
         }
         //////////
 
-        console.log(idSala)
+
         return firstValueFrom(
-            this.httpClient.get<Sala>(`${this.baseUrl}/${idSala}`)
+            this.httpClient.get<Sala>(`${this.baseUrl}/editar/${idSala}`, formValue)
         )
     }
 
