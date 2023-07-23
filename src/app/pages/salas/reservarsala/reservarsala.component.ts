@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Sala } from 'src/app/interfaces/sala.interface';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { SalasService } from 'src/app/services/salas.service';
 
@@ -17,6 +18,7 @@ export class ReservarsalaComponent {
   activatedRoute = inject(ActivatedRoute)
   router = inject(Router)
 
+  salaSeleccionada!: Sala
 
   constructor() {
     this.formulario = new FormGroup({
@@ -28,15 +30,15 @@ export class ReservarsalaComponent {
     })
   }
 
-  // ngOnInit() {
-  //   this.activatedRoute.snapshot.params;
-  //    try {
-  //     const activatedRoute = this.salasServices.getById()
-  //     console.log(activatedRoute)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  async ngOnInit() {
+    const { salaId } = this.activatedRoute.snapshot.params;
+     try {
+      this.salaSeleccionada = await this.salasServices.getById(salaId);
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
   async onSubmit() {

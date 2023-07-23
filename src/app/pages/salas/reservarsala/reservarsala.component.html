@@ -35,5 +35,5 @@
         <p *ngFor=" let error of errores">{{error.msg}}</p>
     </div> -->
   </form>
-  <app-calendar></app-calendar>
+  <app-calendar [reservas]="salaSeleccionada.reservas"></app-calendar>
 </div>
