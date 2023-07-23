@@ -25,6 +25,7 @@ import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.compone
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
+import { MapaComponent } from './pages/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +51,14 @@ import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.compone
     EditarsalaComponent,
     ListasalasComponent,
     ReservarsalaComponent,
-    SalasadminComponent
+    SalasadminComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
