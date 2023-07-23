@@ -16,39 +16,41 @@
             <div class="input-group mb-3">
               <span class="input-group-text">Nombre</span>
               <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre">
-              <p class="error" *ngIf="checkError('nombre', 'required')">
-                El nombre es obligatorio.
-              </p>
-            </div>
 
+            </div>
+            <p class="error" *ngIf="checkError('nombre', 'required')">
+              El nombre es obligatorio.
+            </p>
             <div class="input-group mb-3">
               <span class="input-group-text">Apellidos</span>
               <input type="text" class="form-control" placeholder="Escribe tus apellidos" formControlName="apellidos">
-              <p class="error" *ngIf="checkError('apellidos', 'required')">
-                Los apellidos son obligatorios.
-              </p>
-            </div>
 
+            </div>
+            <p class="error" *ngIf="checkError('apellidos', 'required')">
+              Los apellidos son obligatorios.
+            </p>
             <div class="input-group mb-3">
               <span class="input-group-text">Email</span>
               <input type="text" class="form-control" placeholder="Introduce un correo electrónico"
                 formControlName="email">
-              <p class="error" *ngIf="checkError('email', 'required')">
-                La dirección email es obligatoria.
-              </p>
-              <p class="error" *ngIf="checkError('email', 'pattern')">
-                La dirección email no tiene un formato válido.
-              </p>
-            </div>
 
+            </div>
+            <p class="error" *ngIf="checkError('email', 'required')">
+              La dirección email es obligatoria.
+            </p>
+            <p class="error" *ngIf="checkError('email', 'pattern')">
+              La dirección email no tiene un formato válido.
+            </p>
             <div class="input-group mb-3">
               <span class="input-group-text">Mensaje</span>
               <textarea type="text" class="form-control" rows="3" placeholder="Escribe aquí tu mensaje"
                 formControlName="mensaje"></textarea>
-              <p class="error" *ngIf="checkError('mensaje', 'required')">
-                Tienes que escribir un mensaje.
-              </p>
+
             </div>
+
+            <p class="error" *ngIf="checkError('mensaje', 'required')">
+              Tienes que escribir un mensaje.
+            </p>
             <input type="submit" value="Enviar" class="btn">
 
           </form>
