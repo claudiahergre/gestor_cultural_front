@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editar-staff',
@@ -15,17 +16,19 @@ export class EditarStaffComponent {
   staffService = inject(StaffService);
   activatedRoute = inject(ActivatedRoute);
 
+  router = inject(Router)
+
   constructor() {
     this.staffId = '';
 
     this.formulario = new FormGroup({
-      nombre: new FormControl(null,[Validators.required]),
-      usuario: new FormControl(null,[Validators.required]),
+      nombre: new FormControl(null, [Validators.required]),
+      usuario: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/),
       ]),
-      rol: new FormControl(null,[Validators.required]),
+      rol: new FormControl(null, [Validators.required]),
     });
   }
 
@@ -50,7 +53,19 @@ export class EditarStaffComponent {
     const response = await this.staffService.updateById(
       this.staffId,
       this.formulario.value
-    );
+    )
+    console.log(response)
+    Swal.fire({
+      icon: 'success',
+      title: 'Cambios guardados',
+      showConfirmButton: false,
+      timer: 2500,
+      width: 500,
+      padding: '3em',
+      color: '#333333',
+      background: '#0077B6'
+    })
+    this.router.navigate(['/listaStaff'])
   }
 
   checkError(field: string, error: string) {

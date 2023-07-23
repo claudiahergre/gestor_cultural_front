@@ -55,7 +55,7 @@ export class StaffService {
 
   updateById(staffId: any, formValues: any): Promise<any> {
     return firstValueFrom(
-      this.httpClient.put<Staff>(`${this.baseUrl}/${staffId}`, formValues)
+      this.httpClient.put<Staff>(`${this.baseUrl}/editar/${staffId}`, formValues)
     )
   }
 
