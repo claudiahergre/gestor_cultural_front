@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editar-usuario',
@@ -54,6 +55,16 @@ export class EditarUsuarioComponent {
     const response = await this.usuarioService.update(this.usuarioId, this.formulario.value)
     console.log(response)
 
+    Swal.fire({
+      icon: 'success',
+      title: 'Cambios guardados',
+      showConfirmButton: false,
+      timer: 2500,
+      width: 500,
+      padding: '3em',
+      color: '#333333',
+      background: '#0077B6'
+    })
     this.router.navigate(['/usuarios'])
 
   }

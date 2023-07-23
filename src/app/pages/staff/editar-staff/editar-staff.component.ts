@@ -54,7 +54,6 @@ export class EditarStaffComponent {
       this.staffId,
       this.formulario.value
     )
-    console.log(response)
     Swal.fire({
       icon: 'success',
       title: 'Cambios guardados',
