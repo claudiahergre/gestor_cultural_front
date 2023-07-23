@@ -1,0 +1,9 @@
+<div *ngIf="sala">
+    <h2>Detalle de la sala {{ sala.id }}</h2>
+    <p>Nombre: {{ sala.nombre }}</p>
+    <p>Dirección: {{ sala.direccion }}</p>
+    <p>Precio: {{ sala.precio }}</p>
+    <p>Aforo: {{ sala.aforo }}</p>
+    <p>Descripción: {{ sala.descripcion }}</p>
+    <img [src]="sala.url_foto" alt="Foto de la sala">
+</div>
