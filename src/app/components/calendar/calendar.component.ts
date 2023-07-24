@@ -31,6 +31,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.reservas)
     this.options = {
       plugins: [timeGridPlugin, interactionPlugin],
       defaultDate: new Date(),
@@ -41,22 +42,8 @@ export class CalendarComponent implements OnInit {
         right: 'dayGridMonth,timeGridWeek,timeGridDay',
         initialView: 'dayGridMonth',
       },
-      editable: true,
-      droppable: true,
       events: this.reservas,
-      eventDrop: (ev: any) => {
-        console.log(ev.event);
-
-        const body = {
-          // start: ev.event.
-        };
-      },
-      eventResize: (ev: any) => {
-        console.log(ev.event);
-
-      },
-    };
-
+      };
     // this.events = [
     //   {
     //     title: 'Conferencia',
@@ -78,17 +65,20 @@ export class CalendarComponent implements OnInit {
     // ];
   }
 
+
+
   async getEvents(): Promise<CalendarEvent[] | any> {
     try {
       const response = await this.calendarServices.getAll();
       const calendarEvents: CalendarEvent[] = response.map((event) => {
+        // const fechaInicio = new Date(`${event.fecha_reserva}T${event.hora_reserva}`).toISOString();
+        // console.log(fechaInicio);
         return {
           title: event.titulo,
           description: event.descripcion,
           start: event.fecha_reserva,
           end: event.fecha_fin_reserva,
         };
-        console.log(event);
       });
       return calendarEvents;
     } catch (error) {

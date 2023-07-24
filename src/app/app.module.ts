@@ -62,7 +62,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     ReactiveFormsModule,
     HttpClientModule,
     FullCalendarModule
-
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
