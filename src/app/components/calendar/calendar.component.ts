@@ -19,11 +19,6 @@ export class CalendarComponent implements OnInit {
   public options: any;
   public baseUrl: string;
 
-  eventTitulo: string = '';
-  eventDescripcion: string = '';
-  eventFechaInicio: string = '';
-  eventoFechaFin: string = '';
-
   @Input() reservas: CalendarEvent[] = [];
 
   constructor() {
@@ -31,7 +26,6 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.reservas)
     this.options = {
       plugins: [timeGridPlugin, interactionPlugin],
       defaultDate: new Date(),

@@ -38,10 +38,7 @@
     </div>
 
     <input class="btn" type="submit" class="btn mt-3" value="Guardar" />
-
-    <!--  <div class="errores">
-        <p *ngFor=" let error of errores">{{error.msg}}</p>
-    </div> -->
   </form>
+
   <app-calendar *ngIf="salaSeleccionada" [reservas]="salaSeleccionada.reservas"></app-calendar>
 </div>
