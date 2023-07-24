@@ -1,69 +1,59 @@
-<div class="fondo">
+<div class="container mt-5">
 
-    <div class="container p-5">
+    <h3 class="text-center mb-4">¡Inicia sesión!</h3>
 
-        <h3 class="text-center mb-4">¡Inicia sesión!</h3>
+    <div class="row">
 
-        <div class="row">
+        <div class="bordecito col-6 rounded text-center">
 
-            <div class="bordecito col-6 rounded text-center">
-
-                <div class="p-3 mt-3 rounded">
-                    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Email</span>
-                            <input type="text" class="form-control" formControlName="email">
+            <div class="p-3 mt-3 rounded">
+                <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Email</span>
+                        <input type="text" class="form-control" formControlName="email">
 
 
-                        </div>
-                        <p class="error" *ngIf="checkError('email', 'required')">
-                            La dirección email es obligatoria
-                        </p>
+                    </div>
+                    <p class="error" *ngIf="checkError('email', 'required')">
+                        La dirección email es obligatoria
+                    </p>
 
-                        <p class="error" *ngIf="checkError('email', 'pattern')">
-                            La dirección de email no tiene un formato válido
-                        </p>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Contraseña</span>
-                            <input type="password" class="form-control" formControlName="password">
-
-
-                        </div>
-                        <p class="error" *ngIf="checkError('password', 'required')">
-                            La contraseña es obligatoria
-                        </p>
-                        <input type="submit" value="Enviar" class="btn m-3">
-
-                        <p>
-                            ¿Todavía no estas registrado?
-                            <strong [routerLink]="['/usuarios', 'registro']">Registrate aquí.</strong>
-                        </p>
-                    </form>
+                    <p class="error" *ngIf="checkError('email', 'pattern')">
+                        La dirección de email no tiene un formato válido
+                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Contraseña</span>
+                        <input type="password" class="form-control" formControlName="password">
 
 
-                </div>
+                    </div>
+                    <p class="error" *ngIf="checkError('password', 'required')">
+                        La contraseña es obligatoria
+                    </p>
+                    <input type="submit" value="Enviar" class="btn m-3">
 
-            </div>
+                    <p>
+                        ¿Todavía no estas registrado?
+                        <strong [routerLink]="['/usuarios', 'registro']">Registrate aquí.</strong>
+                    </p>
+                </form>
 
-            <div class="texto col-6 p-4">
-                <h5 class="mb-4"><strong>Accede a tu perfil personal</strong></h5>
 
-                <p>
-                    Inicia sesión para poder acceder a tu perfil. Recuerda que si no estás registrado debes
-                    hacerlo <strong [routerLink]="['/registroStaff']">aquí.</strong>
-                </p>
-
-                <p>Cuándo inicies sesión podrás ver todas nuestras salas y esacios disponibles.</p>
             </div>
 
         </div>
 
+        <div class="texto col-6 p-4">
+            <h5 class="mb-4"><strong>Accede a tu perfil personal</strong></h5>
+
+            <p>
+                Inicia sesión para poder acceder a tu perfil. Recuerda que si no estás registrado debes
+                hacerlo <strong [routerLink]="['/registroStaff']">aquí.</strong>
+            </p>
+
+            <p>Cuándo inicies sesión podrás ver todas nuestras salas y esacios disponibles.</p>
+        </div>
+
     </div>
-
-
-
-
-
-
 
 </div>

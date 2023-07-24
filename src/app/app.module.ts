@@ -30,6 +30,7 @@ import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.co
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     SalasadminComponent,
     MapaComponent,
     DetalleSalaComponent,
-    CalendarComponent
+    CalendarComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -72,4 +74,4 @@ import { FullCalendarModule } from '@fullcalendar/angular';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
