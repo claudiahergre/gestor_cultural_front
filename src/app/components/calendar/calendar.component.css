@@ -1,17 +1,17 @@
-.calendar-container{
+.calendar-container {
     width: 100%;
-        /* Establecer el ancho deseado */
-        height: 500px;
-        /* Establecer la altura deseada */
+    /* Establecer el ancho deseado */
 
-    }
+    /* Establecer la altura deseada */
 
-    :host ::ng-deep .fc{
-        width: 100%;
-        /* Establecer el ancho deseado */
-        height: 800px;
-        /* Establecer la altura deseada */
-        /* border: 1px solid #007bff; */
+}
+
+:host ::ng-deep .fc {
+    width: 100%;
+    /* Establecer el ancho deseado */
+    height: 800px;
+    /* Establecer la altura deseada */
+    /* border: 1px solid #007bff; */
 
 }
 
@@ -36,10 +36,10 @@
     /* Ajustar el relleno deseado para los eventos */
 }
 
-:host ::ng-deep .fc-button{
+:host ::ng-deep .fc-button {
     color: goldenrod;
 }
 
-:host ::ng-deep .fc-state-active{
+:host ::ng-deep .fc-state-active {
     color: red;
 }
