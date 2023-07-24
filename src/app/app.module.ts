@@ -26,6 +26,7 @@ import { ListasalasComponent } from './pages/salas/listasalas/listasalas.compone
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
+import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MapaComponent } from './pages/mapa/mapa.component';
     ListasalasComponent,
     ReservarsalaComponent,
     SalasadminComponent,
-    MapaComponent
+    MapaComponent,
+    DetalleSalaComponent
   ],
   imports: [
     BrowserModule,

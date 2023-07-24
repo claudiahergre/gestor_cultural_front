@@ -1,28 +1,3 @@
-.bordecito {
-    background-color: white;
-    border: 1px solid rgb(28, 146, 179);
-}
-
-
-.btn {
-    background-color: rgb(28, 146, 179);
-    color: var(--blanco);
-}
-
-.btn:hover {
-    background-color: rgb(1, 101, 129);
-}
-
-
-
-.error {
-    text-align: left;
-    font-size: small;
-    color: red;
-}
-
-/* ficha sala */
-
 .detalle-sala {
     margin: 20px;
 }
@@ -52,4 +27,13 @@ h2 {
 
 .sala-details strong {
     font-weight: bold;
+}
+
+.btn {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: rgb(1, 101, 129);
 }

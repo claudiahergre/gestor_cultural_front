@@ -47,8 +47,8 @@
 } */
 
 div.carousel img {
-    width: 100%;
-    height: auto;
+    width: 650px;
+    height: 468px;
     display: block;
 }
 
@@ -122,4 +122,21 @@ div.carousel img {
 
 .nombre {
     margin: 5px 0;
+}
+
+/* zona de los iconos */
+
+.fa-solid {
+    font-size: 40px;
+
+}
+
+.d-flex {
+    align-items: flex-start;
+
+}
+
+.d-flex i {
+    margin-right: 10px;
+
 }

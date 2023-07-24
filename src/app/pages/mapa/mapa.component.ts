@@ -48,16 +48,16 @@ export class MapaComponent {
     this.arrMarkers = [];
     try {
       const salasRegistradas = await this.salasService.getAll();
+      console.log(salasRegistradas)
 
       // iterar sobre las salas y agregar marcadores
       for (const sala of salasRegistradas) {
-        this.salasService.obtenerCoordenadas(sala.direccion).subscribe(
-          coordenadas => {
-            const position = new google.maps.LatLng(coordenadas.latitud, coordenadas.longitud);
-            const marker = this.agregarMarker(position, sala.nombre, sala.descripcion);
-            this.arrMarkers.push(marker);
-          }
-        )
+
+        const position = new google.maps.LatLng(sala.latitud, sala.longitud);
+        const marker = this.agregarMarker(position, sala.nombre, sala.descripcion);
+        this.arrMarkers.push(marker);
+
+
       }
     } catch (error) {
       console.log('Error al obtener las salas')

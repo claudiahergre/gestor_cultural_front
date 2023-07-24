@@ -11,11 +11,9 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{sala.nombre}}</h5>
-                        <p class="card-text">{{sala.descripcion}}</p>
                         <p class="card-text"><strong>Aforo:</strong> {{sala.aforo}}</p>
-                        <p class="card-text"><strong>Dirección: </strong>{{sala.direccion}}</p>
-                        <p class="card-text"><strong>Precio por hora: </strong>{{sala.precio}}</p>
-                        <a class="btn" [routerLink]="['/salas', 'reservar', sala.id]">Reservar esta sala</a>
+
+                        <a class="btn" [routerLink]="['/salas', 'detalle', sala.id]">Ver Detalles</a>
                     </div>
 
                 </div>

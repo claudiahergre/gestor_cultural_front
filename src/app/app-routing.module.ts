@@ -20,6 +20,7 @@ import { ListasalasComponent } from './pages/salas/listasalas/listasalas.compone
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
+import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'salas/nueva', component: NuevasalaComponent },
   { path: 'salas/editar/:salaId', component: EditarsalaComponent },
   { path: 'salas/reservar/:salaId', component: ReservarsalaComponent },
+  { path: 'salas/detalle/:salaId', component: DetalleSalaComponent },
 
   { path: 'contacto', component: ContactoComponent },
   { path: '**', redirectTo: '/home' },

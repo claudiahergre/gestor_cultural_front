@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Sala } from 'src/app/interfaces/sala.interface';
 import { SalasService } from 'src/app/services/salas.service';
 
 @Component({
@@ -14,6 +15,9 @@ export class ReservarsalaComponent {
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
 
+  sala: Sala
+  salaId: number
+
   constructor() {
     this.formulario = new FormGroup({
       fecha_reserva: new FormControl(null, [Validators.required]),
@@ -22,6 +26,26 @@ export class ReservarsalaComponent {
       fecha_fin_reserva: new FormControl(null, [Validators.required]),
       hora_fin_reserva: new FormControl(null, [Validators.required]),
     });
+    this.sala = {
+      id: 0,
+      precio: '',
+      aforo: 0,
+      nombre: '',
+      direccion: '',
+      descripcion: '',
+      url_foto: '',
+      latitud: 0,
+      longitud: 0
+    }
+    this.salaId = 0
+  }
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async params => {
+      this.salaId = params['salaId']
+      this.sala = await this.salasServices.getById(params['salaId'])
+
+    })
   }
 
   //en ng oninit. ir con el activated route
@@ -52,5 +76,5 @@ export class ReservarsalaComponent {
       this.formulario.get(field)?.touched
     );
   }
-  
+
 }

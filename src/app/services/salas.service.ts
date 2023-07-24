@@ -108,25 +108,7 @@ export class SalasService {
     }
 
 
-    obtenerCoordenadas(direccion: string): Observable<{ latitud: number, longitud: number }> {
-        const params = {
-            address: direccion,
-            key: 'AIzaSyBMOcTcAkobrlfKIBOJNz6lDw2R5fJsk_Q'
-        };
-        return this.httpClient.get<{ results: any[] }>(this.mapsUrl, { params }).pipe(
-            map((response) => {
-                const resultados = response.results;
-                if (resultados.length > 0) {
-                    const ubicacion = resultados[0].geometry?.location;
-                    if (ubicacion) {
-                        console.log(ubicacion)
-                        return { latitud: ubicacion.lat, longitud: ubicacion.lng };
-                    }
-                }
-                throw new Error('No se pudo obtener la ubicación.');
-            })
-        );
-    }
+
 
 }
 

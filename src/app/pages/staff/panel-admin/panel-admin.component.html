@@ -45,12 +45,12 @@
     <div class="row mt-3">
         <div class="col-md-4">
             <div class="card h-100 d-flex">
-                <div class="card-body">
+                <div class="card-body" *ngIf="staff">
                     <h5 class="card-title">Mi Perfil</h5>
-                    <p><strong>Nombre:</strong> John Doe</p>
-                    <p><strong>Usuario:</strong> johndoe</p>
-                    <p><strong>Email:</strong> johndoe@example.com</p>
-                    <p><strong>Rol:</strong> Administrador</p>
+                    <p><strong>Nombre:</strong>{{staff.nombre}}</p>
+                    <p><strong>Usuario:</strong> {{staff.usuario}}</p>
+                    <p><strong>Email:</strong>{{staff.email}}</p>
+                    <p><strong>Rol:</strong>{{staff.rol}}</p>
                 </div>
             </div>
         </div>
@@ -74,8 +74,8 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Accesos directos</h5>
                     <div class="d-grid gap-2">
-                        <button class="btn">Logout</button>
-                        <button class="btn">Salas</button>
+                        <button [routerLink]="['/salas', 'nueva']" class="btn">Añadir nueva sala</button>
+                        <button [routerLink]="['/salas']" class="btn">Ver todas las salas</button>
                     </div>
 
                 </div>
