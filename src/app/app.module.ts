@@ -27,6 +27,9 @@ import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.c
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -54,17 +57,19 @@ import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.co
     ReservarsalaComponent,
     SalasadminComponent,
     MapaComponent,
-    DetalleSalaComponent
+    DetalleSalaComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FullCalendarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

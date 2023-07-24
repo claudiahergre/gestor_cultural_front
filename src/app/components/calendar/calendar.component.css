@@ -1,0 +1,45 @@
+.calendar-container{
+    width: 100%;
+        /* Establecer el ancho deseado */
+        height: 500px;
+        /* Establecer la altura deseada */
+
+    }
+
+    :host ::ng-deep .fc{
+        width: 100%;
+        /* Establecer el ancho deseado */
+        height: 800px;
+        /* Establecer la altura deseada */
+        /* border: 1px solid #007bff; */
+
+}
+
+:host ::ng-deep .fc-daygrid-day {
+    height: 60px;
+    /* Establecer la altura deseada para las celdas */
+
+}
+
+:host ::ng-deep .fc-toolbar {
+    background-color: #007bff;
+    /* Cambiar a tu color deseado */
+    color: goldenrod;
+    /* Cambiar el color del texto si es necesario */
+    padding: 5px;
+}
+
+:host ::ng-deep .fc-event {
+    font-size: 18px;
+    /* Establecer el tamaño de fuente deseado para los eventos */
+    padding: 4px 4px;
+    /* Ajustar el relleno deseado para los eventos */
+}
+
+:host ::ng-deep .fc-button{
+    color: goldenrod;
+}
+
+:host ::ng-deep .fc-state-active{
+    color: red;
+}
