@@ -12,15 +12,15 @@ import { SalasService } from 'src/app/services/salas.service';
 })
 export class ReservarsalaComponent {
   formulario: FormGroup;
-  calendarService = inject(CalendarService)
+  calendarService = inject(CalendarService);
   salasServices = inject(SalasService);
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
 
-  sala: Sala
-  salaId: number
+  sala: Sala;
+  salaId: number;
 
-  salaSeleccionada!: Sala
+  salaSeleccionada!: Sala;
 
   constructor() {
     this.formulario = new FormGroup({
@@ -44,8 +44,8 @@ export class ReservarsalaComponent {
       latitud: 0,
       longitud: 0,
       reservas: [],
-    }
-    this.salaId = 0
+    };
+    this.salaId = 0;
   }
 
   async ngOnInit() {
@@ -53,35 +53,59 @@ export class ReservarsalaComponent {
     try {
       this.salaSeleccionada = await this.salasServices.getById(salaId);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    this.activatedRoute.params.subscribe(async params => {
-      this.salaId = params['salaId']
-      this.sala = await this.salasServices.getById(params['salaId'])
-    })
+    this.activatedRoute.params.subscribe(async (params) => {
+      this.salaId = params['salaId'];
+      this.sala = await this.salasServices.getById(params['salaId']);
+    });
   }
 
   async onSubmit() {
     try {
-      this.formulario.value.salas_id = this.salaSeleccionada.id
-      const response = await this.calendarService.create(this.formulario.value)
+      this.formulario.value.salas_id = this.salaSeleccionada.id;
+      const response = await this.calendarService.create(this.formulario.value);
 
+      const date = new Date(this.formulario.value.fecha_reserva);
+      const [hora, minutos] = this.formulario.value.hora_reserva.split(':');
+      date.setHours(hora);
+      date.setMinutes(minutos);
+      const dateString = date.toISOString();
+
+      console.log(dateString);
 
       if (response.error === 'reservada') {
       }
-      // alert tu sala ha sido reservada
 
+      this.salaSeleccionada = await this.salasServices.getById(this.salaId);
+
+      // alert tu sala ha sido reservada
     } catch (error) {
-      console.log(error)
+      console.log(error);
       //redirección a la lista de salas
       this.router.navigate(['/salas']);
     }
   }
 
-    checkError(field: string, error: string): boolean | undefined {
-      return (
-        this.formulario.get(field)?.hasError(error) &&
-        this.formulario.get(field)?.touched
-      );
-    }
+  onSelect(event: { startStr: string; endStr: string }) {
+    this.formulario.patchValue({
+      fecha_reserva: event.startStr.split('T')[0],
+    });
+    this.formulario.patchValue({
+      fecha_fin_reserva: event.endStr.split('T')[0],
+    });
+    this.formulario.patchValue({
+      hora_reserva: event.startStr.split('T')[1].slice(0, 5),
+    });
+    this.formulario.patchValue({
+      hora_fin_reserva: event.endStr.split('T')[1].slice(0, 5),
+    });
   }
+
+  checkError(field: string, error: string): boolean | undefined {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
+  }
+}
