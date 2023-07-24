@@ -113,7 +113,7 @@
                             La contraseña es obligatoria
                         </p>
 
-                        <input type="submit" value="Enviar" class="btn mb-3">
+                        <input type="submit" value="Enviar" class="btn mb-3" [disabled]="!formulario.valid">
 
                         <p>¿Ya eres miembro? <strong [routerLink]="['/usuarios', 'login']">Inicia tu sesión.</strong>
                         </p>

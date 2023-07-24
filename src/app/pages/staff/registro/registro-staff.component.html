@@ -66,7 +66,7 @@
               Tienes que elegir un rol.
             </p>
 
-            <input type="submit" value="Regístrate" class="btn m-3" />
+            <input type="submit" value="Regístrate" class="btn m-3" [disabled]="!formulario.valid" />
 
             <p>
               ¿Ya eres miembro?
