@@ -55,18 +55,18 @@ export class CalendarService {
     );
   }
 
-  reservarSala(formValue: any): Promise<Reserva | any> {
-    // borrar cuando tengamos el interceptor
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    ///
-    return firstValueFrom(
-      this.httpClient.post<Reserva | any>(this.baseUrl, formValue)
-    );
-  }
+  // reservarSala(formValue: any): Promise<Reserva | any> {
+  //   // borrar cuando tengamos el interceptor
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //     }),
+  //   };
+  //   ///
+  //   return firstValueFrom(
+  //     this.httpClient.post<Reserva | any>(this.baseUrl, formValue)
+  //   );
+  // }
 
   updateById(reservaId: number, formValue: any): Promise<Reserva> {
     // borrar cuando tengamos el interceptor

@@ -24,7 +24,7 @@ export class ReservarsalaComponent {
     this.formulario = new FormGroup({
       titulo: new FormControl(),
       descripcion: new FormControl(),
-      
+
       fecha_reserva: new FormControl(),
       hora_reserva: new FormControl(),
 
@@ -37,7 +37,6 @@ export class ReservarsalaComponent {
     const { salaId } = this.activatedRoute.snapshot.params;
      try {
       this.salaSeleccionada = await this.salasServices.getById(salaId);
-
     } catch (error) {
       console.log(error)
     }
@@ -56,6 +55,7 @@ export class ReservarsalaComponent {
 
     }
     try {
+      this.formulario.value.salas_id = this.salaSeleccionada.id
       const response = await this.calendarService.create(this.formulario.value)
 
       if (response.error === 'reservada') {
