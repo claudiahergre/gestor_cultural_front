@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-registro',
@@ -43,6 +44,17 @@ export class RegistroComponent {
     if (response.fatal) {
       return alert(response.fatal);
     }
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro correcto',
+      showConfirmButton: false,
+      timer: 2500,
+      width: 500,
+      padding: '3em',
+      color: '#333333',
+      background: '#0077B6'
+    })
 
     this.router.navigate(['/usuarios/login']);
   }
