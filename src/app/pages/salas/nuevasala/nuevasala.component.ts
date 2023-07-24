@@ -30,26 +30,28 @@ export class NuevasalaComponent {
 
   async onSubmit() {
     // console.log(this.formulario.value)
-    const response = await this.salasServices.create(this.formulario.value)
-    console.log(response)
+    if (this.formulario.valid) {
+      const response = await this.salasServices.create(this.formulario.value)
+      console.log(response)
 
-    if (response.error) {
-      console.log(response.error) //aqui estoy comprobando qué errores me devuelve la aplicacion.
+      if (response.error) {
+        console.log(response.error) //aqui estoy comprobando qué errores me devuelve la aplicacion.
 
-    } else {
+      } else {
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Sala creada',
-        showConfirmButton: false,
-        timer: 2500,
-        width: 500,
-        padding: '3em',
-        color: '#333333',
-        background: '#0077B6'
-      })
+        Swal.fire({
+          icon: 'success',
+          title: 'Sala creada',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
 
-      this.router.navigate(['/salas/salasadmin']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+        this.router.navigate(['/salas/salasadmin']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+      }
     }
 
   }

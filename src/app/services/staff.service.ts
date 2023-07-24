@@ -71,6 +71,9 @@ export class StaffService {
     )
   }
 
+  isLogged(): boolean {
+    return localStorage.getItem('token_front') ? true : false;
+  }
 
 
 

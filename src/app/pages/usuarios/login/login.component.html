@@ -30,7 +30,7 @@
                     <p class="error" *ngIf="checkError('password', 'required')">
                         La contraseña es obligatoria
                     </p>
-                    <input type="submit" value="Enviar" class="btn m-3">
+                    <input type="submit" value="Enviar" class="btn m-3" [disabled]="!formulario.valid">
 
                     <p>
                         ¿Todavía no estas registrado?

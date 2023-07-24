@@ -53,7 +53,17 @@
                     <a [routerLink]="['/contacto']" class="nav-link active">Contacto</a>
                 </li>
 
+                <li class="nav-item" *ngIf="staffService.isLogged()">
+                    <a class="nav-link active" (click)="onLogout(true)">logOut</a>
+                </li>
+
+                <li class="nav-item" *ngIf="usuariosService.isLogged()">
+                    <a class="nav-link active" (click)="onLogout(false)">logOut</a>
+                </li>
+
             </ul>
+
         </div>
+
     </div>
 </nav>
