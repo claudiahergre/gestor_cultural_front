@@ -6,6 +6,14 @@
 
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="input-group mt-3">
+      <span class="input-group-text">Título para la reserva</span>
+      <input type="text" class="form-control" formControlName="titulo" />
+
+      <span class="input-group-text">Descripción</span>
+      <input type="text" class="form-control" formControlName="descripcion" />
+    </div>
+
+    <div class="input-group mt-3">
       <span class="input-group-text">Fecha de inicio</span>
       <input type="date" class="form-control" formControlName="fecha_reserva" />
 

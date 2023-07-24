@@ -22,6 +22,9 @@ export class ReservarsalaComponent {
 
   constructor() {
     this.formulario = new FormGroup({
+      titulo: new FormControl(),
+      descripcion: new FormControl(),
+      
       fecha_reserva: new FormControl(),
       hora_reserva: new FormControl(),
 
@@ -50,7 +53,7 @@ export class ReservarsalaComponent {
     // si confirma, next con la reserva
     // const response = await this.salasServices.reservarSala(this.formulario.value)
     const body = {
-      
+
     }
     try {
       const response = await this.calendarService.create(this.formulario.value)
