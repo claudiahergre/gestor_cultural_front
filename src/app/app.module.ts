@@ -27,6 +27,7 @@ import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.c
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.co
     ReservarsalaComponent,
     SalasadminComponent,
     MapaComponent,
-    DetalleSalaComponent
+    DetalleSalaComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

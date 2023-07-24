@@ -1,35 +1,32 @@
-<div class="fondo">
-  <div class="container p-5">
+<div class="container mt-5">
 
 
 
 
-    <div class="rounded">
+  <div class="rounded">
 
-      <div *ngIf="sala" class="detalle-sala">
-        <h2>{{sala.nombre}}</h2>
-        <div class="sala-info">
-          <div class="sala-image">
-            <img [src]="sala.url_foto" alt="Foto de la sala">
-          </div>
-          <div class="sala-details">
-            <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
-            <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
-            <p><strong>Precio:</strong> {{ sala.precio }}</p>
-            <p><strong>Aforo:</strong> {{ sala.aforo }}</p>
-            <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
-            <p><strong>Teléfono de contacto:</strong></p>
-            <p><strong>Email:</strong></p>
-
-          </div>
+    <div *ngIf="sala" class="detalle-sala">
+      <h2>{{sala.nombre}}</h2>
+      <div class="sala-info">
+        <div class="sala-image">
+          <img [src]="sala.url_foto" alt="Foto de la sala">
         </div>
+        <div class="sala-details">
+          <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+          <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
+          <p><strong>Precio:</strong> {{ sala.precio }}</p>
+          <p><strong>Aforo:</strong> {{ sala.aforo }}</p>
+          <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+          <p><strong>Teléfono de contacto:</strong></p>
+          <p><strong>Email:</strong></p>
 
+        </div>
       </div>
-
 
     </div>
 
 
+  </div>
 
 
 
@@ -40,43 +37,44 @@
 
 
 
-    <div class="bordecito rounded mt-4">
 
-      <div class="p-3 mt-3">
 
-        <h5>Información de la reserva</h5>
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-          <div class="input-group mt-3">
-            <span class="input-group-text">Fecha de inicio</span>
-            <input type="date" class="form-control" formControlName="fecha_reserva" />
-            <p class="error" *ngIf="checkError('fecha_reserva', 'required')">
-              Tienes que indicar una fecha de reserva.
-            </p>
-            <span class="input-group-text">Hora de inicio</span>
-            <input type="time" class="form-control" formControlName="hora_reserva" />
-            <p class="error" *ngIf="checkError('hora_reserva', 'required')">
-              Tienes que indicar una hora de reserva.
-            </p>
-          </div>
+  <div class="bordecito rounded mt-4">
 
-          <div class="input-group mt-3">
-            <span class="input-group-text">Fecha de fin</span>
-            <input type="date" class="form-control" formControlName="fecha_fin_reserva" />
-            <p class="error" *ngIf="checkError('fecha_fin_reserva', 'required')">
-              Tienes que indicar hasta qué fecha se hace la reserva.
-            </p>
+    <div class="p-3 mt-3">
 
-            <span class="input-group-text">Hora de fin</span>
-            <input type="time" class="form-control" formControlName="hora_fin_reserva" />
-            <p class="error" *ngIf="checkError('hora_fin_reserva', 'required')">
-              Tienes que indicar hasta qué hora se hace la reserva.
-            </p>
-          </div>
+      <h5>Información de la reserva</h5>
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="input-group mt-3">
+          <span class="input-group-text">Fecha de inicio</span>
+          <input type="date" class="form-control" formControlName="fecha_reserva" />
+          <p class="error" *ngIf="checkError('fecha_reserva', 'required')">
+            Tienes que indicar una fecha de reserva.
+          </p>
+          <span class="input-group-text">Hora de inicio</span>
+          <input type="time" class="form-control" formControlName="hora_reserva" />
+          <p class="error" *ngIf="checkError('hora_reserva', 'required')">
+            Tienes que indicar una hora de reserva.
+          </p>
+        </div>
 
-          <input class="btn" type="submit" class="btn mt-3" value="Guardar" />
+        <div class="input-group mt-3">
+          <span class="input-group-text">Fecha de fin</span>
+          <input type="date" class="form-control" formControlName="fecha_fin_reserva" />
+          <p class="error" *ngIf="checkError('fecha_fin_reserva', 'required')">
+            Tienes que indicar hasta qué fecha se hace la reserva.
+          </p>
 
-        </form>
-      </div>
+          <span class="input-group-text">Hora de fin</span>
+          <input type="time" class="form-control" formControlName="hora_fin_reserva" />
+          <p class="error" *ngIf="checkError('hora_fin_reserva', 'required')">
+            Tienes que indicar hasta qué hora se hace la reserva.
+          </p>
+        </div>
+
+        <input class="btn" type="submit" class="btn mt-3" value="Guardar" />
+
+      </form>
     </div>
   </div>
 </div>

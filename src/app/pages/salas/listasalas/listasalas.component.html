@@ -1,28 +1,26 @@
-<div class="fondo">
-    <div class="container p-5">
-        <h3 class="text-center mb-4">Encuentra el espacio perfecto para tu evento</h3>
+<div class="container mt-5">
+    <h3 class="text-center mb-4">Encuentra el espacio perfecto para tu evento</h3>
 
-        <div class="row">
-            <div class="col-md-3 mb-4" *ngFor="let sala of salas">
+    <div class="row">
+        <div class="col-md-3 mb-4" *ngFor="let sala of salas">
 
-                <div class="card">
+            <div class="card">
 
-                    <img [src]="sala.url_foto" class="card-img-top" alt="">
+                <img [src]="sala.url_foto" class="card-img-top" alt="">
 
-                    <div class="card-body">
-                        <h5 class="card-title">{{sala.nombre}}</h5>
-                        <p class="card-text"><strong>Aforo:</strong> {{sala.aforo}}</p>
+                <div class="card-body">
+                    <h5 class="card-title">{{sala.nombre}}</h5>
+                    <p class="card-text"><strong>Aforo:</strong> {{sala.aforo}}</p>
 
-                        <a class="btn" [routerLink]="['/salas', 'detalle', sala.id]">Ver Detalles</a>
-                    </div>
-
+                    <a class="btn" [routerLink]="['/salas', 'detalle', sala.id]">Ver Detalles</a>
                 </div>
+
             </div>
-
-
         </div>
 
 
-
     </div>
+
+
+
 </div>
