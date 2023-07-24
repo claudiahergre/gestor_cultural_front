@@ -29,26 +29,28 @@ export class RegistroStaffComponent {
   }
 
   async onSubmit() {
-    const response = await this.staffService.registro(this.formulario.value);
-    console.log(response);
+    if (this.formulario.valid) {
+      const response = await this.staffService.registro(this.formulario.value);
+      console.log(response);
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Registro correcto',
-      showConfirmButton: false,
-      timer: 2500,
-      width: 500,
-      padding: '3em',
-      color: '#333333',
-      background: '#0077B6'
-    })
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro correcto',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
 
 
-    if (response.id) {
-      this.router.navigate(['/loginStaff'])
-    } else {
-      //alertita de que se registre correctamente
-      alert('Tienes que hacer el login correctamente')
+      if (response.id) {
+        this.router.navigate(['/loginStaff'])
+      } else {
+        //alertita de que se registre correctamente
+        alert('Tienes que hacer el login correctamente')
+      }
     }
   }
 

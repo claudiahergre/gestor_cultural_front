@@ -54,11 +54,11 @@
                 </li>
 
                 <li class="nav-item" *ngIf="staffService.isLogged()">
-                    <a [routerLink]="['/stafflogin']" class="nav-link active" (click)="onLogout()">logOut</a>
+                    <a class="nav-link active" (click)="onLogout(true)">logOut</a>
                 </li>
 
                 <li class="nav-item" *ngIf="usuariosService.isLogged()">
-                    <a [routerLink]="['/usuarios', 'login']" class="nav-link active" (click)="onLogout()">logOut</a>
+                    <a class="nav-link active" (click)="onLogout(false)">logOut</a>
                 </li>
 
             </ul>
