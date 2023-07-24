@@ -13,9 +13,7 @@
     background-color: rgb(1, 101, 129);
 }
 
-p {
-    font-size: larger;
-}
+
 
 .error {
     text-align: left;
@@ -24,3 +22,34 @@ p {
 }
 
 /* ficha sala */
+
+.detalle-sala {
+    margin: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.sala-info {
+    display: flex;
+    align-items: center;
+}
+
+.sala-image img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.sala-details p {
+    margin: 5px 0;
+}
+
+.sala-details strong {
+    font-weight: bold;
+}
