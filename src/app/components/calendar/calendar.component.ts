@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -21,6 +21,8 @@ export class CalendarComponent implements OnInit {
 
   @Input() reservas: CalendarEvent[] = [];
 
+  @Output() onSelect: EventEmitter<any> = new EventEmitter();
+
   constructor() {
     this.baseUrl = 'http://localhost:3000/api/reservas';
   }
@@ -38,42 +40,55 @@ export class CalendarComponent implements OnInit {
       },
       editable: true,
       droppable: true,
-      eventDrop: (ev: any) => {
-        console.log(ev.event);
-
-        const body = {
-          // start: ev.event.
-        };
+      selectable: true,
+      dateClick: (info: any) => {
+        console.log(info);
       },
-      eventResize: (ev: any) => {
-        console.log(ev.event);
+      select: (info: any) => {
+        console.log(info);
+        const { startStr, endStr } = info;
+        this.onSelect.emit({
+          startStr,
+          endStr
+        })
 
       },
-    };
+      //   eventDrop: (ev: any) => {
+      //     console.log(ev.event);
+
+      //     const body = {
+      //       // start: ev.event.
+      //     };
+      //   },
+      //   eventResize: (ev: any) => {
+      //     console.log(ev.event);
+
+      //   },
+      // };
+
       events: this.reservas,
 
-    // this.events = [
-    //   {
-    //     title: 'Conferencia',
-    //     start: new Date().getTime(),
-    //     description: 'evento 1',
-    //   },
-    //   {
-    //     title: 'Concierto',
-    //     start: new Date(new Date().getTime() + 86400000),
-    //     description: 'evento 2',
-    //   },
-    //   {
-    //     title: 'Curso de formación',
-    //     start: new Date(new Date().getTime() + 86400000 * 2),
-    //     end: new Date(new Date().getTime() + 86400000 * 3),
-    //     description: 'evento 2',
-    //   },
-    //   {},
-    // ];
+      // this.events = [
+      //   {
+      //     title: 'Conferencia',
+      //     start: new Date().getTime(),
+      //     description: 'evento 1',
+      //   },
+      //   {
+      //     title: 'Concierto',
+      //     start: new Date(new Date().getTime() + 86400000),
+      //     description: 'evento 2',
+      //   },
+      //   {
+      //     title: 'Curso de formación',
+      //     start: new Date(new Date().getTime() + 86400000 * 2),
+      //     end: new Date(new Date().getTime() + 86400000 * 3),
+      //     description: 'evento 2',
+      //   },
+      //   {},
+      // ];
+    };
   }
-
-
 
   async getEvents(): Promise<CalendarEvent[] | any> {
     try {
