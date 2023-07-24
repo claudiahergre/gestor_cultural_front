@@ -33,7 +33,9 @@ export class ReservarsalaComponent {
       nombre: '',
       direccion: '',
       descripcion: '',
-      url_foto: ''
+      url_foto: '',
+      latitud: 0,
+      longitud: 0
     }
     this.salaId = 0
   }

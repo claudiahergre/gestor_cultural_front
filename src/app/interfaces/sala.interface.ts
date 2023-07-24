@@ -5,5 +5,7 @@ export interface Sala {
     nombre: string,
     direccion: string,
     descripcion: string,
-    url_foto: string
+    url_foto: string,
+    latitud: number,
+    longitud: number
 }
