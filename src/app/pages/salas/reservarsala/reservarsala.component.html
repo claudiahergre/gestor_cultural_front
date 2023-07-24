@@ -2,7 +2,7 @@
 
   <div class="rounded">
 
-    <h3 class="text-center">Detalles de la sala</h3>
+    <h3 class="text-center">Formulario de reserva de sala</h3>
 
     <div *ngIf="sala" class="detalle-sala">
 
@@ -11,10 +11,10 @@
           <img [src]="sala.url_foto" alt="Foto de la sala">
         </div>
         <div class="sala-details">
-          <h4>{{sala.nombre}}</h4>
+          <h4>Nombre: {{sala.nombre}}</h4>
           <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
-          <p><strong>Precio:</strong> {{ sala.precio }}</p>
-          <p><strong>Aforo:</strong> {{ sala.aforo }}</p>
+          <p><strong>Precio:</strong> {{ sala.precio }} euros</p>
+          <p><strong>Aforo:</strong> {{ sala.aforo }} personas</p>
           <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
           <p><strong>Teléfono de contacto:</strong></p>
           <p><strong>Email:</strong></p>

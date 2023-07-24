@@ -1,3 +1,33 @@
 <div class="container mt-5">
     <h3 class="text-center mb-5">Panel de Trabajador</h3>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card h-100 d-flex">
+                <div class="card-body" *ngIf="staff">
+                    <h5 class="card-title text-center">Mi Perfil</h5>
+                    <p><strong>Nombre: </strong>{{staff.nombre}}</p>
+                    <p><strong>Usuario: </strong> {{staff.usuario}}</p>
+                    <p><strong>Email: </strong>{{staff.email}}</p>
+                    <p><strong>Rol: </strong>{{staff.rol}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sección de edición</h5>
+                    <div class="d-grid gap-2">
+                        <a [routerLink]="['/usuarios']" class="btn">Usuarios</a>
+                        <a [routerLink]="['/salas', 'salasadmin']" class="btn">Salas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
 </div>

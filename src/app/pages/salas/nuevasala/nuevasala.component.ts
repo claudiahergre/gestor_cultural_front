@@ -49,7 +49,7 @@ export class NuevasalaComponent {
         background: '#0077B6'
       })
 
-      this.router.navigate(['/salas/salasadmin']) //para que me redirija a esa pagina cuando agregue el nuevo cliente
+      this.router.navigate(['/salas/salasadmin']) //para que me redirija a esa pagina cuando agregue la nueva sala
     }
 
   }
