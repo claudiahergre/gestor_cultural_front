@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -13,6 +14,12 @@ export class MenuComponent {
 
   usuariosService = inject(UsuariosService)
 
+  router = inject(Router)
 
+  onLogout() {
+
+    localStorage.removeItem('token_front')
+    this.router.navigate(['/home'])
+  }
 
 }

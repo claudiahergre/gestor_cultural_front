@@ -62,7 +62,8 @@ export class UsuariosService {
   }
 
   isLogged(): boolean {
-    return localStorage.getItem('tokencito') ? true : false;
+    return localStorage.getItem('token_front') ? true : false;
   }
+
 
 }
