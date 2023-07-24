@@ -36,8 +36,22 @@ export class CalendarComponent implements OnInit {
         right: 'dayGridMonth,timeGridWeek,timeGridDay',
         initialView: 'dayGridMonth',
       },
+      editable: true,
+      droppable: true,
+      eventDrop: (ev: any) => {
+        console.log(ev.event);
+
+        const body = {
+          // start: ev.event.
+        };
+      },
+      eventResize: (ev: any) => {
+        console.log(ev.event);
+
+      },
+    };
       events: this.reservas,
-      };
+
     // this.events = [
     //   {
     //     title: 'Conferencia',

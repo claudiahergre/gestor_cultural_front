@@ -62,17 +62,6 @@ export class ReservarsalaComponent {
   }
 
   async onSubmit() {
-
-
-
-
-
-    // console.log(this.formulario.value)
-    // console.log(this.formulario.value.datetime_inicio, this.formulario.value.datetime_fin)
-
-    // alert de confirmación
-
-    // si confirma, next con la reserva
     try {
       this.formulario.value.salas_id = this.salaSeleccionada.id
       const response = await this.calendarService.create(this.formulario.value)
