@@ -22,9 +22,9 @@
 }
 
 :host ::ng-deep .fc-toolbar {
-    background-color: #007bff;
+
     /* Cambiar a tu color deseado */
-    color: goldenrod;
+    color: black;
     /* Cambiar el color del texto si es necesario */
     padding: 5px;
 }
@@ -42,4 +42,9 @@
 
 :host ::ng-deep .fc-state-active {
     color: red;
+}
+
+.bordecito {
+    background-color: white;
+    border: 1px solid rgb(28, 146, 179);
 }
