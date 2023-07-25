@@ -6,9 +6,19 @@ const LoginGuard = () => {
   if (localStorage.getItem('token_front')) {
     return true;
   } else {
-    router.navigate(['/login']);
+    router.navigate(['/loginStaff']);
     return false;
   }
 };
 
-export { LoginGuard };
+const LoginGuardUsuario = () => {
+  const router = inject(Router);
+  if (localStorage.getItem('token_front')) {
+    return true;
+  } else {
+    router.navigate(['/usuarios', 'login']);
+    return false;
+  }
+};
+
+export { LoginGuard, LoginGuardUsuario };

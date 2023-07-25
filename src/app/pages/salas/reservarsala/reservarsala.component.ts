@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Sala } from 'src/app/interfaces/sala.interface';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { SalasService } from 'src/app/services/salas.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-reservarsala',
@@ -80,7 +81,17 @@ export class ReservarsalaComponent {
 
       if (response.error === 'reservada') {
       }
-      // alert tu sala ha sido reservada
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Sala Reservada',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
 
     } catch (error) {
       console.log(error)
@@ -89,10 +100,10 @@ export class ReservarsalaComponent {
     }
   }
 
-    checkError(field: string, error: string): boolean | undefined {
-      return (
-        this.formulario.get(field)?.hasError(error) &&
-        this.formulario.get(field)?.touched
-      );
-    }
+  checkError(field: string, error: string): boolean | undefined {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
   }
+}
