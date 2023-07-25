@@ -16,18 +16,10 @@ export class ContactoService {
   }
 
   contactoFormulario(formValues: any): Promise<Contacto> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
     return firstValueFrom(
       this.httpClient.post<Contacto>(
         `${this.baseUrl}/`,
-        formValues,
-        httpOptions
-      )
-    );
+        formValues,));
   }
 
   getFormById(formId: number): Promise<Contacto | any> {

@@ -49,8 +49,7 @@ export class EditarsalaComponent {
       }
 
       this.formulario.setValue(infoForm);
-      console.log(infoForm)
-    })
+      })
   }
 
   async onSubmit() {
