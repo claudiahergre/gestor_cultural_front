@@ -16,13 +16,18 @@ export class MenuComponent {
 
   router = inject(Router)
 
-  onLogout(staff: boolean) {
+  onLogout() {
     localStorage.removeItem('token_front')
-    if (staff = true) {
-      this.router.navigate(['/loginStaff'])
-    } else {
-      this.router.navigate(['/usuarios', 'login'])
-    }
+
+    this.router.navigate(['/loginStaff'])
+
+  }
+
+  onLogoutUsuario() {
+    localStorage.removeItem('token_front')
+
+    this.router.navigate(['/usuarios', 'login'])
+
   }
 
 }

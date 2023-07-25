@@ -65,11 +65,11 @@
                 </li>
 
                 <li class="nav-item" *ngIf="staffService.isLogged()">
-                    <a class="nav-link active" (click)="onLogout(true)">logOut</a>
+                    <a class="nav-link active" (click)="onLogout()">logOut</a>
                 </li>
 
-                <li class="nav-item" *ngIf="usuariosService.isLogged()">
-                    <a class="nav-link active" (click)="onLogout(false)">logOut</a>
+                <li class="nav-item" *ngIf="usuariosService.isLoggedUsuario()">
+                    <a class="nav-link active" (click)="onLogoutUsuario()">logOut</a>
                 </li>
 
             </ul>
