@@ -67,40 +67,7 @@ export class CalendarComponent implements OnInit {
           endStr,
         });
       },
-      //   eventDrop: (ev: any) => {
-      //     console.log(ev.event);
-
-      //     const body = {
-      //       // start: ev.event.
-      //     };
-      //   },
-      //   eventResize: (ev: any) => {
-      //     console.log(ev.event);
-
-      //   },
-      // };
-
       events: this.reservas,
-
-      // this.events = [
-      //   {
-      //     title: 'Conferencia',
-      //     start: new Date().getTime(),
-      //     description: 'evento 1',
-      //   },
-      //   {
-      //     title: 'Concierto',
-      //     start: new Date(new Date().getTime() + 86400000),
-      //     description: 'evento 2',
-      //   },
-      //   {
-      //     title: 'Curso de formación',
-      //     start: new Date(new Date().getTime() + 86400000 * 2),
-      //     end: new Date(new Date().getTime() + 86400000 * 3),
-      //     description: 'evento 2',
-      //   },
-      //   {},
-      // ];
     };
   }
 
@@ -108,8 +75,6 @@ export class CalendarComponent implements OnInit {
     try {
       const response = await this.calendarServices.getAll();
       const calendarEvents: CalendarEvent[] = response.map((event) => {
-        // const fechaInicio = new Date(`${event.fecha_reserva}T${event.hora_reserva}`).toISOString();
-        // console.log(fechaInicio);
         return {
           title: event.titulo,
           description: event.descripcion,

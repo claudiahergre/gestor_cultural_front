@@ -29,22 +29,12 @@ export class UsuariosService {
   }
 
   update(usuarioId: number, FormValues: any): Promise<Usuario> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }
     return firstValueFrom(
       this.httpClient.put<Usuario>(`${this.baseUrl}/editar/${usuarioId}`, FormValues)
     )
   }
 
   remove(usuarioId: number): Promise<Usuario> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }
     return firstValueFrom(
       this.httpClient.delete<Usuario>(`${this.baseUrl}/${usuarioId}`)
     )

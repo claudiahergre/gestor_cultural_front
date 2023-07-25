@@ -37,19 +37,15 @@ export class StaffService {
   }
 
   registro(formValues: any): Promise<Staff> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }
+
     return firstValueFrom(
-      this.httpClient.post<Staff>(`${this.baseUrl}/registro`, formValues, httpOptions)
+      this.httpClient.post<Staff>(`${this.baseUrl}/registro`, formValues)
     );
   }
 
   login(formValues: any): Promise<any> {
     return firstValueFrom(
-      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues) //confirmar con javi cuando haga la ruta en el back
+      this.httpClient.post<any>(`${this.baseUrl}/login`, formValues)
     );
   }
 
@@ -62,12 +58,7 @@ export class StaffService {
 
   //Para eliminar el staff de la BBDD
   remove(staffId: any): Promise<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }
-    return firstValueFrom(
+      return firstValueFrom(
       this.httpClient.delete<Staff>(`${this.baseUrl}/${staffId}`)
     )
   }

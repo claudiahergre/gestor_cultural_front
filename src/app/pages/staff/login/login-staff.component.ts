@@ -24,7 +24,7 @@ export class LoginStaffComponent {
   }
 
   async onSubmit() {
-    const response = await this.staffService.login(this.formulario.value); //me falta hacer el login en el servicio
+    const response = await this.staffService.login(this.formulario.value); 
     console.log(response);
 
     if (response.fatal) {

@@ -16,53 +16,22 @@ export class CalendarService {
   }
 
   getAll(): Promise<Reserva[]> {
-    // borrar cuando tengamos el interceptor ///
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    ///
     return firstValueFrom(this.httpClient.get<Reserva[]>(this.baseUrl));
   }
 
   getById(reservaId: number): Promise<Reserva> {
-    // borrar cuando tengamos el interceptor ///
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    //
-
-    console.log(reservaId);
     return firstValueFrom(
       this.httpClient.get<Reserva>(`${this.baseUrl}/${reservaId}`)
     );
   }
 
   create(formValue: any): Promise<Reserva | any> {
-    // borrar cuando tengamos el interceptor ///
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    ///
-
-    return firstValueFrom(
-      this.httpClient.post<Reserva | any>(this.baseUrl, formValue, httpOptions)
+        return firstValueFrom(
+      this.httpClient.post<Reserva | any>(this.baseUrl, formValue)
     );
   }
 
   updateById(reservaId: number, formValue: any): Promise<Reserva> {
-    // borrar cuando tengamos el interceptor
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    ///
     return firstValueFrom(
       this.httpClient.put<Reserva>(
         `${this.baseUrl}/editar/${reservaId}`,
@@ -72,13 +41,6 @@ export class CalendarService {
   }
 
   deleteById(reservaId: number) {
-    // borrar cuando tengamos el interceptor
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    ///
     return firstValueFrom(
       this.httpClient.delete<any>(`${this.baseUrl}/${reservaId}`)
     );

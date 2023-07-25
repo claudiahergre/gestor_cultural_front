@@ -72,9 +72,7 @@ export class ReservarsalaComponent {
       date.setHours(hora);
       date.setMinutes(minutos);
       const dateString = date.toISOString();
-
       console.log(dateString);
-
       if (response.error === 'reservada') {
       }
 
@@ -90,11 +88,11 @@ export class ReservarsalaComponent {
       })
 
       this.salaSeleccionada = await this.salasServices.getById(this.salaId);
-
       // alert tu sala ha sido reservada
+
     } catch (error) {
       console.log(error);
-      //redirección a la lista de salas
+      //Si hay error, redirección a la lista de salas
       this.router.navigate(['/salas']);
     }
   }
