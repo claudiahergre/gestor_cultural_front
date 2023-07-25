@@ -1,35 +1,46 @@
-h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.sala-info {
-    display: flex;
-    align-items: center;
-}
-
 .sala-image img {
-    width: 300px;
+    width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 5px;
     margin-right: 20px;
 }
 
-.sala-details p {
-    margin: 5px 0;
+.img {
+    width: 100%;
+    height: 100%;
 }
 
-.sala-details strong {
-    font-weight: bold;
+.sala-details p {
+    margin: 10px 0;
 }
+
+
 
 .btn {
     background-color: rgb(28, 146, 179);
     color: var(--blanco);
-    width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
     background-color: rgb(1, 101, 129);
+}
+
+@media (min-width: 1004px) {
+    .btn {
+        width: 120px;
+    }
+
+    .sala-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .sala-details {
+        padding: 20px;
+    }
+
+
 }

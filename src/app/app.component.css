@@ -17,6 +17,19 @@
 
 i {
     font-size: 40px;
-    margin-right: 30px;
     color: #ffffff;
+}
+
+.titulo a {
+    width: 25%;
+}
+
+@media (max-width: 576px) {
+    .titulo i {
+        font-size: 30px;
+    }
+
+    .titulo p {
+        font-size: 12px;
+    }
 }

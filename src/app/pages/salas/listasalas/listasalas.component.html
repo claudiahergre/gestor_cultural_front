@@ -1,24 +1,46 @@
 <div class="container mt-5">
     <h3 class="text-center mb-4">Encuentra el espacio perfecto para tu evento</h3>
 
-    <div class="row">
-        <div class="col-md-3 mb-4" *ngFor="let sala of salas">
+    <div class="row mb-5">
+        <div class="col-12 col-md-3">
+            <h5 class="mb-3">Consulta por localizacion la sala que tienes más cerca.</h5>
+            <p>Nuestras salas están localizadas en puntos clave de la ciudad, brindando comodidad y
+                accesibilidad a nuestros clientes.
 
-            <div class="card h-100">
+            <p>Con una ubicación estratégica en cada rincón, puedes encontrar la
+                sala ideal cerca de ti. Equipados con tecnología y un ambiente
+                inigualable para tus eventos y reuniones.
+            </p>
 
-                <img [src]="sala.url_foto" class="card-img-top" alt="">
 
-                <div class="card-body d-flex flex-column justify-content-center">
-                    <h5 class="card-title">{{sala.nombre}}</h5>
-                    <p class="card-text"><strong>Aforo:</strong> {{sala.aforo}}</p>
+            <p>¡Descubre la conveniencia y variedad que
+                ofrecemos para hacer de tus experiencias memorables!
+            </p>
 
-                    <a class="btn align-self-center" [routerLink]="['/salas', 'detalle', sala.id]">Ver Detalles</a>
-                </div>
 
-            </div>
+
         </div>
 
+        <div class="col-12 col-md-9">
+            <div class="size">
+                <app-mapa></app-mapa>
+            </div>
 
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 mb-4" *ngFor="let sala of salas">
+            <div class="card h-100">
+                <img [src]="sala.url_foto" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h5 class="card-title">{{sala.nombre}}</h5>
+                    <p class="card-text"><strong>Aforo:</strong> {{sala.aforo}} personas</p>
+                    <a class="btn align-self-center" [routerLink]="['/salas', 'detalle', sala.id]">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 

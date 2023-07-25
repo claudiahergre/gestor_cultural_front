@@ -19,10 +19,10 @@ import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.compone
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
-import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
 import { LoginGuard, LoginGuardUsuario } from './guards';
 import { ReservasComponent } from './pages/reservas/reservas.component';
+import { LocalizacionComponent } from './pages/localizacion/localizacion.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: 'staff/eliminar/:staffId', component: RegistroComponent, canActivate: [LoginGuard] },
 
   { path: 'reservas', component: ReservasComponent },
-  { path: 'mapa', component: MapaComponent },
+  { path: 'mapa', component: LocalizacionComponent },
   { path: 'salas', component: ListasalasComponent },
   { path: 'salas/salasadmin', component: SalasadminComponent, canActivate: [LoginGuard] },
   { path: 'salas/nueva', component: NuevasalaComponent, canActivate: [LoginGuard] },
