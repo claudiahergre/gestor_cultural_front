@@ -15,12 +15,23 @@ export class ReservasComponent {
 
   reservas: Reserva[]
   reservaId: number
-  reservaTrue: number
+  reserva: Reserva
 
   constructor() {
     this.reservas = [],
       this.reservaId = 0,
-      this.reservaTrue = 0
+      this.reserva = {
+        id_reserva: 0,
+        usuarios_id: 0,
+        salas_id: 0,
+        titulo: '',
+        descripcion: '',
+        fecha_reserva: '',
+        hora_reserva: '',
+        fecha_fin_reserva: '',
+        hora_fin_reserva: '',
+        aceptada: 0
+      }
   }
 
   async ngOnInit() {
@@ -32,7 +43,7 @@ export class ReservasComponent {
     }
   }
 
-  eliminarReserva(reservaId: number) {
+  eliminarReserva(id_reserva: number) {
     Swal.fire({
       title: '¿Estás segur@?',
       text: "Una vez borrada la reserva no se puede recuperar",
@@ -44,7 +55,7 @@ export class ReservasComponent {
 
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await this.reservasService.deleteById(reservaId)
+        const response = await this.reservasService.deleteById(id_reserva)
 
         Swal.fire({
           icon: 'success',
@@ -63,10 +74,10 @@ export class ReservasComponent {
     })
   }
 
-  async aceptarReserva() {
+  async aceptarReserva(reserva: Reserva) {
     try {
-      this.reservaTrue = 1
-      const response = await this.reservasService.updateById(this.reservaId, this.reservaTrue)
+      reserva.aceptada = 1
+      const response = await this.reservasService.updateById(reserva.id_reserva, reserva)
       console.log(response)
       if (response) {
         Swal.fire({

@@ -45,7 +45,7 @@ export class ReservasService {
 
 
 
-  updateById(idReserva: number, reservaTrue: number): Promise<Reserva> {
+  updateById(id_reserva: number, reservaModificada: Reserva): Promise<Reserva> {
     ///// borrar cuando tengamos el interceptor ///
     const httpOptions = {
       headers: new HttpHeaders({
@@ -54,7 +54,7 @@ export class ReservasService {
     }
     ///////////
     return firstValueFrom(
-      this.httpClient.put<Reserva>(`${this.reservas}/editar/${idReserva}`, reservaTrue)
+      this.httpClient.put<Reserva>(`${this.reservas}/editar/${id_reserva}`, reservaModificada)
     )
   }
 

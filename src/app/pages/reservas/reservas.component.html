@@ -27,8 +27,8 @@
 
 
                     <td>
-                        <button *ngIf="reserva.aceptada == false" class="btn" (click)="aceptarReserva()">✔️</button>
-                        <button *ngIf="reserva.aceptada == true" class="btn">✅</button>
+                        <button *ngIf="reserva.aceptada == 0" class="btn" (click)="aceptarReserva(reserva)">✔️</button>
+                        <button *ngIf="reserva.aceptada == 1" class="btn">✅</button>
                         <button (click)="eliminarReserva(reserva.id_reserva)" class="btn">🗑️</button>
                     </td>
                 </tr>
