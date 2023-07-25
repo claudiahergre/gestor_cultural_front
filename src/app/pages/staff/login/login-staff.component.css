@@ -22,3 +22,24 @@ p {
     font-size: small;
     color: red;
 }
+
+
+
+/* @media (min-width: 300px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .bordecito,
+    .texto {
+        flex-basis: 100%;
+        width: 95%;
+        align-items: center;
+
+    }
+
+    .bordecito {
+        order: 2;
+
+    }
+} */
