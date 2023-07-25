@@ -76,7 +76,7 @@ export class ReservarsalaComponent {
     try {
       this.formulario.value.salas_id = this.salaSeleccionada.id
       const response = await this.calendarService.create(this.formulario.value)
-
+      console.log(response)
 
       if (response.error === 'reservada') {
       }
@@ -89,10 +89,10 @@ export class ReservarsalaComponent {
     }
   }
 
-    checkError(field: string, error: string): boolean | undefined {
-      return (
-        this.formulario.get(field)?.hasError(error) &&
-        this.formulario.get(field)?.touched
-      );
-    }
+  checkError(field: string, error: string): boolean | undefined {
+    return (
+      this.formulario.get(field)?.hasError(error) &&
+      this.formulario.get(field)?.touched
+    );
   }
+}

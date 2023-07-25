@@ -1,0 +1,10 @@
+.container {
+    background-color: white;
+    /* Añado margen pero no se aplica el background color */
+    margin-bottom: 200px;
+
+}
+
+tbody {
+    border-bottom: 1px solid lightgray;
+}
