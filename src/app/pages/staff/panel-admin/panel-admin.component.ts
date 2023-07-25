@@ -31,14 +31,8 @@ export class PanelAdminComponent {
     }
   }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(async params => {
-      this.staffId = params['staffId']
-      this.staff = await this.staffService.getById(params['staffId'])
-      //esto no funciona porq lo que me devuelve NO ES EL OBJETO CON LOS DATOS DEL STAFF LOGADO
-      console.log(this.staff)
-      console.log(this.staffId)
-    })
+  async ngOnInit() {
+    this.staff = await this.staffService.perfil()
   }
 
 

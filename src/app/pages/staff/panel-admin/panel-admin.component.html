@@ -4,7 +4,7 @@
 
     <div class="row">
         <!-- Apartado de botones de edición -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card h-100 d-flex">
                 <div class="card-body text-center">
                     <h5 class="card-title">Sección de edición</h5>
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Apartado de contadores -->
-        <div class="col-md-8">
+        <div class="col-md-8 mb-3">
             <div class="card h-100 d-flex">
                 <div class="card-body text-center">
                     <h5 class="card-title">Contador de totales</h5>
@@ -41,21 +41,21 @@
         </div>
     </div>
 
-    <!-- Apartado de "Mi Perfil" y logout -->
-    <div class="row mt-3">
-        <div class="col-md-4">
+    <!-- Apartado de "Mi Perfil" -->
+    <div class="row">
+        <div class="col-md-4 mb-3">
             <div class="card h-100 d-flex">
                 <div class="card-body" *ngIf="staff">
-                    <h5 class="card-title">Mi Perfil</h5>
-                    <p><strong>Nombre:</strong>{{staff.nombre}}</p>
-                    <p><strong>Usuario:</strong> {{staff.usuario}}</p>
-                    <p><strong>Email:</strong>{{staff.email}}</p>
-                    <p><strong>Rol:</strong>{{staff.rol}}</p>
+                    <h5 class="card-title text-center">Mi Perfil</h5>
+                    <p><strong>Nombre: </strong>{{staff.nombre}}</p>
+                    <p><strong>Usuario: </strong> {{staff.usuario}}</p>
+                    <p><strong>Email: </strong>{{staff.email}}</p>
+                    <p><strong>Rol: </strong>{{staff.rol}}</p>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4">
+        <!-- Apartado solicitudes -->
+        <div class="col-md-4 mb-3">
             <div class="card h-100 d-flex">
                 <div class="card-body text-center">
                     <h5 class="card-title">Solicitudes recibidas</h5>
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Apartado accesos directos -->
         <div class="col-md-4">
             <div class="card h-100 d-flex">
                 <div class="card-body text-center">
@@ -76,6 +76,8 @@
                     <div class="d-grid gap-2">
                         <button [routerLink]="['/salas', 'nueva']" class="btn">Añadir nueva sala</button>
                         <button [routerLink]="['/salas']" class="btn">Ver todas las salas</button>
+                        <button [routerLink]="['/mapa']" class="btn">Mapa de salas</button>
+
                     </div>
 
                 </div>

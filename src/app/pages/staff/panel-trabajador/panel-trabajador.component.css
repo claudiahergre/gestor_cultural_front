@@ -1,0 +1,11 @@
+.btn {
+    background-color: var(--azulClaro);
+}
+
+.btn:hover {
+    background-color: var(--colorPrincipal);
+}
+
+.card-text {
+    font-size: xx-large;
+}

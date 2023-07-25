@@ -48,6 +48,17 @@
                     </ul>
                 </li>
 
+                <!-- Me falta ocultar o no uno de los dos botones de paneles en funcion de si esta logado un admin o un trabajador -->
+
+                <li class="nav-item">
+                    <a [routerLink]="['/panelAdmin']" class="nav-link active">Panel de control</a>
+                </li>
+
+                <li class="nav-item">
+                    <a [routerLink]="['/panelTrabajador']" class="nav-link active">Panel de control</a>
+                </li>
+
+
 
                 <li class="nav-item">
                     <a [routerLink]="['/contacto']" class="nav-link active">Contacto</a>
