@@ -1,13 +1,15 @@
-<div class="container p-5">
+<div class="container mt-5">
+
   <div class="titulos">
     <h3 class="text-center mb-2">¿Tienes alguna duda?</h3>
     <h6 class="text-center mb-3">¡Contácta con nosotros y te ayudaremos lo antes posible!</h6>
   </div>
 
 
-  <div class="row">
+  <div class="row flex-md-row">
 
-    <div class="col-5">
+    <!-- formulario -->
+    <div class="col-12 col-md-6 order-md.2">
       <div class="p-3 mt-3">
         <h5 class="mb-3">Formulario de contacto.</h5>
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -60,7 +62,8 @@
       </div>
     </div>
 
-    <div class="col-7">
+    <!-- mapa -->
+    <div class="col-12 col-md-6 order-md-1">
       <div class="p-3 mt-3">
         <h5>Dónde encontrarnos.</h5>
         <p>Calle Maravilla Maravillosa, 22. 26841 - Pueblo(Ciudad) </p>
