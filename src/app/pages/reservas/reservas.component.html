@@ -1,0 +1,41 @@
+<div class="container mt-5">
+
+    <h3 class="text-center">Lista de Reservas</h3>
+
+    <div class="container p-3 rounded text-center">
+
+        <table class="table">
+            <thead>
+
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Usuario</th>
+                <th>Sala</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+                <th>Acciones</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let reserva of reservas">
+                    <td>{{reserva.titulo}}</td>
+                    <td>{{reserva.descripcion}}</td>
+                    <td>{{reserva.usuarios_id}}</td>
+                    <td>{{reserva.salas_id}}</td>
+                    <td>{{reserva.fecha_reserva | date: 'dd/MM/yyyy HH:mm'}}</td>
+                    <td>{{reserva.fecha_fin_reserva | date: 'dd/MM/yyyy HH:mm'}}</td>
+
+
+                    <td>
+                        <button *ngIf="reserva.aceptada == 0" class="btn" (click)="aceptarReserva(reserva)">✔️</button>
+                        <button *ngIf="reserva.aceptada == 1" class="btn">✅</button>
+                        <button (click)="eliminarReserva(reserva.id_reserva)" class="btn">🗑️</button>
+                    </td>
+                </tr>
+            </tbody>
+
+
+        </table>
+
+    </div>
+</div>

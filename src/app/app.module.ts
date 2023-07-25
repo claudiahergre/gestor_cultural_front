@@ -31,6 +31,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { SafePipe } from './pipes/safe.pipe';
+import { ReservasComponent } from './pages/reservas/reservas.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { SafePipe } from './pipes/safe.pipe';
     MapaComponent,
     DetalleSalaComponent,
     CalendarComponent,
-    SafePipe
+    SafePipe,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,

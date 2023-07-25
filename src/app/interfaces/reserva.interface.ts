@@ -8,5 +8,5 @@ export interface Reserva {
     hora_reserva: string,
     fecha_fin_reserva: string,
     hora_fin_reserva: string,
-
+    aceptada: number
 }

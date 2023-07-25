@@ -15,13 +15,12 @@ export class SalasService {
     private httpClient = inject(HttpClient)
     private baseUrl: string
     private usuariosHasSalasUrl: string
-    private mapsUrl = 'https://maps.googleapis.com/maps/api/geocode/json'
 
 
 
     constructor() {
         this.baseUrl = 'http://localhost:3000/api/salas'
-        this.usuariosHasSalasUrl = 'http://localhost:3000/api/usuarios_has_salas'
+        this.usuariosHasSalasUrl = 'http://localhost:3000/api/reservas'
 
     }
 

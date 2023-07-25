@@ -22,6 +22,7 @@ import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.compone
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
 import { LoginGuard, LoginGuardUsuario } from './guards';
+import { ReservasComponent } from './pages/reservas/reservas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'staff/editar/:staffId', component: EditarStaffComponent, canActivate: [LoginGuard] },
   { path: 'staff/eliminar/:staffId', component: RegistroComponent, canActivate: [LoginGuard] },
 
+  { path: 'reservas', component: ReservasComponent },
   { path: 'mapa', component: MapaComponent },
   { path: 'salas', component: ListasalasComponent },
   { path: 'salas/salasadmin', component: SalasadminComponent, canActivate: [LoginGuard] },
