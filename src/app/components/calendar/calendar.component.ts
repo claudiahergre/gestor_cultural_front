@@ -1,4 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
+  inject,
+  ɵinjectChangeDetectorRef,
+} from '@angular/core';
 // import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -7,6 +18,7 @@ import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { Reserva } from 'src/app/interfaces/reserva.interface';
 import { CalendarEvent } from 'src/app/interfaces/calendar_event.interface';
+import { FullCalendarComponent } from '@fullcalendar/angular';
 
 @Component({
   selector: 'app-calendar',
@@ -15,6 +27,9 @@ import { CalendarEvent } from 'src/app/interfaces/calendar_event.interface';
 })
 export class CalendarComponent implements OnInit {
   calendarServices = inject(CalendarService);
+  cd = inject(ChangeDetectorRef);
+
+  @ViewChild('calendar') calendarComponent!: FullCalendarComponent;
 
   public options: any;
   public baseUrl: string;
@@ -49,9 +64,8 @@ export class CalendarComponent implements OnInit {
         const { startStr, endStr } = info;
         this.onSelect.emit({
           startStr,
-          endStr
-        })
-
+          endStr,
+        });
       },
       //   eventDrop: (ev: any) => {
       //     console.log(ev.event);
@@ -107,5 +121,10 @@ export class CalendarComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  this.calendarComponent.events = changes["reservas"].currentValue
   }
 }
