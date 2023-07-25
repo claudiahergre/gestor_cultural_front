@@ -1,34 +1,21 @@
 <div class="container mt-5">
+  <h3 class="text-center">Formulario de reserva de sala</h3>
 
-  <div class="rounded">
 
-    <h3 class="text-center">Formulario de reserva de sala</h3>
-
-    <div *ngIf="sala" class="detalle-sala">
-
-      <div class="sala-info">
-        <div class="sala-image">
-          <img [src]="sala.url_foto" alt="Foto de la sala">
-        </div>
-        <div class="sala-details">
-          <h4>Nombre: {{sala.nombre}}</h4>
-          <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
-          <p><strong>Precio:</strong> {{ sala.precio }} euros</p>
-          <p><strong>Aforo:</strong> {{ sala.aforo }} personas</p>
-          <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
-          <p><strong>Teléfono de contacto:</strong></p>
-          <p><strong>Email:</strong></p>
-
-        </div>
+  <!-- detalles sala -->
+  <div *ngIf="sala" class="detalle-sala">
+    <div class="card bordecito m-3" style="width: 18rem;">
+      <img [src]="sala.url_foto" alt="Foto de la sala">
+      <div class="card-body">
+        <h5 class="card-title">{{sala.nombre}}</h5>
+        <p class="card-text">{{sala.descripcion}}</p>
       </div>
-
     </div>
-
   </div>
 
-  <div class=" bordecito rounded p-3 m-3">
 
-
+  <!-- formulario -->
+  <div class="bordecito rounded p-3 m-3">
     <h5>Información de la reserva</h5>
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
@@ -73,12 +60,18 @@
       </p>
 
       <input class="btn" type="submit" class="btn mt-3" value="Guardar" />
-
-
     </form>
   </div>
 
 
+
+
+
+
+
+
+
+  <!-- calendario -->
   <div class="calendario">
     <app-calendar *ngIf="salaSeleccionada" [reservas]="salaSeleccionada.reservas"></app-calendar>
   </div>
