@@ -54,17 +54,35 @@ export class EditarStaffComponent {
       this.staffId,
       this.formulario.value
     )
-    Swal.fire({
-      icon: 'success',
-      title: 'Cambios guardados',
-      showConfirmButton: false,
-      timer: 2500,
-      width: 500,
-      padding: '3em',
-      color: '#333333',
-      background: '#0077B6'
-    })
-    this.router.navigate(['/listaStaff'])
+
+    if (response.fatal) {
+
+      Swal.fire({
+        icon: 'warning',
+        title: 'Registro fallido',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
+
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Cambios guardados',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
+      this.router.navigate(['/usuarios'])
+    }
+
+
   }
 
   checkError(field: string, error: string) {
