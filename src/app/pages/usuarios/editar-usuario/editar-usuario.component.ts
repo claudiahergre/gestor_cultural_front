@@ -52,23 +52,42 @@ export class EditarUsuarioComponent {
 
 
   async onSubmit() {
-    const response = await this.usuarioService.update(this.usuarioId, this.formulario.value)
-    console.log(response)
+    if (this.formulario.valid) {
+      const response = await this.usuarioService.update(this.usuarioId, this.formulario.value)
+      console.log(response)
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Cambios guardados',
-      showConfirmButton: false,
-      timer: 2500,
-      width: 500,
-      padding: '3em',
-      color: '#333333',
-      background: '#0077B6'
-    })
-    this.router.navigate(['/usuarios'])
+      if (response.id) {
 
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro correcto',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
+
+        this.router.navigate(['/usuarios'])
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Registro fallido',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
+      }
+
+
+
+
+    }
   }
-
 
   checkError(field: string, error: string) {
     return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched;

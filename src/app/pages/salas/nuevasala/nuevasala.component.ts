@@ -35,8 +35,16 @@ export class NuevasalaComponent {
       console.log(response)
 
       if (response.error) {
-        console.log(response.error) //aqui estoy comprobando qué errores me devuelve la aplicacion.
-
+        Swal.fire({
+          icon: 'warning',
+          title: 'Registro fallido',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
       } else {
 
         Swal.fire({

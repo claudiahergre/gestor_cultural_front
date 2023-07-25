@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Usuario } from '../interfaces/usuarios.interface';
 import { firstValueFrom } from 'rxjs';
+import jwtDecode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -61,8 +62,19 @@ export class UsuariosService {
     );
   }
 
-  isLogged(): boolean {
-    return localStorage.getItem('token_front') ? true : false;
+  isLoggedUsuario(): boolean {
+    if (localStorage.getItem('token_front')) {
+      const tokenStaff = localStorage.getItem('token_front')
+      const obj = jwtDecode(tokenStaff!) as any
+      console.log(obj)
+      if (obj.userRole) {
+        return false
+      } else {
+        return true
+      }
+    } else {
+      return false
+    }
   }
 
 

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Staff } from '../interfaces/staff.interface';
+import jwtDecode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -72,7 +73,18 @@ export class StaffService {
   }
 
   isLogged(): boolean {
-    return localStorage.getItem('token_front') ? true : false;
+    if (localStorage.getItem('token_front')) {
+      const tokenStaff = localStorage.getItem('token_front')
+      const obj = jwtDecode(tokenStaff!) as any
+      console.log(obj)
+      if (obj.userRole) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
   }
 
 

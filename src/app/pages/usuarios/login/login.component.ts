@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -31,11 +32,22 @@ export class LoginComponent {
     const response = await this.usuariosServices.login(this.formulario.value)
 
     if (response.fatal) {
-      return alert(response.fatal);
+      Swal.fire({
+        icon: 'warning',
+        title: 'No se ha posido iniciar sesion',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
+    } else {
+      localStorage.setItem('token_front', response.token);
+      this.router.navigate(['/salas']);
     }
 
-    localStorage.setItem('token_front', response.token);
-    this.router.navigate(['/salas']);
+
   }
 
   checkError(field: string, error: string) {
