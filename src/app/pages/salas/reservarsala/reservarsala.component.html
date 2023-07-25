@@ -119,7 +119,7 @@
         </p> -->
 
 
-  <app-calendar *ngIf="salaSeleccionada" [reservas]="salaSeleccionada.reservas"></app-calendar>
+  <app-calendar *ngIf="salaSeleccionada" (onSelect)="onSelect($event)" [reservas]="salaSeleccionada.reservas"></app-calendar>
 
 
 </div>
