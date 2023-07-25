@@ -25,12 +25,13 @@ import { EditarsalaComponent } from './pages/salas/editarsala/editarsala.compone
 import { ListasalasComponent } from './pages/salas/listasalas/listasalas.component';
 import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.component';
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
-import { MapaComponent } from './pages/mapa/mapa.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { SafePipe } from './pipes/safe.pipe';
+import { LocalizacionComponent } from './pages/localizacion/localizacion.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { SafePipe } from './pipes/safe.pipe';
     MapaComponent,
     DetalleSalaComponent,
     CalendarComponent,
-    SafePipe
+    SafePipe,
+    LocalizacionComponent
   ],
   imports: [
     BrowserModule,
