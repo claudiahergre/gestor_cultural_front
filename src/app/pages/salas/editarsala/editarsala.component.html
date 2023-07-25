@@ -2,80 +2,77 @@
 
   <h3 class="text-center mb-4">Formulario de edición de espacios</h3>
 
-  <div class="row">
-    <div class="bordecito rounded text-center">
+  <div class="bordecito rounded p-3">
 
-      <div class="p-m mt-3">
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-          <div class="input-group mb-3">
-            <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" formControlName="nombre" />
 
-          </div>
-          <p class="error" *ngIf="checkError('nombre', 'required')">
-            El nombre es obligatorio.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Precio</span>
-            <input type="text" class="form-control" formControlName="precio" />
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input type="text" class="form-control" formControlName="nombre" />
 
-          </div>
-          <p class="error" *ngIf="checkError('precio', 'required')">
-            Tienes que indicar un precio.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Dirección</span>
-            <input type="text" class="form-control" formControlName="direccion" />
-
-          </div>
-          <p class="error" *ngIf="checkError('direccion', 'required')">
-            La dirección es obligatoria.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Aforo</span>
-            <input type="number" class="form-control" formControlName="aforo" />
-
-          </div>
-          <p class="error" *ngIf="checkError('aforo', 'required')">
-            Tienes que indicar un aforo permitido.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Descripción</span>
-            <input type="text" class="form-control" formControlName="descripcion" />
-
-          </div>
-          <p class="error" *ngIf="checkError('descripcion', 'required')">
-            Tienes que añadir una descripción de la sala.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Foto</span>
-            <input type="text" class="form-control" formControlName="url_foto" />
-
-          </div>
-
-          <p class="error" *ngIf="checkError('url_foto', 'required')">
-            La foto de la sala es obligatoria.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Telefono de contacto</span>
-            <input type="text" class="form-control" formControlName="telefono_contacto" />
-
-          </div>
-          <p class="error" *ngIf="checkError('telefono_contacto', 'required')">
-            El telefono de contacto es obligatorio.
-          </p>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Email de contacto</span>
-            <input type="text" class="form-control" formControlName="email_contacto" />
-
-          </div>
-          <p class="error" *ngIf="checkError('email_contacto', 'required')">
-            El email de contacto es obligatorio.
-          </p>
-          <input class="btn" type="submit" class="btn mb-3" value="Actualizar" [disabled]="!formulario.valid" />
-        </form>
       </div>
-    </div>
-  </div>
+      <p class="error" *ngIf="checkError('nombre', 'required')">
+        El nombre es obligatorio.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Precio</span>
+        <input type="text" class="form-control" formControlName="precio" />
 
+      </div>
+      <p class="error" *ngIf="checkError('precio', 'required')">
+        Tienes que indicar un precio.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Dirección</span>
+        <input type="text" class="form-control" formControlName="direccion" />
+
+      </div>
+      <p class="error" *ngIf="checkError('direccion', 'required')">
+        La dirección es obligatoria.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Aforo</span>
+        <input type="number" class="form-control" formControlName="aforo" />
+
+      </div>
+      <p class="error" *ngIf="checkError('aforo', 'required')">
+        Tienes que indicar un aforo permitido.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Descripción</span>
+        <input type="text" class="form-control" formControlName="descripcion" />
+
+      </div>
+      <p class="error" *ngIf="checkError('descripcion', 'required')">
+        Tienes que añadir una descripción de la sala.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Foto</span>
+        <input type="text" class="form-control" formControlName="url_foto" />
+
+      </div>
+
+      <p class="error" *ngIf="checkError('url_foto', 'required')">
+        La foto de la sala es obligatoria.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Telefono de contacto</span>
+        <input type="text" class="form-control" formControlName="telefono_contacto" />
+
+      </div>
+      <p class="error" *ngIf="checkError('telefono_contacto', 'required')">
+        El telefono de contacto es obligatorio.
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Email de contacto</span>
+        <input type="text" class="form-control" formControlName="email_contacto" />
+
+      </div>
+      <p class="error" *ngIf="checkError('email_contacto', 'required')">
+        El email de contacto es obligatorio.
+      </p>
+      <input class="btn" type="submit" class="btn mb-3" value="Actualizar" [disabled]="!formulario.valid" />
+    </form>
+
+  </div>
 </div>
