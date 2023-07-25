@@ -39,26 +39,36 @@ export class RegistroComponent {
 
   async onSubmit() {
     if (this.formulario.valid) {
-
       const response = await this.usuarioService.registro(this.formulario.value);
       console.log(response);
 
-      if (response.fatal) {
-        return alert(response.fatal);
+      if (response.id) {
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro correcto',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
+
+        this.router.navigate(['/usuarios/login']);
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Registro fallido',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
       }
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Registro correcto',
-        showConfirmButton: false,
-        timer: 2500,
-        width: 500,
-        padding: '3em',
-        color: '#333333',
-        background: '#0077B6'
-      })
-
-      this.router.navigate(['/usuarios/login']);
     }
   }
 

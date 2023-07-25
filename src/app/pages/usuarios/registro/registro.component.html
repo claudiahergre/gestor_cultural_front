@@ -40,6 +40,10 @@
                         El DNI es obligatorio
                     </p>
 
+                    <p class="error" *ngIf="checkError('dni', 'dnivalidator')">
+                        El DNI es incrrecto
+                    </p>
+
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Teléfono</span>
