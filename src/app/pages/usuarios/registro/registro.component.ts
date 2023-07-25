@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import Swal from 'sweetalert2'
@@ -21,7 +21,7 @@ export class RegistroComponent {
     this.formulario = new FormGroup({
       nombre: new FormControl(null, [Validators.required]),
 
-      dni: new FormControl(null, [Validators.required]),
+      dni: new FormControl(null, [Validators.required, this.dniValidator]),
 
       telefono: new FormControl(null, [Validators.required]),
 
@@ -70,6 +70,34 @@ export class RegistroComponent {
       }
 
     }
+  }
+
+  dniValidator(control: AbstractControl) {
+    const value = control.value
+
+    let expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+    let expresion_regular_nie = /^[XYZxyz]\d{7}[A-HJ-NP-TV-Za-hj-np-tv-z]$/
+    let listaLetra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+    if (expresion_regular_dni.test(value)) {
+      let numero = value.substring(0, value.length - 1);
+      let letr = value.substring(value.length - 1, value.length);
+      numero = numero % 23;
+
+      let letraSeleccinada = listaLetra.substring(numero, numero + 1);
+      if (letraSeleccinada != letr.toUpperCase()) {
+        return { dnivalidator: 'La letra no coincide' }
+      } else {
+        return null;
+      }
+    } else {
+      if (expresion_regular_nie.test(value)) {
+        return null
+      } else {
+        return { dnivalidator: 'formato invalido' }
+      }
+    }
+
   }
 
 
