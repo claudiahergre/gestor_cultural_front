@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Sala } from 'src/app/interfaces/sala.interface';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { SalasService } from 'src/app/services/salas.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-reservarsala',
@@ -76,6 +77,17 @@ export class ReservarsalaComponent {
 
       if (response.error === 'reservada') {
       }
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Sala Reservada',
+        showConfirmButton: false,
+        timer: 2500,
+        width: 500,
+        padding: '3em',
+        color: '#333333',
+        background: '#0077B6'
+      })
 
       this.salaSeleccionada = await this.salasServices.getById(this.salaId);
 

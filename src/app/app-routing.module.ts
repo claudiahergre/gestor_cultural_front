@@ -21,31 +21,32 @@ import { ReservarsalaComponent } from './pages/salas/reservarsala/reservarsala.c
 import { SalasadminComponent } from './pages/salas/salasadmin/salasadmin.component';
 import { MapaComponent } from './pages/mapa/mapa.component';
 import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.component';
+import { LoginGuard, LoginGuardUsuario } from './guards';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'usuarios', component: ListaUsuariosComponent },
+  { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/registro', component: RegistroComponent },
   { path: 'usuarios/login', component: LoginComponent },
-  { path: 'usuarios/editar/:usuarioId', component: EditarUsuarioComponent },
-  { path: 'usuarios/eliminar/:usuarioId', component: EditarUsuarioComponent },
+  { path: 'usuarios/editar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
+  { path: 'usuarios/eliminar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
   { path: 'loginStaff', component: LoginStaffComponent },
   { path: 'registroStaff', component: RegistroStaffComponent },
 
   //Rutas para panelAdmin, panelTrabajador, listaStaff, eliminar staff y editar staff
-  { path: 'panelAdmin', component: PanelAdminComponent },
-  { path: 'panelTrabajador', component: PanelTrabajadorComponent },
-  { path: 'listaStaff', component: ListaStaffComponent },
-  { path: 'staff/editar/:staffId', component: EditarStaffComponent },
-  { path: 'staff/eliminar/:staffId', component: RegistroComponent },
+  { path: 'panelAdmin', component: PanelAdminComponent, canActivate: [LoginGuard] },
+  { path: 'panelTrabajador', component: PanelTrabajadorComponent, canActivate: [LoginGuard] },
+  { path: 'listaStaff', component: ListaStaffComponent, canActivate: [LoginGuard] },
+  { path: 'staff/editar/:staffId', component: EditarStaffComponent, canActivate: [LoginGuard] },
+  { path: 'staff/eliminar/:staffId', component: RegistroComponent, canActivate: [LoginGuard] },
 
   { path: 'mapa', component: MapaComponent },
   { path: 'salas', component: ListasalasComponent },
-  { path: 'salas/salasadmin', component: SalasadminComponent },
-  { path: 'salas/nueva', component: NuevasalaComponent },
-  { path: 'salas/editar/:salaId', component: EditarsalaComponent },
-  { path: 'salas/reservar/:salaId', component: ReservarsalaComponent },
+  { path: 'salas/salasadmin', component: SalasadminComponent, canActivate: [LoginGuard] },
+  { path: 'salas/nueva', component: NuevasalaComponent, canActivate: [LoginGuard] },
+  { path: 'salas/editar/:salaId', component: EditarsalaComponent, canActivate: [LoginGuard] },
+  { path: 'salas/reservar/:salaId', component: ReservarsalaComponent, canActivate: [LoginGuardUsuario] },
   { path: 'salas/detalle/:salaId', component: DetalleSalaComponent },
 
   { path: 'contacto', component: ContactoComponent },
