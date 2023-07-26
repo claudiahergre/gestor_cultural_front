@@ -59,6 +59,20 @@ export class ReservasService {
   }
 
 
+  aceptarById(id_reserva: number, reservaModificada: Reserva): Promise<Reserva> {
+    ///// borrar cuando tengamos el interceptor ///
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    ///////////
+    return firstValueFrom(
+      this.httpClient.put<Reserva>(`${this.reservas}/aceptar/${id_reserva}`, reservaModificada)
+    )
+  }
+
+
 
   deleteById(idReserva: number) {
     ///// borrar cuando tengamos el interceptor ///
