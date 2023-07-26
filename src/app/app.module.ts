@@ -33,6 +33,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { SafePipe } from './pipes/safe.pipe';
 import { ReservasComponent } from './pages/reservas/reservas.component';
 import { LocalizacionComponent } from './pages/localizacion/localizacion.component';
+import { PerfilUsuarioComponent } from './pages/usuarios/perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { LocalizacionComponent } from './pages/localizacion/localizacion.compone
     CalendarComponent,
     SafePipe,
     ReservasComponent,
-    LocalizacionComponent
+    LocalizacionComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,

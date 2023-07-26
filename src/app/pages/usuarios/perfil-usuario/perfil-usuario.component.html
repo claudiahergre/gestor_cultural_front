@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h3 class="text-center mb-5">Panel de Usuario</h3>
+
+    <div class="row">
+        <!-- Apartado mi perfil -->
+        <div class="col-md-6 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body" *ngIf="usuario">
+                    <h5 class="card-title text-center">Mi Perfil</h5>
+                    <p><strong>Nombre: </strong>{{usuario.nombre}}</p>
+                    <p><strong>Usuario: </strong> {{usuario.username}}</p>
+                    <p><strong>Email: </strong>{{usuario.email}}</p>
+                    <p><strong>Teléfono: </strong>{{usuario.telefono}}</p>
+                    <p><strong>Direccion: </strong>{{usuario.direccion}}</p>
+                    <p><strong>DNI: </strong>{{usuario.dni}}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Apartado accesos directos -->
+        <div class="col-md-6 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Accesos directos</h5>
+                    <div class="d-grid gap-2">
+                        <button [routerLink]="['/salas', 'nueva']" class="btn">Darse de baja</button>
+                        <button [routerLink]="['/salas']" class="btn">Ver todas las salas</button>
+                        <button [routerLink]="['/mapa']" class="btn">Mapa de salas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
