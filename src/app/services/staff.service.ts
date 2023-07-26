@@ -63,7 +63,7 @@ export class StaffService {
     if (localStorage.getItem('token_front')) {
       const tokenStaff = localStorage.getItem('token_front');
       const obj = jwtDecode(tokenStaff!) as any;
-      console.log(obj);
+
       if ((obj.userRole && obj.userRole == rol) || rol == 'staff') {
         return true;
       } else {
