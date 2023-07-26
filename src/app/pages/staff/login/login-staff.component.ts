@@ -27,6 +27,7 @@ export class LoginStaffComponent {
     const response = await this.staffService.login(this.formulario.value);
     console.log(response);
 
+
     if (response.fatal) {
       Swal.fire({
         icon: 'warning',
@@ -39,15 +40,15 @@ export class LoginStaffComponent {
         background: '#0077B6'
       })
     } else if (response.rol === 'administrador') {
-      //Hacer routernavigate al panel de administrador
       localStorage.setItem('token_front', response.token);
       this.router.navigate(['/panelAdmin']);
     } else if (response.rol === 'trabajador') {
-      //Hacer routernavigate al panel de trabajadores
-      this.router.navigate(['/panelTrabajador']);
+
       localStorage.setItem('token_front', response.token);
+      this.router.navigate(['/panelTrabajador']);
     }
   }
+
 
   checkError(field: string, error: string) {
     return (
