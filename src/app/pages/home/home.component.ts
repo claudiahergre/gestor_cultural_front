@@ -36,6 +36,11 @@ export class HomeComponent implements OnInit {
         url: 'https://cd1.taquilla.com/data/images/t/23/teatro-jovellanos.jpg',
         descripcion: 'Teatro Jovellanos de Gijón',
       },
+      {
+        nombre: 'Sala de conferencias Chachi',
+        url: 'https://2.bp.blogspot.com/-VKRF1Ls1Zf0/Wuw_gTP4IsI/AAAAAAAAUxA/YU2B52_FKiQu9QyE4tc7yzR6xOFtqn4GACLcBGAs/s1600/MG_0163.jpg',
+        descripcion: 'Teatro Jovellanos de Gijón',
+      }
     ];
   }
 
