@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Staff } from '../interfaces/staff.interface';
 import jwtDecode from 'jwt-decode';
+import { Usuario } from '../interfaces/usuarios.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -76,16 +77,34 @@ export class StaffService {
 
   isLoggedUsuario() {
     if (localStorage.getItem('token_front')) {
-      const tokenStaff = localStorage.getItem('token_front')
-      const obj = jwtDecode(tokenStaff!) as any
+      const tokenStaff = localStorage.getItem('token_front');
+      const obj = jwtDecode(tokenStaff!) as any;
 
       if (obj.userRole) {
-        return true
+        return true;
       } else {
-        return false
+        return false;
       }
     } else {
-      return false
+      return false;
     }
   }
+
+  aceptarStaffById(staffId: number, staffModificado: number): Promise<Staff> {
+    return firstValueFrom(
+      this.httpClient.put<Staff>(`${this.baseUrl}/aceptar/staff/${staffId}`, {
+        aceptada: staffModificado,
+      })
+    );
+  }
+
+
+  aceptarUsuarioById(usuarioId: number, usuarioModificado: number): Promise<Usuario> {
+    return firstValueFrom(
+      this.httpClient.put<Usuario>(`${this.baseUrl}/aceptar/${usuarioId}`, {
+        aceptada: usuarioModificado,
+      })
+    );
+  }
+
 }

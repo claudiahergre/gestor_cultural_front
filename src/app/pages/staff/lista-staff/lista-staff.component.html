@@ -22,6 +22,9 @@
                     <td>{{staff.email}}</td>
                     <td>{{staff.rol}} </td>
                     <td>
+                        <button *ngIf="staff.aceptada == 0" class="btn" (click)="aceptarStaff(staff)">Aceptar
+                        </button>
+                        <button *ngIf="staff.aceptada == 1" class="btn">Aceptado</button>
                         <button class="btn" [routerLink]="['/staff', 'editar', staff.id]">✏️</button>
                         <button (click)="eliminar(staff.id)" class="btn">🗑️</button>
                     </td>

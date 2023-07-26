@@ -6,5 +6,6 @@ export interface Usuario {
     dni: string,
     password: string,
     nombre: string,
-    direccion: string
+    direccion: string,
+    aceptada: number
 }

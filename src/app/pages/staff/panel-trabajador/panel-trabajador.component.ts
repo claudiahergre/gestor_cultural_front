@@ -24,7 +24,8 @@ export class PanelTrabajadorComponent {
       usuario: '',
       email: '',
       password: '',
-      rol: ''
+      rol: '',
+      aceptada: 0
     }
   }
 

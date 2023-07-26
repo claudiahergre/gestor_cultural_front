@@ -27,7 +27,8 @@ export class PanelAdminComponent {
       usuario: '',
       email: '',
       password: '',
-      rol: ''
+      rol: '',
+      aceptada: 0
     }
   }
 
