@@ -1,54 +1,48 @@
 <div class="container mt-5">
-    <div class="row align-items-start">
-        <h2 class="text-center mb-5">{{sala.nombre}}</h2>
+  <div class="row align-items-start">
+    <h2 class="text-center mb-5">{{ sala.nombre }}</h2>
 
-        <!--  -->
-        <div class="row">
-            <div class="col-12 col-md-8">
-                <!-- datos de la sala -->
-                <h5 class="mb-3">Detalles de la sala:</h5>
-                <div *ngIf="sala" class="detalle-sala">
-
-                    <div class="sala-info">
-                        <div class="sala-image">
-                            <img [src]="sala.url_foto" alt="Foto de la sala">
-                        </div>
-                        <div class="sala-details">
-                            <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
-                            <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
-                            <p><strong>Precio:</strong> {{ sala.precio }} euros la hora </p>
-                            <p><strong>Aforo:</strong> {{ sala.aforo }} personas</p>
-                            <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
-                            <p><strong>Teléfono de contacto:</strong></p>
-                            <p><strong>Email:</strong></p>
-
-                        </div>
-
-                    </div>
-                    <button [routerLink]="['/salas', 'reservar', sala.id]" class="btn">Reservar
-                        Sala</button>
-                </div>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <!-- datos de la sala -->
+        <h5 class="mb-3">Detalles de la sala:</h5>
+        <div *ngIf="sala" class="detalle-sala">
+          <div class="sala-info">
+            <div class="sala-image">
+              <img [src]="sala.url_foto" alt="Foto de la sala" />
             </div>
-            <!-- mapa -->
-            <div class="col-12 col-md-4">
-                <h5 class="mb-3">Nos encontramos en:</h5>
-                <div *ngIf="urlMapa !== ''" class="mapa">
-
-
-                    <iframe [src]="urlMapa" width="500" height="325" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+            <div class="sala-details">
+              <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+              <p><strong>Dirección:</strong> {{ sala.direccion }}</p>
+              <p><strong>Precio:</strong> {{ sala.precio }} euros la hora</p>
+              <p><strong>Aforo:</strong> {{ sala.aforo }} personas</p>
+              <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+              <p><strong>Teléfono de contacto:</strong></p>
+              <p><strong>Email:</strong></p>
             </div>
-
+          </div>
+          <button [routerLink]="['/salas', 'reservar', sala.id]" class="btn">
+            Reservar Sala
+          </button>
         </div>
-
-        <!--  -->
-
-
-
+      </div>
+      <!-- mapa -->
+      <div class="col-12 col-md-4">
+        <h5 class="mb-3">Nos encontramos en:</h5>
+        <div *ngIf="urlMapa !== ''" class="mapa">
+          <iframe
+            [src]="urlMapa"
+            width="500"
+            height="325"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </div>
 
-
-
-
+    <!--  -->
+  </div>
 </div>

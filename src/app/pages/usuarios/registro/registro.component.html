@@ -10,10 +10,6 @@
                         <span class="input-group-text">Nombre</span>
                         <input type="text" class="form-control" placeholder="Escribe tu nombre"
                             formControlName="nombre">
-
-
-
-
                     </div>
 
                     <p class="error" *ngIf="checkError('nombre', 'required')">
@@ -41,7 +37,7 @@
                     </p>
 
                     <p class="error" *ngIf="checkError('dni', 'dnivalidator')">
-                        El docuemento es incrrecto
+                        El documento es incorrecto
                     </p>
 
 
@@ -49,9 +45,6 @@
                         <span class="input-group-text">Teléfono</span>
                         <input type="text" class="form-control" placeholder="Escribe tu numero de teléfono"
                             formControlName="telefono">
-
-
-
                     </div>
 
                     <p class="error" *ngIf="checkError('telefono', 'required')">
@@ -73,7 +66,7 @@
                     </p>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Email</span>
+                        <span class="input-group-text">E-mail</span>
                         <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
                             formControlName="email">
 
@@ -82,11 +75,11 @@
                     </div>
 
                     <p class="error" *ngIf="checkError('email', 'required')">
-                        La dirección email es obligatoria
+                        La dirección e-mail es obligatoria
                     </p>
 
                     <p class="error" *ngIf="checkError('email', 'pattern')">
-                        La dirección de email no tiene un formato válido
+                        La dirección de e-mail no tiene un formato válido
                     </p>
 
                     <div class="input-group mb-3">
@@ -118,7 +111,7 @@
 
                     <input type="submit" value="Enviar" class="btn mb-3" [disabled]="!formulario.valid">
 
-                    <p>¿Ya eres miembro? <strong [routerLink]="['/usuarios', 'login']">Inicia tu sesión.</strong>
+                    <p>¿Ya eres miembro? <strong [routerLink]="['/usuarios', 'login']">Inicia sesión.</strong>
                     </p>
 
                 </form>
@@ -128,18 +121,18 @@
         <div class="texto col-12 col-md-6 p-4">
             <h5 class="mb-4"><strong>Bienvenido a AppChachi</strong></h5>
 
-            <p>En AppChachi podrás alquilar nuestras salas por horas para llevar acabo todo tipo de eventos.</p>
+            <p>En Eventia podrás alquilar nuestras salas por horas para llevar a cabo todo tipo de eventos.</p>
 
             <p>El <strong>alquiler de espacios por horas</strong> es una solución muy útil para aquellos
                 profesionales, empresas o
-                particulares que no encuentran con el espacio perfecto para llevar a cabo su actividad.</p>
+                particulares que no encuentran el espacio adecuado para llevar a cabo su actividad.</p>
 
             <p>Una vez te registres, podrás <strong [routerLink]="['/usuarios', 'login']">iniciar sesión</strong> y
                 descubrir todas las salas y espacios
                 que tenemos
                 disponibles para tu evento.</p>
 
-            <p>Si ya estás registrado y lo que quieres es iniciar sesión puedes hacerlo directamente
+            <p>Si ya estás registrado y  quieres iniciar sesión puedes hacerlo directamente
                 <strong [routerLink]="['/usuarios', 'login']">aquí</strong>.
             </p>
 

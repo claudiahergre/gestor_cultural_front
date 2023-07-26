@@ -6,15 +6,15 @@
       <div class="bordecito p-4 mt-3 rounded">
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
           <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
+            <span class="input-group-text">E-mail</span>
             <input type="text" class="form-control" formControlName="email" />
 
           </div>
           <p class="error" *ngIf="checkError('email', 'required')">
-            La dirección email es obligatoria.
+            La dirección e-mail es obligatoria.
           </p>
           <p class="error" *ngIf="checkError('email', 'pattern')">
-            La dirección email no tiene un formato válido.
+            La dirección e-mail no tiene un formato válido.
           </p>
 
 
@@ -30,7 +30,7 @@
 
           <p>
             ¿Todavía no estas registrado?
-            <strong [routerLink]="['/registroStaff']">Registrate aquí.</strong>
+            <strong [routerLink]="['/registroStaff']">Regístrate aquí</strong>
           </p>
         </form>
       </div>

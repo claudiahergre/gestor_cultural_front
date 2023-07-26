@@ -44,8 +44,9 @@
       <p class="error" *ngIf="checkError('descripcion', 'required')">
         Tienes que añadir una descripción de la sala.
       </p>
+
       <div class="input-group mt-3">
-        <span class="input-group-text">foto</span>
+        <span class="input-group-text">Foto</span>
         <input type="text" class="form-control" formControlName="url_foto" />
 
       </div>
@@ -53,12 +54,12 @@
         La foto de la sala es obligatoria.
       </p>
       <div class="input-group mt-3">
-        <span class="input-group-text">Telefono de contacto</span>
+        <span class="input-group-text">Teléfono de contacto</span>
         <input type="text" class="form-control" formControlName="telefono_contacto" />
 
       </div>
       <p class="error" *ngIf="checkError('telefono_contacto', 'required')">
-        El telefono de contacto es obligatorio.
+        El teléfono de contacto es obligatorio.
       </p>
       <div class="input-group mt-3">
         <span class="input-group-text">Email de contacto</span>
@@ -66,7 +67,7 @@
 
       </div>
       <p class="error" *ngIf="checkError('email_contacto', 'required')">
-        El email de contacto es obligatorio.
+        El e-mail de contacto es obligatorio.
       </p>
       <input class="btn" type="submit" class="btn mt-3" value="Guardar" [disabled]="!formulario.valid" />
     </form>
