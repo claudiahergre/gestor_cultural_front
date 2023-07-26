@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'usuarios/login', component: LoginComponent },
   { path: 'usuarios/editar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/eliminar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
-  { path: 'usuarios/perfil', component: PerfilUsuarioComponent, canActivate: [LoginGuardUsuario] },
+  { path: 'panelUsuario', component: PerfilUsuarioComponent, canActivate: [LoginGuardUsuario] },
   { path: 'loginStaff', component: LoginStaffComponent },
   { path: 'registroStaff', component: RegistroStaffComponent },
 

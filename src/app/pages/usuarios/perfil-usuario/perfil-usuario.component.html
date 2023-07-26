@@ -24,7 +24,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Accesos directos</h5>
                     <div class="d-grid gap-2">
-                        <button [routerLink]="['/salas', 'nueva']" class="btn">Darse de baja</button>
+                        <button class="btn" (click)="eliminar(usuario.id)">Darse de baja</button>
                         <button [routerLink]="['/salas']" class="btn">Ver todas las salas</button>
                         <button [routerLink]="['/mapa']" class="btn">Mapa de salas</button>
                     </div>

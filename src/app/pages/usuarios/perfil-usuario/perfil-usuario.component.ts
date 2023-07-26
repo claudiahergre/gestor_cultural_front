@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuarios.interface';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -16,7 +16,7 @@ export class PerfilUsuarioComponent {
   usuarioId: number
   usuario: Usuario
 
-  constructor() {
+  constructor(private router: Router) {
     this.usuarioId = 0;
     this.usuario = {
       id: 0,
@@ -32,6 +32,12 @@ export class PerfilUsuarioComponent {
 
   async ngOnInit() {
     this.usuario = await this.usuariosService.perfil()
+  }
+
+  async eliminar(usuarioId: number) {
+    const response = await this.usuariosService.remove(usuarioId)
+    localStorage.removeItem('token_front')
+    this.router.navigate(['/usuarios/registro'])
   }
 
 }
