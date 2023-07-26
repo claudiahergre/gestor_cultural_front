@@ -75,7 +75,7 @@ export class MapaComponent {
   loadMap() {
     const options = {
       center: new google.maps.LatLng(40.4167278, -3.7033387),
-      zoom: 17,
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.HYBRID,
       mapId: 'mapasalasculturales' //esto lo he puesto siguiendo las ordenes de google para hacer modificaciones de a los marcadores
     }
@@ -99,7 +99,6 @@ export class MapaComponent {
       <div id="contenidotarjeta">
       <p>${descripcion}</p> 
 
-     <p>Haz Login para más información</p>
 
       </div>
       </div>`;
@@ -112,9 +111,6 @@ export class MapaComponent {
 
     marker.addListener("mouseover", () => {
       infowindow.open(this.mapa, marker);
-    });
-    marker.addListener("mouseout", () => {
-      infowindow.close()
     });
 
     return marker
