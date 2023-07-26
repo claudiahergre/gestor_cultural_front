@@ -32,6 +32,13 @@
             <input type="text" class="form-control" formControlName="descripcion" />
           </div>
 
+          <p class="error" *ngIf="checkError('titulo', 'required')">
+            Tienes que indicar un titulo para la reserva.
+          </p>
+          <p class="error" *ngIf="checkError('descripcion', 'required')">
+            Tienes que indicar una descripcion para la reserva.
+          </p>
+
           <div class="input-group mt-3">
             <span class="input-group-text">Fecha de inicio</span>
             <input type="date" class="form-control" formControlName="fecha_reserva" />
