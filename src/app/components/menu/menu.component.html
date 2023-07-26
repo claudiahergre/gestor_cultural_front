@@ -37,8 +37,6 @@
                     </ul>
                 </li>
 
-                <!-- Me falta ocultar o no uno de los dos botones de paneles en funcion de si esta logado un admin o un trabajador -->
-
                 <li class="nav-item" *ngIf="staffService.isLogged('administrador')">
                     <a [routerLink]="['/panelAdmin']" class="nav-link active" data-bs-toggle="collapse"
                         data-bs-target=".navbar-collapse.show">Panel de control</a>
@@ -56,14 +54,14 @@
                         data-bs-target=".navbar-collapse.show">Contacto</a>
                 </li>
 
-                <li class="nav-item" *ngIf="staffService.isLogged()" data-bs-toggle="collapse"
+                <li class="nav-item" *ngIf="staffService.isLoggedUsuario()" data-bs-toggle="collapse"
                     data-bs-target=".navbar-collapse.show">
-                    <a class="nav-link active" (click)="onLogout()">Logout</a>
+                    <a class="nav-link active" (click)="onLogout(0)">Logout</a>
                 </li>
 
                 <li class="nav-item" *ngIf="usuariosService.isLoggedUsuario()" data-bs-toggle="collapse"
                     data-bs-target=".navbar-collapse.show">
-                    <a class="nav-link active" (click)="onLogout()">Logout</a>
+                    <a class="nav-link active" (click)="onLogout(1)">Logout</a>
                 </li>
 
             </ul>
