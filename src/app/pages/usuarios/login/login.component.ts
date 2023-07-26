@@ -46,13 +46,10 @@ export class LoginComponent {
       localStorage.setItem('token_front', response.token);
       this.router.navigate(['/salas']);
     }
-
-
   }
 
   checkError(field: string, error: string) {
     return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched;
   }
-
 
 }

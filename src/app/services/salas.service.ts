@@ -16,12 +16,9 @@ export class SalasService {
     private baseUrl: string
     private usuariosHasSalasUrl: string
 
-
-
     constructor() {
         this.baseUrl = 'http://localhost:3000/api/salas'
         this.usuariosHasSalasUrl = 'http://localhost:3000/api/reservas'
-
     }
 
     getAll(): Promise<Sala[]> {
@@ -59,8 +56,5 @@ export class SalasService {
             this.httpClient.post<Reserva | any>(this.usuariosHasSalasUrl, formValue)
         )
     }
-
-
-
 
 }

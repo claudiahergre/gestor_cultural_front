@@ -34,9 +34,7 @@ export class EditarsalaComponent {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      // console.log(params['salaId'])
       const sala = await this.salasServices.getById(params['salaId'])
-      // console.log(sala)
       this.salaId = params['salaId']
 
       const infoForm = {
@@ -83,8 +81,6 @@ export class EditarsalaComponent {
       })
       this.router.navigate(['/salas/salasadmin'])
     }
-
-
   }
 
   checkError(field: string, error: string): boolean | undefined {

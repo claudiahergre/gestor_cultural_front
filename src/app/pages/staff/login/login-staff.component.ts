@@ -49,7 +49,6 @@ export class LoginStaffComponent {
     }
   }
 
-
   checkError(field: string, error: string) {
     return (
       this.formulario.get(field)?.hasError(error) &&

@@ -18,8 +18,6 @@
             <span class="input-group-text">Usuario</span>
             <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
               formControlName="usuario" />
-
-
           </div>
 
           <p class="error" *ngIf="checkError('usuario', 'required')">
@@ -30,7 +28,6 @@
             <span class="input-group-text">E-mail</span>
             <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
               formControlName="email" />
-
           </div>
 
           <p class="error" *ngIf="checkError('email', 'required')">
@@ -44,7 +41,6 @@
             <span class="input-group-text">Contraseña</span>
             <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
               formControlName="password" />
-
           </div>
 
           <p class="error" *ngIf="checkError('password', 'required')">
@@ -57,7 +53,6 @@
               <option value="administrador">Administrador</option>
               <option value="trabajador">Trabajador</option>
             </select>
-
           </div>
 
           <p class="error" *ngIf="checkError('rol', 'required')">
@@ -76,7 +71,6 @@
 
     <div class="texto col-12 col-md-6 p-4">
       <h5 class="mb-4"><strong>Bienvenido a Eventia</strong></h5>
-
       <p>
         Si ya eres miembro del <strong>staff </strong> pero todavia no tienes
         cuenta y quieres acceder a tu panel de control, no olvides que tienes

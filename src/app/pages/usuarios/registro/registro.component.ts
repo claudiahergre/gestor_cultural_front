@@ -20,22 +20,15 @@ export class RegistroComponent {
   constructor() {
     this.formulario = new FormGroup({
       nombre: new FormControl(null, [Validators.required]),
-
       dni: new FormControl(null, [Validators.required, this.dniValidator]),
-
       telefono: new FormControl(null, [Validators.required]),
-
       direccion: new FormControl(null, [Validators.required]),
-
       email: new FormControl(null, [Validators.required,
       Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,10}$/)]),
-
       username: new FormControl(null, [Validators.required]),
-
       password: new FormControl(null, [Validators.required]),
     })
   }
-
 
   async onSubmit() {
     if (this.formulario.valid) {
@@ -68,7 +61,6 @@ export class RegistroComponent {
           background: '#0077B6'
         })
       }
-
     }
   }
 
@@ -97,13 +89,10 @@ export class RegistroComponent {
         return { dnivalidator: 'formato invalido' }
       }
     }
-
   }
-
 
   checkError(field: string, error: string) {
     return this.formulario.get(field)?.hasError(error) && this.formulario.get(field)?.touched;
   }
-
 
 }

@@ -16,8 +16,6 @@
       <div class="input-group mb-3">
         <span class="input-group-text">Usuario</span>
         <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario" formControlName="usuario" />
-
-
       </div>
 
       <p class="error" *ngIf="checkError('usuario', 'required')">
@@ -28,7 +26,6 @@
         <span class="input-group-text">E-mail</span>
         <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
           formControlName="email" />
-
       </div>
 
       <p class="error" *ngIf="checkError('email', 'required')">
@@ -44,7 +41,6 @@
           <option value="administrador">Administrador</option>
           <option value="trabajador">Trabajador</option>
         </select>
-
       </div>
 
       <p class="error" *ngIf="checkError('rol', 'required')">
@@ -52,8 +48,6 @@
       </p>
 
       <input type="submit" value="Actualizar" class="btn m-3" />
-
-
     </form>
   </div>
 

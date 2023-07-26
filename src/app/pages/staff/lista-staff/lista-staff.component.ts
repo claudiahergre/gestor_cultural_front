@@ -11,14 +11,9 @@ export class ListaStaffComponent {
 
   arrStaff: Staff[]
 
-
-
-
   constructor(private staffService: StaffService) {
     this.arrStaff = []
   }
-
-
 
   async ngOnInit() {
     const staff = await this.staffService.getAllStaff()
@@ -28,9 +23,6 @@ export class ListaStaffComponent {
   async eliminar(staffId: number) {
     const response = await this.staffService.remove(staffId)
     this.arrStaff = await this.staffService.getAllStaff()
-
   }
-
-
 
 }

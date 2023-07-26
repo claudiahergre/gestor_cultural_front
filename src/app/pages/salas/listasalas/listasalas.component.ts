@@ -25,12 +25,9 @@ export class ListasalasComponent {
   }
 
   async ngOnInit() {
-
-    //consultar el token del localstorage
     try {
       this.salas = await this.salasService.getAll()
-      console.log(this.salas)
-    } catch (error) {
+     } catch (error) {
       console.log(error)
     }
   }
