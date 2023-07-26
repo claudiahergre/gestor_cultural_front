@@ -73,4 +73,19 @@ export class StaffService {
       return false;
     }
   }
+
+  isLoggedUsuario() {
+    if (localStorage.getItem('token_front')) {
+      const tokenStaff = localStorage.getItem('token_front')
+      const obj = jwtDecode(tokenStaff!) as any
+
+      if (obj.userRole) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
 }
