@@ -37,8 +37,6 @@
                     </ul>
                 </li>
 
-                <!-- Me falta ocultar o no uno de los dos botones de paneles en funcion de si esta logado un admin o un trabajador -->
-
                 <li class="nav-item" *ngIf="staffService.isLogged('administrador')">
                     <a [routerLink]="['/panelAdmin']" class="nav-link active" data-bs-toggle="collapse"
                         data-bs-target=".navbar-collapse.show">Panel de control</a>
