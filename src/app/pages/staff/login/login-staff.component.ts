@@ -24,13 +24,13 @@ export class LoginStaffComponent {
   }
 
   async onSubmit() {
-    const response = await this.staffService.login(this.formulario.value); 
+    const response = await this.staffService.login(this.formulario.value);
     console.log(response);
 
     if (response.fatal) {
       Swal.fire({
         icon: 'warning',
-        title: 'No se ha posido iniciar sesion',
+        title: 'No se ha podido iniciar sesion',
         showConfirmButton: false,
         timer: 2500,
         width: 500,
