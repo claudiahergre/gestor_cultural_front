@@ -26,7 +26,8 @@ export class PerfilUsuarioComponent {
       dni: '',
       password: '',
       nombre: '',
-      direccion: ''
+      direccion: '',
+      aceptada: 0
     }
   }
 
