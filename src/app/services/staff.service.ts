@@ -58,7 +58,7 @@ export class StaffService {
 
   //Para eliminar el staff de la BBDD
   remove(staffId: any): Promise<any> {
-      return firstValueFrom(
+    return firstValueFrom(
       this.httpClient.delete<Staff>(`${this.baseUrl}/${staffId}`)
     )
   }
@@ -67,8 +67,8 @@ export class StaffService {
     if (localStorage.getItem('token_front')) {
       const tokenStaff = localStorage.getItem('token_front')
       const obj = jwtDecode(tokenStaff!) as any
-      console.log(obj)
-      if (obj.userRole) {
+
+      if (obj.userRole === 'administrador') {
         return true
       } else {
         return false

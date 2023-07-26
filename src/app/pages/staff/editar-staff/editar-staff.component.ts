@@ -79,7 +79,7 @@ export class EditarStaffComponent {
         color: '#333333',
         background: '#0077B6'
       })
-      this.router.navigate(['/usuarios'])
+      this.router.navigate(['/listaStaff'])
     }
 
 

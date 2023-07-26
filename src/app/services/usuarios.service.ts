@@ -56,7 +56,7 @@ export class UsuariosService {
     if (localStorage.getItem('token_front')) {
       const tokenStaff = localStorage.getItem('token_front')
       const obj = jwtDecode(tokenStaff!) as any
-      console.log(obj)
+
       if (obj.userRole) {
         return false
       } else {

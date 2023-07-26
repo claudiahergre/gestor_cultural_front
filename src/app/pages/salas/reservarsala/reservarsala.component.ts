@@ -73,22 +73,35 @@ export class ReservarsalaComponent {
       date.setMinutes(minutos);
       const dateString = date.toISOString();
       console.log(dateString);
-      if (response.error === 'reservada') {
+
+      console.log(response)
+
+      if (response.id_reserva) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Sala Reservada',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Registro fallido',
+          showConfirmButton: false,
+          timer: 2500,
+          width: 500,
+          padding: '3em',
+          color: '#333333',
+          background: '#0077B6'
+        })
+
       }
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Sala Reservada',
-        showConfirmButton: false,
-        timer: 2500,
-        width: 500,
-        padding: '3em',
-        color: '#333333',
-        background: '#0077B6'
-      })
-
       this.salaSeleccionada = await this.salasServices.getById(this.salaId);
-      // alert tu sala ha sido reservada
 
     } catch (error) {
       console.log(error);
