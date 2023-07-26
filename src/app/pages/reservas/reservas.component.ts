@@ -77,7 +77,7 @@ export class ReservasComponent {
   async aceptarReserva(reserva: Reserva) {
     try {
       reserva.aceptada = 1
-      const response = await this.reservasService.updateById(reserva.id_reserva, reserva)
+      const response = await this.reservasService.aceptarById(reserva.id_reserva, reserva)
       console.log(response)
       if (response) {
         Swal.fire({
