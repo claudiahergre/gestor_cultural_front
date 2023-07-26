@@ -90,6 +90,6 @@ export class CalendarComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes)
-  this.calendarComponent.events = changes["reservas"].currentValue
+    this.calendarComponent.events = changes["reservas"].currentValue
   }
 }
