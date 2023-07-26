@@ -59,7 +59,7 @@ export class ReservasService {
   }
 
 
-  aceptarById(id_reserva: number, reservaModificada: Reserva): Promise<Reserva> {
+  aceptarById(id_reserva: number, reservaModificada: number): Promise<Reserva> {
     ///// borrar cuando tengamos el interceptor ///
     const httpOptions = {
       headers: new HttpHeaders({
@@ -68,10 +68,12 @@ export class ReservasService {
     }
     ///////////
     return firstValueFrom(
-      this.httpClient.put<Reserva>(`${this.reservas}/aceptar/${id_reserva}`, reservaModificada)
+      this.httpClient.put<Reserva>(`${this.reservas}/aceptar/${id_reserva}`, { aceptada: reservaModificada })
     )
   }
-
+  // metodo:put
+  // url: /api/reservas/aceptar/2
+  // body: {aceptada: 1}
 
 
   deleteById(idReserva: number) {
