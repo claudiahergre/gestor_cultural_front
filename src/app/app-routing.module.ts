@@ -23,6 +23,7 @@ import { DetalleSalaComponent } from './pages/salas/detalle-sala/detalle-sala.co
 import { LoginGuard, LoginGuardUsuario } from './guards';
 import { ReservasComponent } from './pages/reservas/reservas.component';
 import { LocalizacionComponent } from './pages/localizacion/localizacion.component';
+import { PerfilUsuarioComponent } from './pages/usuarios/perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'usuarios/login', component: LoginComponent },
   { path: 'usuarios/editar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
   { path: 'usuarios/eliminar/:usuarioId', component: EditarUsuarioComponent, canActivate: [LoginGuard] },
+  { path: 'panelUsuario', component: PerfilUsuarioComponent, canActivate: [LoginGuardUsuario] },
   { path: 'loginStaff', component: LoginStaffComponent },
   { path: 'registroStaff', component: RegistroStaffComponent },
 

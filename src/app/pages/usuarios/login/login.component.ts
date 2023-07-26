@@ -44,7 +44,7 @@ export class LoginComponent {
       })
     } else {
       localStorage.setItem('token_front', response.token);
-      this.router.navigate(['/salas']);
+      this.router.navigate(['/panelUsuario']);
     }
   }
 

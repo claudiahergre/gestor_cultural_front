@@ -28,6 +28,14 @@ export class UsuariosService {
     )
   }
 
+  perfil(): Promise<any> {
+    return firstValueFrom(this.httpClient.get<Usuario>(`${this.baseUrl}/perfil`));
+  }
+  //url: api/usuarios/perfil
+  //get
+  // 
+
+
   update(usuarioId: number, FormValues: any): Promise<Usuario> {
     return firstValueFrom(
       this.httpClient.put<Usuario>(`${this.baseUrl}/editar/${usuarioId}`, FormValues)
