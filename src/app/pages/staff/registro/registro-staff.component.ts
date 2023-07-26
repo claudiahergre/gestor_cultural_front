@@ -46,7 +46,7 @@ export class RegistroStaffComponent {
           background: '#0077B6'
         })
 
-        this.router.navigate(['/usuarios/login']);
+        this.router.navigate(['/loginStaff']);
       } else {
         Swal.fire({
           icon: 'warning',
