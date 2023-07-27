@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'salas/nueva', component: NuevasalaComponent, canActivate: [LoginGuard] },
   { path: 'salas/editar/:salaId', component: EditarsalaComponent, canActivate: [LoginGuard] },
   { path: 'salas/reservar/:salaId', component: ReservarsalaComponent, canActivate: [LoginGuardUsuario] },
-  { path: 'salas/detalle/:salaId', component: DetalleSalaComponent },
+  { path: 'salas/detalle/:salaId', component: DetalleSalaComponent, canActivate: [LoginGuardUsuario] },
 
   { path: 'contacto', component: ContactoComponent },
   { path: '**', redirectTo: '/home' },
