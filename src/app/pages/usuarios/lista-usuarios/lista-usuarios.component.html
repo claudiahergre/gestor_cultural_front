@@ -28,9 +28,10 @@
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.direccion}}</td>
                     <td>
-                        <button *ngIf="usuario.aceptada == 0" class="btn" (click)="aceptarUsuario(usuario)">Aceptar
+                        <button *ngIf="usuario.aceptada == 0" class="aceptar btn"
+                            (click)="aceptarUsuario(usuario)">Aceptar
                         </button>
-                        <button *ngIf="usuario.aceptada == 1" class="btn">Aceptado</button>
+                        <button *ngIf="usuario.aceptada == 1" class="aceptar btn">Aceptado</button>
                         <button class="btn" [routerLink]="['/usuarios', 'editar', usuario.id]">✏️</button>
                         <button class="btn" (click)="onDelete(usuario.id)">🗑️</button>
                     </td>
