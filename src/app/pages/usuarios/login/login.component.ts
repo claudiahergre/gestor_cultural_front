@@ -34,7 +34,7 @@ export class LoginComponent {
     if (response.fatal) {
       Swal.fire({
         icon: 'warning',
-        title: 'No se ha posido iniciar sesion',
+        title: 'No se ha podido iniciar sesion',
         showConfirmButton: false,
         timer: 2500,
         width: 500,
