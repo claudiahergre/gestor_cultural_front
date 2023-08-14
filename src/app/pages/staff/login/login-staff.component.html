@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h3 class="text-center mb-4">¡Inicia sesión!</h3>
+
+  <div class="row flex-column-reverse flex-md-row">
+    <div class="col-12 col-md-6 rounded text-center">
+      <div class="bordecito p-4 mt-3 rounded">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <div class="input-group mb-3">
+            <span class="input-group-text">E-mail</span>
+            <input type="text" class="form-control" formControlName="email" />
+
+          </div>
+          <p class="error" *ngIf="checkError('email', 'required')">
+            La dirección e-mail es obligatoria.
+          </p>
+          <p class="error" *ngIf="checkError('email', 'pattern')">
+            La dirección e-mail no tiene un formato válido.
+          </p>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Contraseña</span>
+            <input type="password" class="form-control" formControlName="password" />
+
+          </div>
+          <p class="error" *ngIf="checkError('password', 'required')">
+            La contraseña es obligatoria.
+          </p>
+          <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid" />
+
+          <p>
+            ¿Todavía no estas registrado?
+            <strong [routerLink]="['/registroStaff']">Regístrate aquí</strong>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="texto col-12 col-md-6 p-4">
+      <h5 class="mb-4"><strong>Accede a tu perfil personal</strong></h5>
+
+      <p>
+        Inicia sesión para poder acceder a tu panel de control. Recuerda que
+        si no estás registrado debes hacerlo
+        <strong [routerLink]="['/registroStaff']">aquí.</strong>
+      </p>
+
+      <p>
+        Si has llegado aquí por error, y lo que quieres es alquilar uno de
+        nuestros espacios, regístrate
+        <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para
+        crear tu perfil.
+      </p>
+    </div>
+  </div>
+</div>

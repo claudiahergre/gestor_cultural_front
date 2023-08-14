@@ -1,0 +1,17 @@
+.navbar {
+
+    background-color: rgb(28, 146, 179);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+
+
+}
+
+li:hover {
+    background-color: rgb(17, 94, 116);
+    border-radius: 10px;
+}

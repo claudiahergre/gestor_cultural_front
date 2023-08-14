@@ -1,0 +1,171 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <!-- texto con titulo -->
+    <div class="col-5 col-sm">
+      <h1 class="mb-3">Gestor Cultural Eventia</h1>
+
+      <h6 class="mb-3">
+        ¡Bienvenido a nuestra innovadora aplicación de gestión y reservas de espacios para eventos, Eventia!
+      </h6>
+      <p>
+        Eventia es la solución definitiva para organizar y optimizar tus eventos de manera eficiente y sin
+        complicaciones. Con una interfaz intuitiva y fácil de usar, nuestra aplicación te brinda el control total sobre
+        la reserva de espacios para cualquier tipo de evento: reuniones corporativas, conferencias, fiestas privadas o
+        eventos culturales.
+      </p>
+
+      <p>
+        Gracias a nuestro amplio catálogo de lugares disponibles, encontrarás el espacio perfecto para cada ocasión.
+      </p>
+
+      <p>
+        Nuestra plataforma centralizada te permite administrar todas tus reservas de forma transparente. Con un solo
+        clic, podrás verificar la disponibilidad, confirmar fechas y realizar pagos seguros. Olvídate de las
+        preocupaciones logísticas, ¡nosotros nos encargamos de todo!
+      </p>
+
+      <div class="botones">
+        <button class="btn" [routerLink]="['/salas']">Ver salas</button>
+        <button class="btn" [routerLink]="['/mapa']">Mapa de salas</button>
+      </div>
+
+    </div>
+
+    <!-- galeria -->
+    <div class="col-7">
+
+      <div class="carousel">
+
+        <!-- <button class="btn" (click)="startInterval()">Ver imagenes</button> -->
+        <img class="galeria" [src]="images[imagenSeleccionada].url" [alt]="">
+        <!-- <button class="btn" (click)="stopInterval()">Detener</button> -->
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- seccion acceso -->
+<div class="seccionInicial">
+
+  <div class="container">
+    <h3 class="mb-5 text-center">Nosotros ponemos el espacio, tu ahorras tiempo y dinero</h3>
+
+
+    <div class="cajas row">
+
+      <div class="col-md-4">
+
+        <h5 class="text-center mb-3">Encuentra un espacio para tu evento</h5>
+
+        <p>Eventia es la empresa líder en gestión y reservas de espacios para eventos. Nos encargamos de gestionar
+          todo
+          lo
+          que necesites para tu evento.</p>
+
+        <p>Precios cerrados, sin extras. En función del espacio, tendrá un precio por horas, ¡sin sorpresas en
+          la
+          factura final!</p>
+
+        <p>Podrás disponer del espacio completo siempre y cuando reserves el tiempo que lo vas a necesitar, puede ser
+          desde
+          unas horas, a unos días, siempre en función de tus necesidades.</p>
+
+      </div>
+
+      <div class="bordes col-md-4">
+        <h5 class="text-center">¿Por qué reservar con nosotros?</h5>
+        <div class="d-flex flex-column p-4">
+
+          <div class="d-flex mb-5">
+            <i class="fa-solid fa-x mr-3"></i>
+            <p>Sin sorpresas en la factura. Precio cerrado.</p>
+          </div>
+
+          <div class="d-flex mb-5">
+            <i class="fa-solid fa-user mr-3"></i>
+            <p>Asistencia personalizada 24/7</p>
+          </div>
+
+          <div class="d-flex">
+            <i class="fa-solid fa-thumbtack mr-3"></i>
+            <p>Espacios situados en puntos estrategicos de la ciudad</p>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+
+        <h5 class="text-center mb-3">Nuestros precios son más bajos</h5>
+
+        <p>Negociamos los precios de muchos espacios a la vez directamente con las propias compañías, así
+          que podemos conseguir las tarifas más bajas para nuestros clientes.</p>
+
+        <p>Sabemos los elevados costes que supone la organización de un evento, pero nosotros estamos aquí para ayudarte
+          y ponertelo más facil.</p>
+
+        <p>Gracias a la estrecha relación con los espacios, podemos conseguir los mejores precios, además, si nos traes
+          un presupuesto, te lo mejoramos!</p>
+
+        <p class="text-center"><strong [routerLink]="['/contacto']">¡Contacta ya con nosotros!</strong></p>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Sección de personal -->
+
+<div class="seccionEquipo m-5">
+
+  <div class="container">
+
+    <h3 class="mb-3 text-center">¿Quiénes somos?</h3>
+
+    <h6 class="text-center mb-4">Eventia tiene un equipo detrás de lo más completo, estarán siempre dispuestos
+      ayudarte en
+      todo lo que
+      necesites.
+    </h6>
+
+
+    <section class="equipo">
+      <div class="miembro">
+        <img
+          src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light' />
+        <h4 class="nombre">Claudia</h4>
+        <p>Full Stack Developer</p>
+      </div>
+      <div class="miembro">
+        <img
+          src='https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Round&facialHairType=BeardLight&facialHairColor=Black&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Squint&eyebrowType=RaisedExcitedNatural&mouthType=Tongue&skinColor=Light' />
+        <h4 class="nombre">Javi</h4>
+        <p>Full Stack Developer</p>
+      </div>
+      <div class="miembro">
+        <img
+          src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Platinum&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelGreen&graphicType=Bat&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Twinkle&skinColor=Brown' />
+        <h4 class="nombre">Gustavo</h4>
+        <p>Full Stack Developer</p>
+      </div>
+      <div class="miembro">
+        <img
+          src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairDreads&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue01&eyeType=Hearts&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light' />
+        <h4 class="nombre">Ana</h4>
+        <p>Full Stack Developer</p>
+      </div>
+    </section>
+  </div>
+
+
+
+</div>

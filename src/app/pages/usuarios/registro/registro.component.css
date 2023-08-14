@@ -1,0 +1,30 @@
+/* .fondo {
+    background-color: var(--blanco);
+    height: calc(100vh - 56px);
+    padding-top: 40px;
+}
+ */
+.bordecito {
+    background-color: white;
+    border: 1px solid rgb(28, 146, 179);
+}
+
+
+.btn {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: rgb(1, 101, 129);
+}
+
+p {
+    font-size: larger;
+}
+
+.error {
+    text-align: left;
+    font-size: small;
+    color: red;
+}

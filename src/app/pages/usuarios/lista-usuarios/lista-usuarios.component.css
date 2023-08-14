@@ -1,0 +1,12 @@
+.aceptar {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+}
+
+.aceptar:hover {
+    background-color: rgb(1, 101, 129);
+}
+
+tbody {
+    border-bottom: 1px solid lightgray;
+}

@@ -1,0 +1,87 @@
+<div class="container mt-5">
+
+    <h3 class="text-center mb-5">Panel de Administrador</h3>
+
+    <div class="row">
+        <!-- Apartado de botones de edición -->
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sección de edición</h5>
+                    <div class="d-grid gap-2">
+                        <a [routerLink]="['/usuarios']" class="btn">Usuarios</a>
+                        <a [routerLink]="['/listaStaff']" class="btn">Staff</a>
+                        <a [routerLink]="['/salas', 'salasadmin']" class="btn">Salas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apartado de contadores -->
+        <div class="col-md-8 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Contador de totales</h5>
+                    <div class="row">
+                        <div class="col">
+                            <h6>Usuarios</h6>
+                            <p class="card-text">300</p>
+                        </div>
+                        <div class="col">
+                            <h6>Staff</h6>
+                            <p class="card-text">50</p>
+                        </div>
+                        <div class="col">
+                            <h6>Salas</h6>
+                            <p class="card-text">25</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Apartado de "Mi Perfil" -->
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body" *ngIf="staff">
+                    <h5 class="card-title text-center">Mi Perfil</h5>
+                    <p><strong>Nombre: </strong>{{staff.nombre}}</p>
+                    <p><strong>Usuario: </strong> {{staff.usuario}}</p>
+                    <p><strong>Email: </strong>{{staff.email}}</p>
+                    <p><strong>Rol: </strong>{{staff.rol}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Apartado solicitudes -->
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Lista de reservas</h5>
+                    <div class="d-grid gap-2">
+                        <p>Confirma que autorizas las reservas de las salas solicitadas por los usuarios
+                        </p>
+                        <button [routerLink]="['/reservas']" class="btn">Ver solicitudes</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Apartado accesos directos -->
+        <div class="col-md-4">
+            <div class="card h-100 d-flex">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Accesos directos</h5>
+                    <div class="d-grid gap-2">
+                        <button [routerLink]="['/salas', 'nueva']" class="btn">Añadir nueva sala</button>
+                        <button [routerLink]="['/salas']" class="btn">Ver todas las salas</button>
+                        <button [routerLink]="['/mapa']" class="btn">Mapa de salas</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

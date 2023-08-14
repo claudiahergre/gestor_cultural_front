@@ -1,0 +1,93 @@
+<div class="container mt-5">
+  <h3 class="text-center mb-4">¡Regístrate!</h3>
+
+  <div class="row flex-column-reverse flex-md-row">
+    <div class="col-12 col-md-6 text-center">
+      <div class="bordecito p-4 mt-3 rounded">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Nombre</span>
+            <input type="text" class="form-control" placeholder="Escribe tu nombre" formControlName="nombre" />
+          </div>
+
+          <p class="error" *ngIf="checkError('nombre', 'required')">
+            El nombre es obligatorio.
+          </p>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Usuario</span>
+            <input type="text" class="form-control" placeholder="Escribe tu nombre de usuario"
+              formControlName="usuario" />
+          </div>
+
+          <p class="error" *ngIf="checkError('usuario', 'required')">
+            El nombre de usuario es obligatorio.
+          </p>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">E-mail</span>
+            <input type="text" class="form-control" placeholder="Introduce un correo electrónico válido"
+              formControlName="email" />
+          </div>
+
+          <p class="error" *ngIf="checkError('email', 'required')">
+            La dirección e-mail es obligatoria.
+          </p>
+          <p class="error" *ngIf="checkError('email', 'pattern')">
+            La dirección e-mail no tiene un formato válido.
+          </p>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Contraseña</span>
+            <input type="password" class="form-control" placeholder="Escoge una contraseña segura"
+              formControlName="password" />
+          </div>
+
+          <p class="error" *ngIf="checkError('password', 'required')">
+            La contraseña es obligatoria.
+          </p>
+
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Rol</label>
+            <select class="form-select" id="inputGroupSelect01" formControlName="rol">
+              <option value="administrador">Administrador</option>
+              <option value="trabajador">Trabajador</option>
+            </select>
+          </div>
+
+          <p class="error" *ngIf="checkError('rol', 'required')">
+            Tienes que elegir un rol.
+          </p>
+
+          <input type="submit" value="Regístrate" class="btn m-3" [disabled]="!formulario.valid" />
+
+          <p>
+            ¿Ya eres miembro?
+            <strong [routerLink]="['/loginStaff']">Inicia tu sesión.</strong>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="texto col-12 col-md-6 p-4">
+      <h5 class="mb-4"><strong>Bienvenido a Eventia</strong></h5>
+      <p>
+        Si ya eres miembro del <strong>staff </strong> pero todavia no tienes
+        cuenta y quieres acceder a tu panel de control, no olvides que tienes
+        que estar registrado.
+      </p>
+
+      <p>
+        Si ya estás registrado puedes iniciar sesión directamente
+        <strong>aquí.</strong>
+      </p>
+
+      <p>
+        Si has llegado aquí por error, y lo que quieres es alquilar uno de
+        nuestros espacios, regístrate
+        <strong [routerLink]="['/usuarios', 'registro']">aquí</strong> para
+        crear tu perfil.
+      </p>
+    </div>
+  </div>
+</div>

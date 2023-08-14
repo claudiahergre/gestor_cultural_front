@@ -1,0 +1,36 @@
+<div class="container mt-5">
+
+    <h3 class="text-center p-4">Lista de salas editables</h3>
+
+    <div class="p-3 rounded text-center">
+
+        <table class="table">
+            <thead>
+
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Dirección</th>
+                <th>Aforo</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sala of salas">
+                    <td>{{sala.nombre}}</td>
+                    <td>{{sala.descripcion}}</td>
+                    <td>{{sala.direccion}}</td>
+                    <td>{{sala.aforo}}</td>
+                    <td>{{sala.precio}}</td>
+
+                    <td>
+                        <button [routerLink]="['/salas','editar',sala.id]" class="btn">✏️</button>
+                        <button (click)="eliminarSala(sala.id)" class="btn">🗑️</button>
+                    </td>
+                </tr>
+            </tbody>
+
+
+        </table>
+
+    </div>
+</div>

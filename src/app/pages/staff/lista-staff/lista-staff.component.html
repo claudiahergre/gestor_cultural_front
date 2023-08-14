@@ -1,0 +1,36 @@
+<div class="container mt-5">
+
+    <h3 class="text-center p-4">Lista de miembros usuarios</h3>
+
+    <div class="p-3 mt-3 rounded text-center">
+
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>usuario</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let staff of arrStaff">
+                    <td>{{staff.id}}</td>
+                    <td>{{staff.nombre}}</td>
+                    <td>{{staff.usuario}}</td>
+                    <td>{{staff.email}}</td>
+                    <td>{{staff.rol}} </td>
+                    <td>
+                        <button *ngIf="staff.aceptada == 0" class="btn" (click)="aceptarStaff(staff)">Aceptar
+                        </button>
+                        <button *ngIf="staff.aceptada == 1" class="btn">Aceptado</button>
+                        <button class="btn" [routerLink]="['/staff', 'editar', staff.id]">✏️</button>
+                        <button (click)="eliminar(staff.id)" class="btn">🗑️</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

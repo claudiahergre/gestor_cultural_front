@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <h3 class="text-center">Formulario de reserva de sala</h3>
+
+
+
+  <div class="row m-1">
+    <div class="col-12 col-md-4">
+      <!-- detalles sala -->
+      <div *ngIf="sala" class="detalle-sala mb-3">
+        <div class="card bordecito">
+          <img [src]="sala.url_foto" alt="Foto de la sala">
+          <div class="card-body">
+            <h5 class="card-title">{{sala.nombre}}</h5>
+            <p class="card-text">{{sala.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-8">
+
+      <!-- formulario -->
+      <div class="form bordecito rounded p-3">
+        <h5 class="mt-4">Información de la reserva</h5>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+          <div class="input-group mt-3">
+            <span class="input-group-text">Título para la reserva</span>
+            <input type="text" class="form-control" formControlName="titulo" />
+
+            <span class="input-group-text">Descripción</span>
+            <input type="text" class="form-control" formControlName="descripcion" />
+          </div>
+
+          <p class="error" *ngIf="checkError('titulo', 'required')">
+            Tienes que indicar un titulo para la reserva.
+          </p>
+          <p class="error" *ngIf="checkError('descripcion', 'required')">
+            Tienes que indicar una descripcion para la reserva.
+          </p>
+
+          <div class="input-group mt-3">
+            <span class="input-group-text">Fecha de inicio</span>
+            <input type="date" class="form-control" formControlName="fecha_reserva" />
+
+            <span class="input-group-text">Hora de inicio</span>
+            <input type="time" class="form-control" formControlName="hora_reserva" />
+
+          </div>
+          <p class="error" *ngIf="checkError('fecha_reserva', 'required')">
+            Tienes que indicar una fecha de reserva.
+          </p>
+          <p class="error" *ngIf="checkError('hora_reserva', 'required')">
+            Tienes que indicar una hora de reserva.
+          </p>
+
+          <div class="input-group mt-3">
+
+            <span class="input-group-text">Fecha de fin</span>
+            <input type="date" class="form-control" formControlName="fecha_fin_reserva" />
+
+
+            <span class="input-group-text">Hora de fin</span>
+            <input type="time" class="form-control" formControlName="hora_fin_reserva" />
+
+          </div>
+          <p class="error" *ngIf="checkError('fecha_fin_reserva', 'required')">
+            Tienes que indicar hasta qué fecha se hace la reserva.
+          </p>
+          <p class="error" *ngIf="checkError('hora_fin_reserva', 'required')">
+            Tienes que indicar hasta qué hora se hace la reserva.
+          </p>
+
+          <input class="btn" type="submit" class="btn mt-3 mb-3" value="Guardar" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- calendario -->
+  <div class="calendario">
+    <app-calendar *ngIf="salaSeleccionada" (onSelect)="onSelect($event)"
+      [reservas]="salaSeleccionada.reservas"></app-calendar>
+  </div>
+
+</div>

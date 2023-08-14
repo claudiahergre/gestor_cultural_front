@@ -1,0 +1,18 @@
+.btn {
+    background-color: rgb(28, 146, 179);
+    color: var(--blanco);
+}
+
+.btn:hover {
+    background-color: rgb(1, 101, 129);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+    /* Puedes ajustar la altura según tus preferencias */
+}
+
+.size {
+    height: 350px;
+}
